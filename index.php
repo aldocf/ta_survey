@@ -14,22 +14,28 @@ include_once './model/Survey.php';
 include_once './model/Pertanyaan.php';
 include_once './model/Pilihan.php';
 include_once './model/Responden.php';
+include_once './model/Kategori.php';
+include_once './model/Berita.php';
 
 include_once './dao/UserDao.php';
 include_once './dao/RespondenDao.php';
+include_once './dao/KategoriDao.php';
+include_once './dao/BeritaDao.php';
 
 include_once './controller/AuthController.php';
 include_once './controller/SurveyController.php';
 include_once './controller/UserController.php';
 include_once './controller/RespondenController.php';
+include_once './controller/BeritaController.php';
 
 
-//ASUUUUUUUUUUUUUUUUU
+
 
 $authController = new AuthController();
 $surveyController = new SurveyController();
 $userController = new UserController();
 $respondenController = new RespondenController();
+$beritaController = new BeritaController();
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +102,21 @@ switch ($menu) {
         break;
     case 'insertResponden' :
         $respondenController->insertResponden();
+        break;
+    case 'berita' :
+        $beritaController->berita();
+        break;
+    case 'berita_s' :
+        $beritaController->singleBerita();
+        break;
+    case 'insertBerita' :
+        $beritaController->insertBerita();
+        break;
+    case 'dataBerita' :
+        $beritaController->index();
+        break;
+    case 'updateBerita' :
+        $beritaController->updateBerita();
         break;
     default:
         $authController->index();

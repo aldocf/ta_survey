@@ -22,6 +22,14 @@
                     </ul>
                 </li>
                 <li class="nav-parent">
+                    <a href="#"><i class="fa fa-newspaper-o"></i><span>Berita</span> <span class="fa arrow"></span></a>
+                    <ul class="children collapse">
+                        <li><a href="index.php?menu=berita"> Lihat Berita</a></li>
+                        <li><a href="index.php?menu=dataBerita"> Data Berita</a></li>
+                        <li><a href="index.php?menu=dataKategori"> Data Kategori Berita</a></li>
+                    </ul>
+                </li>
+                <li class="nav-parent">
                     <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>
                     <ul class="children collapse">
                         <li><a href=""> Member</a></li>
@@ -31,6 +39,8 @@
                 <?php
             } else if (isset($_SESSION['role']) && $_SESSION['role'] == 0) {
                 ?>
+                <li class="nav"><a href="index.php?menu=berita"><i class="fa fa-newspaper-o"></i><span>Berita</span></a>
+                </li>
                 <li class="nav"><a href="#"><i class="icons-office-02"></i><span>Lowongan Kerja</span></a>
                 </li>
                 <li class="nav"><a href="#"><i class="icon-docs"></i><span>Survey</span></a>
