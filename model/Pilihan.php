@@ -11,6 +11,7 @@ class Pilihan
     private $idPilihan;
     private $pertanyaan;
     private $pilihan;
+    private $isLainnya;
 
     /**
      * @return mixed
@@ -58,6 +59,22 @@ class Pilihan
     public function setPilihan($pilihan): void
     {
         $this->pilihan = $pilihan;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getisLainnya()
+    {
+        return $this->isLainnya;
+    }
+
+    /**
+     * @param mixed $isLainnya
+     */
+    public function setIsLainnya($isLainnya): void
+    {
+        $this->isLainnya = $isLainnya;
     }
 
 

@@ -18,7 +18,7 @@
     function addFormSingleTextBox() {
         var c = countGlobal
         c = c + 1;
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban" disabled></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban" disabled></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
         $("#form-js").append(txt1);
 
         var number = "number" + c;
@@ -31,7 +31,7 @@
     function addFormCommentBox() {
         var c = countGlobal;
         c = c + 1;
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="CommentBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><textarea class="form-control" placeholder="Jawaban" disabled rows="5"></textarea></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="CommentBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><textarea class="form-control" placeholder="Jawaban" disabled rows="5"></textarea></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
         $("#form-js").append(txt1);
 
         var number = "number" + c;
@@ -48,14 +48,17 @@
         var c = countGlobal;
         c = c + 1;
 
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleAnswer" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleAnswer" readonly name="type[]"><input type="text" class="form-control" value="' + multipleAnswer + '" readonly name="multiple_answer[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div>';
 
         for (var i = 1; i <= multipleAnswer; i++) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]"></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]" required></div></div>';
         }
 
         if (lainnya) {
             txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="1" name="lainnya[]"></div>';
+        } else {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="0" name="lainnya[]"></div>';
         }
 
         txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
@@ -76,14 +79,17 @@
         var c = countGlobal;
         c = c + 1;
 
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleChoice" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white"placeholder="Penjelasan" name="penjelasan[]"></div>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleChoice" readonly name="type[]"><input type="text" class="form-control" value="' + multipleChoice + '" readonly name="multiple_choice[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white"placeholder="Penjelasan" name="penjelasan[]" required></div>';
 
         for (var i = 1; i <= multipleChoice; i++) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]"></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]" required></div></div>';
         }
 
         if (lainnya) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled ></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="1" name="lainnya[]"></div>';
+        } else {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="0" name="lainnya[]"></div>';
         }
 
         txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
@@ -104,16 +110,16 @@
         var c = countGlobal;
         c = c + 1;
 
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="Matrix" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]"></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]"></div><div class="col-md-12 m-b-10"><label for="">Baris</label>';
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="Matrix" readonly name="type[]"><input type="text" class="form-control" value="' + totalBaris + '" readonly name="total_baris[]"><input type="text" class="form-control" value="' + totalKolom + '" readonly name="total_kolom[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Baris</label>';
 
         for (var i = 1; i <= totalBaris; i++) {
-            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Baris ' + i + '" name="baris[]">';
+            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Baris ' + i + '" name="baris[]" required>';
         }
 
         txt1 = txt1 + '</div><div class="col-md-12 m-b-10"><label for="">Kolom</label>';
 
         for (var i = 1; i <= totalKolom; i++) {
-            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Kolom ' + i + '" name="kolom[]">';
+            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Kolom ' + i + '" name="kolom[]" required>';
         }
 
 

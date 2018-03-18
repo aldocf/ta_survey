@@ -8,6 +8,20 @@
 
 class SurveyController
 {
+
+    private $pertanyaanDao;
+    private $pilihanDao;
+    private $barisDao;
+    private $kolomDao;
+
+    public function __construct()
+    {
+        $this->pertanyaanDao = new PertanyaanDao();
+        $this->pilihanDao = new PilihanDao();
+        $this->barisDao = new BarisDao();
+        $this->kolomDao = new KolomDao();
+    }
+
     public function index()
     {
 
@@ -85,8 +99,131 @@ class SurveyController
 //            array_push($_SESSION['survey'], $this->addMatrix($baris, $kolom));
 //        }
 
-        if(isset($_POST['btnSimpan'])){
-            print_r($_POST);
+        if (isset($_POST['btnSimpan'])) {
+
+            $countChoice = 0;
+            $countLainnya = 0;
+            $countBaris = 0;
+            $countKolom = 0;
+            $soalMultipleAnswer = 0;
+            $soalMultipleChoice = 0;
+            $soalBaris = 0;
+            $soalKolom = 0;
+            for ($i = 0; $i < sizeof($_POST['type']); $i++) {
+                if ($_POST['type'][$i] == "SingleTextBox") {
+                    $pertanyaan = new Pertanyaan();
+                    $pertanyaan->setPertanyaan($_POST['soal'][$i]);
+                    $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
+                    $pertanyaan->setTipeSoal($_POST['type'][$i]);
+                    $pertanyaan->setNomorPertanyaan($i + 1);
+                    $pertanyaan->setSurvey(1);
+                    $this->pertanyaanDao->insertPertanyaan($pertanyaan);
+                } else if ($_POST['type'][$i] == "CommentBox") {
+                    $pertanyaan = new Pertanyaan();
+                    $pertanyaan->setPertanyaan($_POST['soal'][$i]);
+                    $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
+                    $pertanyaan->setTipeSoal($_POST['type'][$i]);
+                    $pertanyaan->setNomorPertanyaan($i + 1);
+                    $pertanyaan->setSurvey(1);
+                    $this->pertanyaanDao->insertPertanyaan($pertanyaan);
+                } else if ($_POST['type'][$i] == "MultipleAnswer") {
+                    $pertanyaan = new Pertanyaan();
+                    $pertanyaan->setPertanyaan($_POST['soal'][$i]);
+                    $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
+                    $pertanyaan->setTipeSoal($_POST['type'][$i]);
+                    $pertanyaan->setNomorPertanyaan($i + 1);
+                    $pertanyaan->setSurvey(1);
+                    $this->pertanyaanDao->insertPertanyaan($pertanyaan);
+
+                    $lastPertanyaan = $this->pertanyaanDao->getLastIdPertanyaan($pertanyaan);
+
+                    $k = 0;
+                    while ($k < $_POST['multiple_answer'][$soalMultipleAnswer]) {
+                        $pilihan = new Pilihan();
+                        $pilihan->setPertanyaan($lastPertanyaan->getIdPertanyaan());
+                        $pilihan->setPilihan($_POST['pilihan'][$countChoice]);
+                        $pilihan->setIsLainnya(0);
+                        $this->pilihanDao->insertPilihan($pilihan);
+                        $countChoice = $countChoice + 1;
+                        $k++;
+                    }
+
+                    if ($_POST['lainnya'][$countLainnya] == 1) {
+                        $pilihan = new Pilihan();
+                        $pilihan->setPertanyaan($lastPertanyaan->getIdPertanyaan());
+                        $pilihan->setPilihan("Lainnya");
+                        $pilihan->setIsLainnya(1);
+                        $this->pilihanDao->insertPilihan($pilihan);
+                    }
+                    $countLainnya = $countLainnya + 1;
+                    $soalMultipleAnswer = $soalMultipleAnswer + 1;
+                } else if ($_POST['type'][$i] == "MultipleChoice") {
+                    $pertanyaan = new Pertanyaan();
+                    $pertanyaan->setPertanyaan($_POST['soal'][$i]);
+                    $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
+                    $pertanyaan->setTipeSoal($_POST['type'][$i]);
+                    $pertanyaan->setNomorPertanyaan($i + 1);
+                    $pertanyaan->setSurvey(1);
+                    $this->pertanyaanDao->insertPertanyaan($pertanyaan);
+
+                    $lastPertanyaan = $this->pertanyaanDao->getLastIdPertanyaan($pertanyaan);
+
+                    $k = 0;
+                    while ($k < $_POST['multiple_choice'][$soalMultipleChoice]) {
+                        $pilihan = new Pilihan();
+                        $pilihan->setPertanyaan($lastPertanyaan->getIdPertanyaan());
+                        $pilihan->setPilihan($_POST['pilihan'][$countChoice]);
+                        $pilihan->setIsLainnya(0);
+                        $this->pilihanDao->insertPilihan($pilihan);
+                        $countChoice = $countChoice + 1;
+                        $k++;
+                    }
+
+                    if ($_POST['lainnya'][$countLainnya] == 1) {
+                        $pilihan = new Pilihan();
+                        $pilihan->setPertanyaan($lastPertanyaan->getIdPertanyaan());
+                        $pilihan->setPilihan("Lainnya");
+                        $pilihan->setIsLainnya(1);
+                        $this->pilihanDao->insertPilihan($pilihan);
+                    }
+                    $countLainnya = $countLainnya + 1;
+                    $soalMultipleChoice = $soalMultipleChoice + 1;
+                } else if ($_POST['type'][$i] == "Matrix") {
+                    $pertanyaan = new Pertanyaan();
+                    $pertanyaan->setPertanyaan($_POST['soal'][$i]);
+                    $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
+                    $pertanyaan->setTipeSoal($_POST['type'][$i]);
+                    $pertanyaan->setNomorPertanyaan($i + 1);
+                    $pertanyaan->setSurvey(1);
+                    $this->pertanyaanDao->insertPertanyaan($pertanyaan);
+
+                    $lastPertanyaan = $this->pertanyaanDao->getLastIdPertanyaan($pertanyaan);
+
+                    $k = 0;
+                    while ($k < $_POST['total_baris'][$soalBaris]) {
+                        $baris = new Baris();
+                        $baris->setPertanyaan($lastPertanyaan->getIdPertanyaan());
+                        $baris->setIsiBaris($_POST['baris'][$countBaris]);
+                        $this->barisDao->insertBaris($baris);
+                        $countBaris = $countBaris + 1;
+                        $k++;
+                    }
+
+                    $k = 0;
+                    while ($k < $_POST['total_kolom'][$soalKolom]) {
+                        $kolom = new Kolom();
+                        $kolom->setPertanyaan($lastPertanyaan->getIdPertanyaan());
+                        $kolom->setIsiKolom($_POST['kolom'][$countKolom]);
+                        $this->kolomDao->insertKolom($kolom);
+                        $countKolom = $countKolom + 1;
+                        $k++;
+                    }
+
+                    $soalBaris = $soalBaris + 1;
+                    $soalKolom = $soalKolom + 1;
+                }
+            }
+
         }
 
         require_once './view/survey/pertanyaan.php';
