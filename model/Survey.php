@@ -11,6 +11,9 @@ class Survey
     private $idSurvey;
     private $namaSurvey;
     private $deskripsiSurvey;
+    private $targetResponden;
+    private $periodeSurvey;
+    private $periodeSurveyAkhir;
 
     /**
      * @return mixed
@@ -58,6 +61,54 @@ class Survey
     public function setDeskripsiSurvey($deskripsiSurvey): void
     {
         $this->deskripsiSurvey = $deskripsiSurvey;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTargetResponden()
+    {
+        return $this->targetResponden;
+    }
+
+    /**
+     * @param mixed $targetResponden
+     */
+    public function setTargetResponden($targetResponden): void
+    {
+        $this->targetResponden = $targetResponden;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPeriodeSurvey()
+    {
+        return $this->periodeSurvey;
+    }
+
+    /**
+     * @param mixed $periodeSurvey
+     */
+    public function setPeriodeSurvey($periodeSurvey): void
+    {
+        $this->periodeSurvey = $periodeSurvey;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPeriodeSurveyAkhir()
+    {
+        return $this->periodeSurveyAkhir;
+    }
+
+    /**
+     * @param mixed $periodeSurveyAkhir
+     */
+    public function setPeriodeSurveyAkhir($periodeSurveyAkhir): void
+    {
+        $this->periodeSurveyAkhir = $periodeSurveyAkhir;
     }
 
 

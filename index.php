@@ -18,6 +18,7 @@ include_once './model/Kategori.php';
 include_once './model/Berita.php';
 include_once './model/Baris.php';
 include_once './model/Kolom.php';
+include_once './model/Survey.php';
 
 include_once './dao/UserDao.php';
 include_once './dao/RespondenDao.php';
@@ -27,6 +28,7 @@ include_once './dao/PertanyaanDao.php';
 include_once './dao/PilihanDao.php';
 include_once './dao/BarisDao.php';
 include_once './dao/KolomDao.php';
+include_once './dao/SurveyDao.php';
 
 include_once './controller/AuthController.php';
 include_once './controller/SurveyController.php';

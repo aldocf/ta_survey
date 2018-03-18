@@ -9,6 +9,7 @@
 class SurveyController
 {
 
+    private $surveyDao;
     private $pertanyaanDao;
     private $pilihanDao;
     private $barisDao;
@@ -16,6 +17,7 @@ class SurveyController
 
     public function __construct()
     {
+        $this->surveyDao = new SurveyDao();
         $this->pertanyaanDao = new PertanyaanDao();
         $this->pilihanDao = new PilihanDao();
         $this->barisDao = new BarisDao();
@@ -31,12 +33,13 @@ class SurveyController
     public function insert()
     {
 
-        $_SESSION['survey'] = array();
-        $_SESSION['nomor'] = 0;
-        $_SESSION['soal'] = array();
-
         if (isset($_POST['btnBuatSurvey'])) {
-            header('location:index.php?menu=insertPertanyaan');
+            $namaSurvey = $_POST['nama_survey'];
+            $deskripsi = $_POST['deskripsi'];
+            $targetResponden = $_POST['target_responden'];
+            $awal = $_POST['awal'];
+            $akhir = $_POST['akhir'];
+            header('location:index.php?menu=insertPertanyaan&namaSurvey=' . $namaSurvey . '&deskripsi=' . $deskripsi . '&targetResponden=' . $targetResponden . '&awal=' . $awal . '&akhir=' . $akhir);
         }
 
         require_once './view/survey/insert.php';
@@ -44,7 +47,7 @@ class SurveyController
 
     public function insertPertanyaan()
     {
-
+        //region GA DIPAKE TAPI JANGAN DIHAPUS
 //        if (isset($_GET['p'])) {
 //            $_SESSION['nomor'] = $_GET['p'];
 //        }
@@ -98,8 +101,19 @@ class SurveyController
 //            $_SESSION['nomor'] = $_SESSION['nomor'] + 1;
 //            array_push($_SESSION['survey'], $this->addMatrix($baris, $kolom));
 //        }
+        //endregion
 
         if (isset($_POST['btnSimpan'])) {
+
+            $survey = new Survey();
+            $survey->setNamaSurvey($_GET['namaSurvey']);
+            $survey->setDeskripsiSurvey($_GET['deskripsi']);
+            $survey->setTargetResponden($_GET['targetResponden']);
+            $survey->setPeriodeSurvey($_GET['awal']);
+            $survey->setPeriodeSurveyAkhir($_GET['akhir']);
+            $this->surveyDao->insertSurvey($survey);
+
+            $lastSurvey = $this->surveyDao->getLastIdSurvey($survey);
 
             $countChoice = 0;
             $countLainnya = 0;
@@ -116,7 +130,7 @@ class SurveyController
                     $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
                     $pertanyaan->setTipeSoal($_POST['type'][$i]);
                     $pertanyaan->setNomorPertanyaan($i + 1);
-                    $pertanyaan->setSurvey(1);
+                    $pertanyaan->setSurvey($lastSurvey->getIdSurvey());
                     $this->pertanyaanDao->insertPertanyaan($pertanyaan);
                 } else if ($_POST['type'][$i] == "CommentBox") {
                     $pertanyaan = new Pertanyaan();
@@ -124,7 +138,7 @@ class SurveyController
                     $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
                     $pertanyaan->setTipeSoal($_POST['type'][$i]);
                     $pertanyaan->setNomorPertanyaan($i + 1);
-                    $pertanyaan->setSurvey(1);
+                    $pertanyaan->setSurvey($lastSurvey->getIdSurvey());
                     $this->pertanyaanDao->insertPertanyaan($pertanyaan);
                 } else if ($_POST['type'][$i] == "MultipleAnswer") {
                     $pertanyaan = new Pertanyaan();
@@ -132,7 +146,7 @@ class SurveyController
                     $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
                     $pertanyaan->setTipeSoal($_POST['type'][$i]);
                     $pertanyaan->setNomorPertanyaan($i + 1);
-                    $pertanyaan->setSurvey(1);
+                    $pertanyaan->setSurvey($lastSurvey->getIdSurvey());
                     $this->pertanyaanDao->insertPertanyaan($pertanyaan);
 
                     $lastPertanyaan = $this->pertanyaanDao->getLastIdPertanyaan($pertanyaan);
@@ -163,7 +177,7 @@ class SurveyController
                     $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
                     $pertanyaan->setTipeSoal($_POST['type'][$i]);
                     $pertanyaan->setNomorPertanyaan($i + 1);
-                    $pertanyaan->setSurvey(1);
+                    $pertanyaan->setSurvey($lastSurvey->getIdSurvey());
                     $this->pertanyaanDao->insertPertanyaan($pertanyaan);
 
                     $lastPertanyaan = $this->pertanyaanDao->getLastIdPertanyaan($pertanyaan);
@@ -194,7 +208,7 @@ class SurveyController
                     $pertanyaan->setPenjelasan($_POST['penjelasan'][$i]);
                     $pertanyaan->setTipeSoal($_POST['type'][$i]);
                     $pertanyaan->setNomorPertanyaan($i + 1);
-                    $pertanyaan->setSurvey(1);
+                    $pertanyaan->setSurvey($lastSurvey->getIdSurvey());
                     $this->pertanyaanDao->insertPertanyaan($pertanyaan);
 
                     $lastPertanyaan = $this->pertanyaanDao->getLastIdPertanyaan($pertanyaan);
@@ -229,6 +243,7 @@ class SurveyController
         require_once './view/survey/pertanyaan.php';
     }
 
+    //region GA DIPAKE TAPI JANGAN DIHAPUS
     public function addSingleTextBox()
     {
         $line = '<div class="form-group"><div class="col-md-12"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white"placeholder="Soal" name=""></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white"placeholder="Penjelasan"></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban"disabled></div></div></div></div>';
@@ -301,4 +316,5 @@ class SurveyController
             array_push($_SESSION['soal'], $pertanyaan);
         }
     }
+    //endregion
 }

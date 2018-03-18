@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4469139f-9643-49a7-9b96-44d41355cae4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/controller/SurveyController.php" afterPath="$PROJECT_DIR$/controller/SurveyController.php" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/model/Pilihan.php" afterPath="$PROJECT_DIR$/model/Pilihan.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/pertanyaan.php" afterPath="$PROJECT_DIR$/view/survey/pertanyaan.php" />
+      <change beforePath="$PROJECT_DIR$/model/Survey.php" afterPath="$PROJECT_DIR$/model/Survey.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/insert.php" afterPath="$PROJECT_DIR$/view/survey/insert.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,51 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SurveyController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="212" column="51" lean-forward="false" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
-              <folding>
-                <marker date="1521375832185" expanded="true" signature="11548:11585" ph="..." />
-                <marker date="1521375832185" expanded="true" signature="11882:11920" ph="..." />
-                <marker date="1521375832185" expanded="true" signature="12915:12952" ph="..." />
-                <marker date="1521375832185" expanded="true" signature="13246:13284" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pertanyaan.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/survey/pertanyaan.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="112" column="539" lean-forward="false" selection-start-line="112" selection-start-column="539" selection-end-line="112" selection-end-column="539" />
-              <folding>
-                <marker date="1521375812310" expanded="true" signature="4231:4268" ph="..." />
-                <marker date="1521375812310" expanded="true" signature="4596:4634" ph="..." />
-                <marker date="1521375812310" expanded="true" signature="6816:6853" ph="..." />
-                <marker date="1521375812310" expanded="true" signature="7178:7216" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PertanyaanDao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/PertanyaanDao.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="66" column="5" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
-              <folding>
-                <marker date="1521364406509" expanded="true" signature="538:642" ph="INSERT INTO berita... " />
-                <marker date="1521364406509" expanded="true" signature="1485:1646" ph="SELECT * FRO... pertanyaan" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,12 +34,15 @@
         <option value="$PROJECT_DIR$/model/Pilihan.php" />
         <option value="$PROJECT_DIR$/dao/PilihanDao.php" />
         <option value="$PROJECT_DIR$/model/Baris.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/model/Kolom.php" />
         <option value="$PROJECT_DIR$/dao/KolomDao.php" />
         <option value="$PROJECT_DIR$/dao/BarisDao.php" />
         <option value="$PROJECT_DIR$/view/survey/pertanyaan.php" />
+        <option value="$PROJECT_DIR$/view/survey/insert.php" />
+        <option value="$PROJECT_DIR$/model/Survey.php" />
         <option value="$PROJECT_DIR$/controller/SurveyController.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/dao/SurveyDao.php" />
       </list>
     </option>
   </component>
@@ -207,12 +165,12 @@
       <workItem from="1518778902777" duration="2312000" />
       <workItem from="1518781738323" duration="1313000" />
       <workItem from="1521165993132" duration="12000" />
-      <workItem from="1521359722210" duration="16433000" />
+      <workItem from="1521359722210" duration="19774000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39284000" />
+    <option name="totallyTimeSpent" value="42625000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -225,9 +183,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25988287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25988287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -267,20 +224,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/RespondenController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/UserDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/user/member/insertResponden.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -463,13 +406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/RespondenDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -531,14 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1071">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Pertanyaan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
@@ -568,14 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Pilihan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/PilihanDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -590,14 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -654,16 +566,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4896">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="212" column="51" lean-forward="false" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
+        <state relative-caret-position="-68">
+          <caret line="210" column="71" lean-forward="false" selection-start-line="210" selection-start-column="71" selection-end-line="210" selection-end-column="71" />
           <folding>
-            <marker date="1521375832185" expanded="true" signature="11548:11585" ph="..." />
-            <marker date="1521375832185" expanded="true" signature="11882:11920" ph="..." />
-            <marker date="1521375832185" expanded="true" signature="12915:12952" ph="..." />
-            <marker date="1521375832185" expanded="true" signature="13246:13284" ph="..." />
+            <element signature="e#1240#1278#0#PHP" expanded="false" />
+            <element signature="e#10334#10372#0#PHP" expanded="false" />
+            <marker date="1521379314864" expanded="true" signature="12565:12602" ph="..." />
+            <marker date="1521379314864" expanded="true" signature="12899:12937" ph="..." />
+            <marker date="1521379314864" expanded="true" signature="13932:13969" ph="..." />
+            <marker date="1521379314864" expanded="true" signature="14263:14301" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/SurveyDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <marker date="1521379373071" expanded="true" signature="543:666" ph="INSERT INTO survey... " />
+            <marker date="1521379373071" expanded="true" signature="1513:1689" ph="SELECT * FRO... survey" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="46" column="99" lean-forward="false" selection-start-line="46" selection-start-column="83" selection-end-line="46" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Pilihan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
