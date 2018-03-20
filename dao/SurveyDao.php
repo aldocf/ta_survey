@@ -65,4 +65,93 @@ class SurveyDao
         $conn = null;
         return $survey;
     }
+
+    public function getAllSurvey()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM survey";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $data->append($survey);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getSurvey($id)
+    {
+        $survey = null;
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM survey WHERE id_survey = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $survey = new Survey();
+            $survey->setIdSurvey($row['id_survey']);
+            $survey->setNamaSurvey($row['nama_survey']);
+            $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+            $survey->setTargetResponden($row['target_responden']);
+            $survey->setPeriodeSurvey($row['periode_survey']);
+            $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $survey;
+    }
+
+    public function getSurveyAllPertanyaan($id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM survey JOIN pertanyaan ON pertanyaan.id_survey = survey.id_survey WHERE survey.id_survey = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+
+                $pertanyaan = new Pertanyaan();
+                $pertanyaan->setIdPertanyaan($row['id_pertanyaan']);
+                $pertanyaan->setSurvey($survey);
+                $pertanyaan->setNomorPertanyaan($row['nomor_pertanyaan']);
+                $pertanyaan->setPertanyaan($row['pertanyaan']);
+                $pertanyaan->setPenjelasan($row['penjelasan']);
+                $pertanyaan->setTipeSoal($row['tipe_soal']);
+                $pertanyaan->setJumlahPilihan($row['jumlah_pilihan']);
+                $pertanyaan->setJumlahBaris($row['jumlah_baris']);
+                $pertanyaan->setJumlahKolom($row['jumlah_kolom']);
+                $data->append($pertanyaan);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

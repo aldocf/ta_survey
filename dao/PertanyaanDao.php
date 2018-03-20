@@ -8,7 +8,7 @@
 
 class PertanyaanDao
 {
-    public function insertPertanyaan(Pertanyaan $data)
+    public function insertPertanyaanSingle(Pertanyaan $data)
     {
         $result = FALSE;
         $survey = $data->getSurvey();
@@ -27,6 +27,70 @@ class PertanyaanDao
             $stmt->bindParam(3, $pertanyaan);
             $stmt->bindParam(4, $penjelasan);
             $stmt->bindParam(5, $tipeSoal);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+    public function insertPertanyaanPilihan(Pertanyaan $data)
+    {
+        $result = FALSE;
+        $survey = $data->getSurvey();
+        $pertanyaan = $data->getPertanyaan();
+        $penjelasan = $data->getPenjelasan();
+        $tipeSoal = $data->getTipeSoal();
+        $nomor = $data->getNomorPertanyaan();
+        $pilihan = $data->getJumlahPilihan();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "INSERT INTO pertanyaan(id_survey, nomor_pertanyaan, pertanyaan, penjelasan, tipe_soal, jumlah_pilihan) VALUES(?,?,?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $survey);
+            $stmt->bindParam(2, $nomor);
+            $stmt->bindParam(3, $pertanyaan);
+            $stmt->bindParam(4, $penjelasan);
+            $stmt->bindParam(5, $tipeSoal);
+            $stmt->bindParam(6, $pilihan);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+    public function insertPertanyaanMatrix(Pertanyaan $data)
+    {
+        $result = FALSE;
+        $survey = $data->getSurvey();
+        $pertanyaan = $data->getPertanyaan();
+        $penjelasan = $data->getPenjelasan();
+        $tipeSoal = $data->getTipeSoal();
+        $nomor = $data->getNomorPertanyaan();
+        $baris = $data->getJumlahBaris();
+        $kolom = $data->getJumlahKolom();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "INSERT INTO pertanyaan(id_survey, nomor_pertanyaan, pertanyaan, penjelasan, tipe_soal, jumlah_baris, jumlah_kolom) VALUES(?,?,?,?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $survey);
+            $stmt->bindParam(2, $nomor);
+            $stmt->bindParam(3, $pertanyaan);
+            $stmt->bindParam(4, $penjelasan);
+            $stmt->bindParam(5, $tipeSoal);
+            $stmt->bindParam(6, $baris);
+            $stmt->bindParam(7, $kolom);
             $stmt->execute();
             $conn->commit();
             $result = TRUE;

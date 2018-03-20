@@ -32,4 +32,29 @@ class PilihanDao
         }
         return $result;
     }
+
+    public function getPilihanPertanyaan($id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM pilihan WHERE id_pertanyaan = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $pilihan = new Pilihan();
+                $pilihan->setIdPilihan($row['id_pilihan']);
+                $pilihan->setPertanyaan($row['id_pertanyaan']);
+                $pilihan->setPilihan($row['pilihan']);
+                $pilihan->setIsLainnya($row['is_lainnya']);
+                $data->append($pilihan);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

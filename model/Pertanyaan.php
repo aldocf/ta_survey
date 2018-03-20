@@ -14,6 +14,9 @@ class Pertanyaan
     private $pertanyaan;
     private $penjelasan;
     private $tipeSoal;
+    private $jumlahPilihan;
+    private $jumlahBaris;
+    private $jumlahKolom;
 
     /**
      * @return mixed
@@ -109,6 +112,54 @@ class Pertanyaan
     public function setTipeSoal($tipeSoal): void
     {
         $this->tipeSoal = $tipeSoal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJumlahPilihan()
+    {
+        return $this->jumlahPilihan;
+    }
+
+    /**
+     * @param mixed $jumlahPilihan
+     */
+    public function setJumlahPilihan($jumlahPilihan): void
+    {
+        $this->jumlahPilihan = $jumlahPilihan;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJumlahBaris()
+    {
+        return $this->jumlahBaris;
+    }
+
+    /**
+     * @param mixed $jumlahBaris
+     */
+    public function setJumlahBaris($jumlahBaris): void
+    {
+        $this->jumlahBaris = $jumlahBaris;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJumlahKolom()
+    {
+        return $this->jumlahKolom;
+    }
+
+    /**
+     * @param mixed $jumlahKolom
+     */
+    public function setJumlahKolom($jumlahKolom): void
+    {
+        $this->jumlahKolom = $jumlahKolom;
     }
 
 

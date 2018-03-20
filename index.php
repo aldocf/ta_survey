@@ -96,6 +96,9 @@ switch ($menu) {
     case 'insertSurvey' :
         $surveyController->insert();
         break;
+    case 'isiSurvey' :
+        $surveyController->isiSurvey();
+        break;
     case 'insertPertanyaan' :
         $surveyController->insertPertanyaan();
         break;
