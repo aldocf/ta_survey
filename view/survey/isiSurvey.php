@@ -157,12 +157,18 @@
 </script>
 
 <style>
-    .matrix td{
+    .matrix td {
         padding: 10px;
     }
-    .matrix-center{
+
+    .matrix th {
+        padding: 10px;
+    }
+
+    .matrix-center {
         text-align: center;
     }
+
     .matrix {
         width: 100%;
     }
@@ -201,70 +207,6 @@
                                 <form class="form-horizontal" method="post">
                                     <div class="col-md-12">
                                         <div id="form-js">
-                                            <!--                                            <div class="form-group"><div class="col-md-12"><div class="col-md-1"><label><div>1.</div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><label for="">Soal</label></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label></div><div class="col-md-12 m-b-10"><input type="text" class="form-control form-white" placeholder="Jawaban" name="jawaban[]"></div></div></div></div>-->
-                                            <div class="form-group">
-                                                <div class="col-md-12">
-                                                    <div class="col-md-1">
-                                                        <h4>
-                                                            <div>1.</div>
-                                                        </h4>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <div class="form-group">
-                                                            <div class="col-md-12 m-b-10"><h4 for="">sadasdasd'</h4>
-                                                            </div>
-                                                            <div class="col-md-12 m-b-10"><label for="">asdasda</label>
-                                                            </div>
-                                                            <div class="col-md-12 m-b-10">
-                                                                <table class="matrix">
-                                                                    <tr>
-                                                                        <td></td>
-                                                                        <td class="matrix-center">Tidak Setuju</td>
-                                                                        <td class="matrix-center">Netral</td>
-                                                                        <td class="matrix-center">Setuju</td>
-                                                                        <td class="matrix-center">Sangat Setuju</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>asdasdasdaasd</td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>asdasdasdaasd</td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>asdasdasdaasd</td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>asdasdasdaasd</td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>asdasdasdaasd</td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                        <td class="matrix-center"><input type="radio"></td>
-                                                                    </tr>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <?php echo $soal; ?>
                                         </div>
                                     </div>

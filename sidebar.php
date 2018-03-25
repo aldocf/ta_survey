@@ -19,6 +19,7 @@
                         <li><a href="index.php?menu=insertSurvey"> Insert Survey</a></li>
                         <li><a href="index.php?menu=survey"> Survey Aktif</a></li>
                         <li><a href="index.php?menu=survey"> Survey Draf</a></li>
+                        <li><a href="index.php?menu=jawabanSurvey"> Jawaban Survey</a></li>
                     </ul>
                 </li>
                 <li class="nav-parent">

@@ -14,6 +14,7 @@ class SurveyController
     private $pilihanDao;
     private $barisDao;
     private $kolomDao;
+    private $jawabanDao;
 
     public function __construct()
     {
@@ -22,6 +23,7 @@ class SurveyController
         $this->pilihanDao = new PilihanDao();
         $this->barisDao = new BarisDao();
         $this->kolomDao = new KolomDao();
+        $this->jawabanDao = new JawabanDao();
     }
 
     public function index()
@@ -265,21 +267,22 @@ class SurveyController
         $survey = $this->surveyDao->getSurvey($_GET['id']);
         $pertanyaan = $this->surveyDao->getSurveyAllPertanyaan($_GET['id'])->getIterator();
 
+        //region CREATE SOAL
         $soal = "";
         while ($pertanyaan->valid()) {
 
             if ($pertanyaan->current()->getTipeSoal() == "SingleTextBox") {
-                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div><div class="col-md-12 m-b-10"><input type="text" class="form-control form-white" placeholder="Jawaban" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'" required></div></div></div></div></div>';
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div><div class="col-md-12 m-b-10"><input type="text" class="form-control form-white" placeholder="Jawaban" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . '" required></div></div></div></div></div>';
             } else if ($pertanyaan->current()->getTipeSoal() == "CommentBox") {
-                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div><div class="col-md-12 m-b-10"><textarea class="form-control form-white" placeholder="Jawaban" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'" rows="4" required></textarea></div></div></div></div></div>';
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div><div class="col-md-12 m-b-10"><textarea class="form-control form-white" placeholder="Jawaban" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . '" rows="4" required></textarea></div></div></div></div></div>';
             } else if ($pertanyaan->current()->getTipeSoal() == "MultipleAnswer") {
                 $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div>';
                 $pilihan = $this->pilihanDao->getPilihanPertanyaan($pertanyaan->current()->getIdPertanyaan())->getIterator();
                 while ($pilihan->valid()) {
-                    if($pilihan->current()->getIsLainnya() == 0){
-                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'"></div><div class="col-md-11" style="padding-top: 5px"><span for="">' . $pilihan->current()->getPilihan() . '</span></div></div>';
+                    if ($pilihan->current()->getIsLainnya() == 0) {
+                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . '[]" value="' . $pilihan->current()->getPilihan() . '"></div><div class="col-md-11" style="padding-top: 5px"><span for="">' . $pilihan->current()->getPilihan() . '</span></div></div>';
                     } else {
-                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'"></div><div class="col-md-11" style="padding-top: 5px"><input type="text" class="form-control form-white" placeholder="Lainnya" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'lainnya"></div></div>';
+                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . '[]" value="lainnya"></div><div class="col-md-11" style="padding-top: 5px"><input type="text" class="form-control form-white" placeholder="Lainnya" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . 'lainnya"></div></div>';
                     }
                     $pilihan->next();
                 }
@@ -288,20 +291,185 @@ class SurveyController
                 $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div>';
                 $pilihan = $this->pilihanDao->getPilihanPertanyaan($pertanyaan->current()->getIdPertanyaan())->getIterator();
                 while ($pilihan->valid()) {
-                    if($pilihan->current()->getIsLainnya() == 0){
-                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'"></div><div class="col-md-11" style="padding-top: 5px"><span for="">' . $pilihan->current()->getPilihan() . '</span></div></div>';
+                    if ($pilihan->current()->getIsLainnya() == 0) {
+                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . '" value="' . $pilihan->current()->getPilihan() . '"></div><div class="col-md-11" style="padding-top: 5px"><span for="">' . $pilihan->current()->getPilihan() . '</span></div></div>';
                     } else {
-                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'"></div><div class="col-md-11" style="padding-top: 5px"><input type="text" class="form-control form-white" placeholder="Lainnya" name="soal'.$pertanyaan->current()->getNomorPertanyaan().'lainnya"></div></div>';
+                        $soal = $soal . '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . '" value="lainnya"></div><div class="col-md-11" style="padding-top: 5px"><input type="text" class="form-control form-white" placeholder="Lainnya" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . 'lainnya"></div></div>';
                     }
                     $pilihan->next();
                 }
                 $soal = $soal . '</div></div></div></div>';
+            } else if ($pertanyaan->current()->getTipeSoal() == "Matrix") {
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-1"><h4><div>' . $pertanyaan->current()->getNomorPertanyaan() . '.</div></h4></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10"><h4 for="">' . $pertanyaan->current()->getPertanyaan() . '</h4></div><div class="col-md-12 m-b-10"><label for="">' . $pertanyaan->current()->getPenjelasan() . '</label></div><div class="col-md-12 m-b-10"><table class="matrix">';
+
+                $kolom = $this->kolomDao->getSurveyKolom($pertanyaan->current()->getIdPertanyaan());
+                $baris = $this->barisDao->getSurveyBaris($pertanyaan->current()->getIdPertanyaan());
+
+                $countMatrix = 0;
+                foreach ($baris as $b) {
+                    if ($countMatrix == 0) {
+                        $soal = $soal . '<tr><th></th>';
+
+                        foreach ($kolom as $k) {
+                            $soal = $soal . '<th class="matrix-center">' . $k->getIsiKolom() . '</th>';
+                        }
+                        $soal = $soal . '</tr>';
+                    } else {
+                        $soal = $soal . '<tr><td>' . $b->getIsiBaris() . '</td>';
+
+                        foreach ($kolom as $k) {
+                            $soal = $soal . '<td class="matrix-center"><input type="radio" value="' . $k->getIsiKolom() . '" name="soal' . $pertanyaan->current()->getNomorPertanyaan() . 'matrix' . $countMatrix . '"></td>';
+                        }
+                        $soal = $soal . '</tr>';
+                    }
+                    $countMatrix++;
+                }
+                $soal = $soal . '</table></div></div></div></div></div>';
             }
 
             $pertanyaan->next();
         }
+        //endregion
+
+        if (isset($_POST['btnSimpan'])) {
+            $pertanyaan = $this->surveyDao->getSurveyAllPertanyaan($_GET['id'])->getIterator();
+            $validasiPertanyaan = $this->surveyDao->getSurveyAllPertanyaan($_GET['id'])->getIterator();
+
+            $result = true;
+            while ($validasiPertanyaan->valid()) {
+
+                if ($validasiPertanyaan->current()->getTipeSoal() == "MultipleAnswer") {
+                    if (!isset($_POST['soal' . $validasiPertanyaan->current()->getNomorPertanyaan()])) {
+                        echo '<script>alert("Soal nomor ' . $validasiPertanyaan->current()->getNomorPertanyaan() . ' harus diisi!");</script>';
+                        $result = false;
+                        break;
+                    }
+                } else if ($validasiPertanyaan->current()->getTipeSoal() == "MultipleChoice") {
+                    if (!isset($_POST['soal' . $validasiPertanyaan->current()->getNomorPertanyaan()])) {
+                        echo '<script>alert("Soal nomor ' . $validasiPertanyaan->current()->getNomorPertanyaan() . ' harus diisi!");</script>';
+                        $result = false;
+                        break;
+                    }
+                } else if ($validasiPertanyaan->current()->getTipeSoal() == "Matrix") {
+                    $baris = $this->barisDao->getSurveyBaris($validasiPertanyaan->current()->getIdPertanyaan());
+
+                    $countMatrix = 0;
+                    foreach ($baris as $b) {
+                        if ($countMatrix != 0) {
+                            if (!isset($_POST['soal' . $validasiPertanyaan->current()->getNomorPertanyaan() . 'matrix' . $countMatrix])) {
+                                echo '<script>alert("Soal nomor ' . $validasiPertanyaan->current()->getNomorPertanyaan() . ' harus diisi!");</script>';
+                                $result = false;
+                                break;
+                                break;
+                            }
+                        }
+                        $countMatrix++;
+                    }
+                }
+
+                $validasiPertanyaan->next();
+            }
+
+            if ($result) {
+                while ($pertanyaan->valid()) {
+                    $jawaban = new Jawaban();
+                    $jawaban->setResponden(28);
+                    $jawaban->setPertanyaan($pertanyaan->current()->getIdPertanyaan());
+
+                    if ($pertanyaan->current()->getTipeSoal() == "SingleTextBox") {
+                        $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()]);
+                        $this->jawabanDao->insertJawaban($jawaban);
+                    } else if ($pertanyaan->current()->getTipeSoal() == "CommentBox") {
+                        $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()]);
+                        $this->jawabanDao->insertJawaban($jawaban);
+                    } else if ($pertanyaan->current()->getTipeSoal() == "MultipleAnswer") {
+
+                        for ($i = 0; $i < sizeof($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()]); $i++) {
+                            if ($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()][$i] == "lainnya") {
+                                $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan() . 'lainnya']);
+                            } else {
+                                $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()][$i]);
+                            }
+                            $this->jawabanDao->insertJawaban($jawaban);
+                        }
+
+                    } else if ($pertanyaan->current()->getTipeSoal() == "MultipleChoice") {
+                        if ($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()] == "lainnya") {
+                            $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan() . 'lainnya']);
+                        } else {
+                            $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan()]);
+                        }
+                        $this->jawabanDao->insertJawaban($jawaban);
+
+                    } else if ($pertanyaan->current()->getTipeSoal() == "Matrix") {
+                        $baris = $this->barisDao->getSurveyBaris($pertanyaan->current()->getIdPertanyaan());
+
+                        $countMatrix = 0;
+                        foreach ($baris as $b) {
+                            if ($countMatrix != 0) {
+                                $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan() . 'matrix' . $countMatrix]);
+                                $this->jawabanDao->insertJawaban($jawaban);
+                            }
+                            $countMatrix++;
+                        }
+                    }
+
+                    $pertanyaan->next();
+                }
+            }
+        }
 
         require_once './view/survey/isiSurvey.php';
+    }
+
+    public function jawabanSurvey(){
+
+        $data = $this->surveyDao->getAllCountRespondenSurvey()->getIterator();
+        require_once './view/survey/jawabanSurvey.php';
+    }
+
+    public function detailJawaban(){
+
+        $survey = $this->surveyDao->getSurvey($_GET['id']);
+        $pertanyaan = $this->surveyDao->getSurveyAllPertanyaan($_GET['id'])->getIterator();
+
+        //region CREATE SOAL
+        $soal = "";
+        while ($pertanyaan->valid()) {
+
+            if ($pertanyaan->current()->getTipeSoal() == "SingleTextBox") {
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>'.$pertanyaan->current()->getNomorPertanyaan().'</td></tr><tr><td>Pertanyaan</td><td>:</td><td>'.$pertanyaan->current()->getPertanyaan().'</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Single Text Box</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
+
+                while($jawaban->valid()){
+                    $soal = $soal . '<tr><td>'.$jawaban->current()->getResponden()->getIdUser()->getNama().'</td><td>'.$jawaban->current()->getIsiJawaban().'</td></tr>';
+                    $jawaban->next();
+                }
+
+                $soal = $soal . '</tbody></table></div></div></div>';
+            } else if ($pertanyaan->current()->getTipeSoal() == "CommentBox") {
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>'.$pertanyaan->current()->getNomorPertanyaan().'</td></tr><tr><td>Pertanyaan</td><td>:</td><td>'.$pertanyaan->current()->getPertanyaan().'</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Comment Box</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px; !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
+
+                while($jawaban->valid()){
+                    $soal = $soal . '<tr><td>'.$jawaban->current()->getResponden()->getIdUser()->getNama().'</td><td>'.$jawaban->current()->getIsiJawaban().'</td></tr>';
+                    $jawaban->next();
+                }
+
+                $soal = $soal . '</tbody></table></div></div></div>';
+            } else if ($pertanyaan->current()->getTipeSoal() == "MultipleAnswer") {
+
+            } else if ($pertanyaan->current()->getTipeSoal() == "MultipleChoice") {
+
+            } else if ($pertanyaan->current()->getTipeSoal() == "Matrix") {
+
+            }
+
+            $pertanyaan->next();
+        }
+        //endregion
+
+        require_once './view/survey/detailJawaban.php';
     }
 
     //region GA DIPAKE TAPI JANGAN DIHAPUS

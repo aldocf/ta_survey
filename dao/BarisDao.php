@@ -31,4 +31,30 @@ class BarisDao
         return $result;
     }
 
+    public function getSurveyBaris($id)
+    {
+        $data = new ArrayObject();
+        $baris = new Baris();
+        $data->append($baris);
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM baris WHERE id_pertanyaan = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $baris = new Baris();
+                $baris->setIdBaris($row['id_baris']);
+                $baris->setPertanyaan($row['id_pertanyaan']);
+                $baris->setIsiBaris($row['isi_baris']);
+                $data->append($baris);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
 }

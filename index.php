@@ -19,6 +19,7 @@ include_once './model/Berita.php';
 include_once './model/Baris.php';
 include_once './model/Kolom.php';
 include_once './model/Survey.php';
+include_once './model/Jawaban.php';
 
 include_once './dao/UserDao.php';
 include_once './dao/RespondenDao.php';
@@ -29,6 +30,7 @@ include_once './dao/PilihanDao.php';
 include_once './dao/BarisDao.php';
 include_once './dao/KolomDao.php';
 include_once './dao/SurveyDao.php';
+include_once './dao/JawabanDao.php';
 
 include_once './controller/AuthController.php';
 include_once './controller/SurveyController.php';
@@ -98,6 +100,12 @@ switch ($menu) {
         break;
     case 'isiSurvey' :
         $surveyController->isiSurvey();
+        break;
+    case 'jawabanSurvey' :
+        $surveyController->jawabanSurvey();
+        break;
+    case 'detailJawaban' :
+        $surveyController->detailJawaban();
         break;
     case 'insertPertanyaan' :
         $surveyController->insertPertanyaan();

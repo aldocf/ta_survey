@@ -92,6 +92,32 @@ class SurveyDao
         return $data;
     }
 
+    public function getAllCountRespondenSurvey()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT *, COUNT(*) AS jumlah FROM (SELECT survey.*, COUNT(jawaban.id_responden) FROM jawaban JOIN pertanyaan ON pertanyaan.id_pertanyaan = jawaban.id_pertanyaan JOIN survey ON survey.id_survey = pertanyaan.id_survey GROUP BY jawaban.id_responden) jawaban";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['jumlah']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $data->append($survey);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
     public function getSurvey($id)
     {
         $survey = null;

@@ -30,4 +30,28 @@ class KolomDao
         }
         return $result;
     }
+
+    public function getSurveyKolom($id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM kolom WHERE id_pertanyaan = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $kolom = new Kolom();
+                $kolom->setIdKolom($row['id_kolom']);
+                $kolom->setPertanyaan($row['id_pertanyaan']);
+                $kolom->setIsiKolom($row['isi_kolom']);
+                $data->append($kolom);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }
