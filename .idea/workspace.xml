@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4469139f-9643-49a7-9b96-44d41355cae4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/controller/SurveyController.php" afterPath="$PROJECT_DIR$/controller/SurveyController.php" />
-      <change beforePath="$PROJECT_DIR$/dao/BarisDao.php" afterPath="$PROJECT_DIR$/dao/BarisDao.php" />
-      <change beforePath="$PROJECT_DIR$/dao/KolomDao.php" afterPath="$PROJECT_DIR$/dao/KolomDao.php" />
-      <change beforePath="$PROJECT_DIR$/dao/SurveyDao.php" afterPath="$PROJECT_DIR$/dao/SurveyDao.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/sidebar.php" afterPath="$PROJECT_DIR$/sidebar.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/isiSurvey.php" afterPath="$PROJECT_DIR$/view/survey/isiSurvey.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,33 +13,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SurveyController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SurveyController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="450" column="483" lean-forward="false" selection-start-line="450" selection-start-column="483" selection-end-line="450" selection-end-column="483" />
+            <state relative-caret-position="1643">
+              <caret line="481" column="358" lean-forward="false" selection-start-line="481" selection-start-column="358" selection-end-line="481" selection-end-column="358" />
               <folding>
                 <element signature="n#insert#0;n#SurveyController#0;n#!!top" expanded="false" />
                 <element signature="n#insertPertanyaan#0;n#SurveyController#0;n#!!top" expanded="false" />
                 <element signature="e#1375#1413#0#PHP" expanded="false" />
                 <element signature="e#11521#11541#0#PHP" expanded="false" />
-                <element signature="e#26682#26720#0#PHP" expanded="false" />
-                <marker date="1521978953516" expanded="true" signature="13908:13945" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="14143:14159" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="14366:14403" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="14567:14583" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="15739:15776" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="15969:15985" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="16192:16229" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="16388:16404" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="24609:24632" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="24609:24664" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="25702:25758" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="28913:28950" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="29247:29285" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="30280:30317" ph="..." />
-                <marker date="1521978953516" expanded="true" signature="30611:30649" ph="..." />
+                <element signature="e#29822#29860#0#PHP" expanded="false" />
+                <marker date="1521984899791" expanded="true" signature="13908:13945" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="14143:14159" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="14366:14403" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="14567:14583" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="15739:15776" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="15969:15985" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="16192:16229" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="16388:16404" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="24627:24650" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="24627:24682" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="25738:25794" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="26858:26914" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="27978:28034" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="29080:29136" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="32053:32090" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="32387:32425" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="33420:33457" ph="..." />
+                <marker date="1521984899791" expanded="true" signature="33751:33789" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pilihan.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Pilihan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JawabanDao.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JawabanDao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/JawabanDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="201">
               <caret line="40" column="183" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="183" />
               <folding>
                 <marker date="1521978746432" expanded="true" signature="440:515" ph="INSERT INTO jawaban... " />
@@ -259,12 +265,12 @@
       <workItem from="1521359722210" duration="20371000" />
       <workItem from="1521459769761" duration="9127000" />
       <workItem from="1521957105296" duration="7731000" />
-      <workItem from="1521967877619" duration="11318000" />
+      <workItem from="1521967877619" duration="14829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71398000" />
+    <option name="totallyTimeSpent" value="74909000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -576,14 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Pilihan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/PertanyaanDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1584">
@@ -593,17 +591,6 @@
             <marker date="1521461540670" expanded="true" signature="1605:1727" ph="INSERT INTO pertanyaan... " />
             <marker date="1521461540670" expanded="true" signature="2764:2900" ph="INSERT INTO pertanyaan... " />
             <marker date="1521461540670" expanded="true" signature="3825:3986" ph="SELECT * FRO... pertanyaan" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/PilihanDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-          <folding>
-            <marker date="1521466200609" expanded="true" signature="439:508" ph="INSERT INTO pilihan... " />
-            <marker date="1521466200609" expanded="true" signature="1069:1114" ph="SELECT * FRO... survey" />
           </folding>
         </state>
       </provider>
@@ -707,43 +694,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
+    <entry file="file://$PROJECT_DIR$/dao/PilihanDao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="450" column="483" lean-forward="false" selection-start-line="450" selection-start-column="483" selection-end-line="450" selection-end-column="483" />
+        <state relative-caret-position="-346">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="n#insert#0;n#SurveyController#0;n#!!top" expanded="false" />
-            <element signature="n#insertPertanyaan#0;n#SurveyController#0;n#!!top" expanded="false" />
-            <element signature="e#1375#1413#0#PHP" expanded="false" />
-            <element signature="e#11521#11541#0#PHP" expanded="false" />
-            <element signature="e#26682#26720#0#PHP" expanded="false" />
-            <marker date="1521978953516" expanded="true" signature="13908:13945" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="14143:14159" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="14366:14403" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="14567:14583" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="15739:15776" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="15969:15985" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="16192:16229" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="16388:16404" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="24609:24632" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="24609:24664" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="25702:25758" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="28913:28950" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="29247:29285" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="30280:30317" ph="..." />
-            <marker date="1521978953516" expanded="true" signature="30611:30649" ph="..." />
+            <marker date="1521466200609" expanded="true" signature="439:508" ph="INSERT INTO pilihan... " />
+            <marker date="1521466200609" expanded="true" signature="1069:1114" ph="SELECT * FRO... survey" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Pilihan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/JawabanDao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="201">
           <caret line="40" column="183" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="183" />
           <folding>
             <marker date="1521978746432" expanded="true" signature="440:515" ph="INSERT INTO jawaban... " />
             <marker date="1521978746432" expanded="true" signature="1064:1150" ph="SELECT * FRO... baris" />
             <marker date="1521978746432" expanded="true" signature="1064:1227" ph="SELECT * FRO... jawaban" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1643">
+          <caret line="481" column="358" lean-forward="false" selection-start-line="481" selection-start-column="358" selection-end-line="481" selection-end-column="358" />
+          <folding>
+            <element signature="n#insert#0;n#SurveyController#0;n#!!top" expanded="false" />
+            <element signature="n#insertPertanyaan#0;n#SurveyController#0;n#!!top" expanded="false" />
+            <element signature="e#1375#1413#0#PHP" expanded="false" />
+            <element signature="e#11521#11541#0#PHP" expanded="false" />
+            <element signature="e#29822#29860#0#PHP" expanded="false" />
+            <marker date="1521984899791" expanded="true" signature="13908:13945" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="14143:14159" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="14366:14403" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="14567:14583" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="15739:15776" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="15969:15985" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="16192:16229" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="16388:16404" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="24627:24650" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="24627:24682" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="25738:25794" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="26858:26914" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="27978:28034" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="29080:29136" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="32053:32090" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="32387:32425" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="33420:33457" ph="..." />
+            <marker date="1521984899791" expanded="true" signature="33751:33789" ph="..." />
           </folding>
         </state>
       </provider>

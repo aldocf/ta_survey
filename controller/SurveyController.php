@@ -422,13 +422,15 @@ class SurveyController
         require_once './view/survey/isiSurvey.php';
     }
 
-    public function jawabanSurvey(){
+    public function jawabanSurvey()
+    {
 
         $data = $this->surveyDao->getAllCountRespondenSurvey()->getIterator();
         require_once './view/survey/jawabanSurvey.php';
     }
 
-    public function detailJawaban(){
+    public function detailJawaban()
+    {
 
         $survey = $this->surveyDao->getSurvey($_GET['id']);
         $pertanyaan = $this->surveyDao->getSurveyAllPertanyaan($_GET['id'])->getIterator();
@@ -438,31 +440,53 @@ class SurveyController
         while ($pertanyaan->valid()) {
 
             if ($pertanyaan->current()->getTipeSoal() == "SingleTextBox") {
-                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>'.$pertanyaan->current()->getNomorPertanyaan().'</td></tr><tr><td>Pertanyaan</td><td>:</td><td>'.$pertanyaan->current()->getPertanyaan().'</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Single Text Box</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>' . $pertanyaan->current()->getNomorPertanyaan() . '</td></tr><tr><td>Pertanyaan</td><td>:</td><td>' . $pertanyaan->current()->getPertanyaan() . '</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Single Text Box</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
                 $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
 
-                while($jawaban->valid()){
-                    $soal = $soal . '<tr><td>'.$jawaban->current()->getResponden()->getIdUser()->getNama().'</td><td>'.$jawaban->current()->getIsiJawaban().'</td></tr>';
+                while ($jawaban->valid()) {
+                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>' . $jawaban->current()->getIsiJawaban() . '</td></tr>';
                     $jawaban->next();
                 }
 
                 $soal = $soal . '</tbody></table></div></div></div>';
             } else if ($pertanyaan->current()->getTipeSoal() == "CommentBox") {
-                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>'.$pertanyaan->current()->getNomorPertanyaan().'</td></tr><tr><td>Pertanyaan</td><td>:</td><td>'.$pertanyaan->current()->getPertanyaan().'</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Comment Box</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px; !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>' . $pertanyaan->current()->getNomorPertanyaan() . '</td></tr><tr><td>Pertanyaan</td><td>:</td><td>' . $pertanyaan->current()->getPertanyaan() . '</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Comment Box</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px; !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
                 $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
 
-                while($jawaban->valid()){
-                    $soal = $soal . '<tr><td>'.$jawaban->current()->getResponden()->getIdUser()->getNama().'</td><td>'.$jawaban->current()->getIsiJawaban().'</td></tr>';
+                while ($jawaban->valid()) {
+                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>' . $jawaban->current()->getIsiJawaban() . '</td></tr>';
                     $jawaban->next();
                 }
 
                 $soal = $soal . '</tbody></table></div></div></div>';
             } else if ($pertanyaan->current()->getTipeSoal() == "MultipleAnswer") {
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>' . $pertanyaan->current()->getNomorPertanyaan() . '</td></tr><tr><td>Pertanyaan</td><td>:</td><td>' . $pertanyaan->current()->getPertanyaan() . '</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Multiple Answer</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px; !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
+
+                while ($jawaban->valid()) {
+                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>' . $jawaban->current()->getIsiJawaban() . '</td></tr>';
+                    $jawaban->next();
+                }
+                $soal = $soal . '</tbody></table></div></div></div>';
 
             } else if ($pertanyaan->current()->getTipeSoal() == "MultipleChoice") {
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>' . $pertanyaan->current()->getNomorPertanyaan() . '</td></tr><tr><td>Pertanyaan</td><td>:</td><td>' . $pertanyaan->current()->getPertanyaan() . '</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Multiple Choice</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px; !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
 
+                while ($jawaban->valid()) {
+                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>' . $jawaban->current()->getIsiJawaban() . '</td></tr>';
+                    $jawaban->next();
+                }
+                $soal = $soal . '</tbody></table></div></div></div>';
             } else if ($pertanyaan->current()->getTipeSoal() == "Matrix") {
+                $soal = $soal . '<div class="form-group"><div class="col-md-12"><div class="col-md-12"><table class="soal"><tr><td>Nomor Soal</td><td>:</td><td>' . $pertanyaan->current()->getNomorPertanyaan() . '</td></tr><tr><td>Pertanyaan</td><td>:</td><td>' . $pertanyaan->current()->getPertanyaan() . '</td></tr><tr><td>Tipe Soal</td><td>:</td><td>Matrix</td></tr></table><table class="table table-hover table-dynamic" style="width: auto !important; margin-bottom: 40px; !important;"><thead><tr><th>Nama Responden</th><th>Jawaban</th></tr></thead><tbody>';
+                $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
 
+                while ($jawaban->valid()) {
+                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>' . $jawaban->current()->getIsiJawaban() . '</td></tr>';
+                    $jawaban->next();
+                }
+                $soal = $soal . '</tbody></table></div></div></div>';
             }
 
             $pertanyaan->next();
