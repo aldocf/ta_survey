@@ -70,7 +70,6 @@ $beritaController = new BeritaController();
     <!-- END PAGE STYLE -->
     <script src="./assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
-
 <?php
 
 if (isset($_GET["menu"])) {
@@ -115,6 +114,9 @@ switch ($menu) {
         break;
     case 'insertAdmin' :
         $userController->insertAdmin();
+        break;
+    case  'insertUser':
+        $userController->register();
         break;
     case 'profile' :
         $authController->profile();

@@ -66,4 +66,43 @@ class UserController
 
         require_once './view/user/admin/insert.php';
     }
+
+    public function register()
+    {
+        $msg = 0;
+        $nama = "";
+        $email = "";
+        $telepon = "";
+
+        if (isset($_POST['btnRegis'])) {
+
+            $nama = $_POST['nama'];
+            $telepon = $_POST['telepon'];
+            $email = $_POST['email'];
+
+            if ($_POST['password'] != $_POST['re-password']) {
+                $msg = 1;
+            } else {
+                if (!$this->userDao->checkEmail($email)) {
+                    $msg = 2;
+                } else {
+                    $user = new User();
+                    $user->setNama($nama);
+                    $user->setNomorTelepon($telepon);
+                    $user->setEmail($email);
+                    $user->setPassword($_POST['password']);
+
+                    if ($this->userDao->register($user)) {
+                        $msg = 4;
+//                        header('location:index.php?menu=home&msg=1');
+                    } else {
+                        $msg = 3;
+                    }
+                }
+            }
+        }
+
+        require_once './view/register.php';
+    }
+
 }

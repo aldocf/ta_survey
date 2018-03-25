@@ -18,7 +18,7 @@
                     <a href="index.php" id="" class="btn btn-lg btn-danger btn-block ladda-button" data-style="expand-left">Back To Home</a>
                     <div class="clearfix">
                         <p class="pull-left m-t-20"><a id="password" href="#">Forgot password?</a></p>
-                        <p class="pull-right m-t-20"><a href="index.php?menu=register">Register</a></p>
+                        <p class="pull-right m-t-20"><a href="index.php?menu=insertUser">Register</a></p>
                     </div>
                 </form>
                 <form class="form-password" role="form">

@@ -131,4 +131,31 @@ class UserDao
         return $user;
     }
 
+    public function register(User $data)
+    {
+        $result = FALSE;
+        $nama = $data->getNama();
+        $email = $data->getEmail();
+        $telepon = $data->getNomorTelepon();
+        $password = $data->getPassword();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "INSERT INTO user(nama, nomor_telepon, email, password, role, status) VALUES(?,?,?,MD5(?),0,0)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $nama);
+            $stmt->bindParam(2, $telepon);
+            $stmt->bindParam(3, $email);
+            $stmt->bindParam(4, $password);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
 }
