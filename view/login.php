@@ -47,3 +47,15 @@
 <script src="./assets/global/plugins/backstretch/backstretch.min.js"></script>
 <script src="./assets/global/plugins/bootstrap-loading/lada.min.js"></script>
 <script src="./assets/global/js/pages/login-v1.js"></script>
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('danger', 'Login gagal!', 'Data login salah atau email anda belum diverifikasi.')";
+        }
+        ?>
+    });
+</script>

@@ -13,7 +13,7 @@ class UserDao
 
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT * FROM user WHERE email=? AND password = MD5(?)";
+            $sql = "SELECT * FROM user WHERE email=? AND password = MD5(?) AND status = 1";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $email);
             $stmt->bindParam(2, $password);

@@ -19,6 +19,7 @@ class AuthController
 
     public function login(){
 
+        $msg = 0;
         if(isset($_POST['btnSubmit'])){
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -33,7 +34,7 @@ class AuthController
             if ($this->userDao->login($user)) {
                 header("location:index.php");
             } else {
-                header("location:index.php?menu=login");
+                $msg = 1;
             }
         }
 
