@@ -149,9 +149,35 @@ class UserDao
             $stmt->bindParam(3, $email);
             $stmt->bindParam(4, $password);
             $stmt->execute();
-            $conn->commit();
-            $result = TRUE;
+            require 'sendMail.php';
+            if (sendEmail($email, $nama)) {
+                $conn->commit();
+                $result = TRUE;
+            }
         } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+    public function activation($email)
+    {
+        $result = false;
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "UPDATE user SET status = 1 WHERE email=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $email);
+            $stmt->execute();
+            if ($stmt->rowCount() >= 1) {//ada datanya
+                $result = TRUE;
+                $conn->commit();
+            }
+        } catch (PDOException $e) {
+            $result = false;
+            $conn->rollBack();
             echo $e->getMessage();
             die();
         }

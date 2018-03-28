@@ -139,10 +139,14 @@ switch ($menu) {
     case 'updateBerita' :
         $beritaController->updateBerita();
         break;
+    case 'activation' :
+        $userController->activation();
+        break;
     default:
         $authController->index();
         break;
 }
 
 ?>
+
 </html>

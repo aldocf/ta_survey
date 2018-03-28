@@ -105,4 +105,19 @@ class UserController
         require_once './view/register.php';
     }
 
+    public function activation()
+    {
+        if(isset($_GET['email'])){
+            if ($this->userDao->activation($_GET['email'])) {
+                $msg = 1;
+            } else {
+                $msg = 0;
+            }
+        } else {
+            header('location:index.php?menu=home');
+        }
+
+        require_once './view/user/member/activation.php';
+    }
+
 }

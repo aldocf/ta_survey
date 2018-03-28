@@ -15,27 +15,35 @@
 
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
-            <div class="">
-                <div class="panel-content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="widget widget_slider">
-                                <div class="slick" data-arrows="true">
-                                    <div class="slide">
-                                        <img src="./assets/global/images/gallery/1.jpg" alt="" style="width: 100%">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./assets/global/images/gallery/2.jpg" alt="" style="width: 100%">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./assets/global/images/gallery/3.jpg" alt="" style="width: 100%">
-                                    </div>
-                                </div>
+            <?php
+                if ($msg == 1) {
+            ?>
+                <div class="">
+                    <div class="panel-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 style="text-align: center"><strong>Verifikasi email berhasil!</strong></h1>
+                                <h2 style="text-align: center">Akun anda sudah diaktifkan, silahkan login.</h2>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php
+                } else {
+            ?>
+                <div class="">
+                    <div class="panel-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 style="text-align: center"><strong>Verifikasi email gagal!</strong></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                }
+            ?>
+
 
 
             <div class="footer">
@@ -96,16 +104,3 @@
 
 <script src="./assets/global/plugins/slick/slick.min.js"></script> <!-- Slider -->
 </body>
-
-<script>
-    alert('aaaaaaa');
-    $(document).ready(function () {
-        <?php
-        if ($msg == 1) {
-            echo "makeAlert('success', 'Aktivasi email berhasil!', 'Akun anda sudah diaktifkan, silahkan login.')";
-        } else {
-            echo "makeAlert('danger', 'Aktivasi email gagal!', 'Akun anda gagal diaktifkan.')";
-        }
-        ?>
-    });
-</script>
