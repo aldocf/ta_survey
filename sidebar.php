@@ -30,6 +30,8 @@
                         <li><a href="index.php?menu=dataKategori"> Data Kategori Berita</a></li>
                     </ul>
                 </li>
+                <li class="nav "><a href="index.php?menu=insertResponden"><i class="fa fa-file-sound-o  "></i><span>Responden</span></a>
+                </li>
                 <li class="nav-parent">
                     <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>
                     <ul class="children collapse">
@@ -45,8 +47,6 @@
                 <li class="nav"><a href="#"><i class="icons-office-02"></i><span>Lowongan Kerja</span></a>
                 </li>
                 <li class="nav"><a href="#"><i class="icon-docs"></i><span>Survey</span></a>
-                </li>
-                <li class="nav "><a href="index.php?menu=insertResponden"><i class="fa fa-file-sound-o  "></i><span>Responden</span></a>
                 </li>
                 <?php
             }else {
