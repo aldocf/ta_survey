@@ -30,7 +30,7 @@
                         <li><a href="index.php?menu=dataKategori"> Data Kategori Berita</a></li>
                     </ul>
                 </li>
-                <li class="nav "><a href="index.php?menu=insertResponden"><i class="fa fa-file-sound-o  "></i><span>Responden</span></a>
+                <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-file-sound-o  "></i><span>Responden</span></a>
                 </li>
                 <li class="nav-parent">
                     <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>
