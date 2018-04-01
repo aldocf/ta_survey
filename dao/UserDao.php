@@ -279,4 +279,63 @@ class UserDao
         $conn = null;
         return $data;
     }
+
+    public function getUserResponden(User $data)
+    {
+        $nama = $data->getNama();
+        $email = $data->getEmail();
+        $telepon = $data->getNomorTelepon();
+        $password = $data->getPassword();
+
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user WHERE nama=? AND nomor_telepon=? AND email=? AND password=MD5(?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $nama);
+            $stmt->bindParam(2, $telepon);
+            $stmt->bindParam(3, $email);
+            $stmt->bindParam(4, $password);
+
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $user = new User();
+            $user->setIdUser($row['id_user']);
+            $user->setNama($row['nama']);
+            $user->setNomorTelepon($row['nomor_telepon']);
+            $user->setEmail($row['email']);
+            $user->setPassword($row['password']);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $user;
+    }
+
+    public function insertMember(User $data)
+    {
+        $result = FALSE;
+        $nama = $data->getNama();
+        $email = $data->getEmail();
+        $telepon = $data->getNomorTelepon();
+        $password = $data->getPassword();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "INSERT INTO user(nama, nomor_telepon, email, password, role, status) VALUES(?,?,?,MD5(?),0,1)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $nama);
+            $stmt->bindParam(2, $telepon);
+            $stmt->bindParam(3, $email);
+            $stmt->bindParam(4, $password);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
 }

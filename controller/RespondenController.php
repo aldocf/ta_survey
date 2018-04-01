@@ -27,18 +27,35 @@ class RespondenController
             $msg = 0;
         }
 
-        if (isset($_POST['btnUpdate'])) {
+        if (isset($_POST['btnInsert'])) {
 
+            if ($_POST['password'] != $_POST['re-password']) {
+                header("location:index.php?menu=insertResponden&msg=1");
+            } else {
+                if (!$this->userDao->checkEmail($_POST['email'])) {
+                    header("location:index.php?menu=insertResponden&msg=2");
+                } else {
+                    $user = new User();
+                    $user->setNama($_POST['nama']);
+                    $user->setNomorTelepon($_POST['telepon']);
+                    $user->setEmail($_POST['email']);
+                    $user->setPassword($_POST['password']);
 
-            $responden_new = new Responden();
-            $responden_new->setJabatan($_POST['jabatan']);
-            $responden_new->setNamaPerusahaan($_POST['nmPerusahaan']);
-//            $responden_new->setIdUser();
+                    if ($this->userDao->insertMember($user)) {
+                        $newUser = $this->userDao->getUserResponden($user);
+                        $responden_new = new Responden();
+                        $responden_new->setJabatan($_POST['jabatan']);
+                        $responden_new->setNamaPerusahaan($_POST['nmPerusahaan']);
+                        $responden_new->setIdUser($newUser->getIdUser());
+                        $this->respondenDao->insert_responden($responden_new);
+                        header("location:index.php?menu=insertResponden&msg=4");
 
-            $hasil = $this->respondenDao->insert_responden($responden_new);
+                    } else {
+                        header("location:index.php?menu=insertResponden&msg=3");
+                    }
+                }
 
-            header("location:index.php?menu=insertResponden");
-
+            }
         }
         require_once './view/user/member/insertResponden.php';
     }

@@ -41,15 +41,27 @@
                                                        name="nama" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
-                                                <label>Nomor Telepon</label>
-                                                <input type="text" class="form-control form-white"
-                                                       placeholder="Nomor Telepon" name="telepon" required>
-                                            </div>
-                                            <div class="col-md-12 m-b-10">
                                                 <label>Email</label>
                                                 <input type="email" class="form-control form-white"
                                                        placeholder="Email"
                                                        name="email" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control form-white"
+                                                       placeholder="Password"
+                                                       name="password" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Confirm Password</label>
+                                                <input type="password" class="form-control form-white"
+                                                       placeholder="Confirm Password"
+                                                       name="re-password" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Nomor Telepon</label>
+                                                <input type="number" class="form-control form-white"
+                                                       placeholder="Nomor Telepon" name="telepon" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Jabatan</label>
@@ -153,6 +165,8 @@
             echo "makeAlert('danger', 'Insert Failed!', 'Email sudah tersedia.')";
         } else if ($msg == 3) {
             echo "makeAlert('danger', 'Insert Failed!', 'Terjadi kesalahan didalam database.')";
+        } else if ($msg == 4) {
+            echo "makeAlert('success', 'Insert Success!', 'Data responden berhasil dimasukan kedalam database.')";
         }
         ?>
     });
