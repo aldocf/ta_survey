@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4469139f-9643-49a7-9b96-44d41355cae4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/footer.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/global/css/style.css" afterPath="$PROJECT_DIR$/assets/global/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/assets/global/images/logo/logo-dark.png" afterPath="$PROJECT_DIR$/assets/global/images/logo/logo-dark.png" />
       <change beforePath="$PROJECT_DIR$/sidebar.php" afterPath="$PROJECT_DIR$/sidebar.php" />
-      <change beforePath="$PROJECT_DIR$/view/berita/berita.php" afterPath="$PROJECT_DIR$/view/berita/berita.php" />
-      <change beforePath="$PROJECT_DIR$/view/berita/data.php" afterPath="$PROJECT_DIR$/view/berita/data.php" />
-      <change beforePath="$PROJECT_DIR$/view/berita/insert.php" afterPath="$PROJECT_DIR$/view/berita/insert.php" />
-      <change beforePath="$PROJECT_DIR$/view/berita/single_berita.php" afterPath="$PROJECT_DIR$/view/berita/single_berita.php" />
-      <change beforePath="$PROJECT_DIR$/view/berita/update.php" afterPath="$PROJECT_DIR$/view/berita/update.php" />
-      <change beforePath="$PROJECT_DIR$/view/home.php" afterPath="$PROJECT_DIR$/view/home.php" />
-      <change beforePath="$PROJECT_DIR$/view/kategori_berita/data.php" afterPath="$PROJECT_DIR$/view/kategori_berita/data.php" />
-      <change beforePath="$PROJECT_DIR$/view/kategori_berita/insert.php" afterPath="$PROJECT_DIR$/view/kategori_berita/insert.php" />
-      <change beforePath="$PROJECT_DIR$/view/kategori_berita/update.php" afterPath="$PROJECT_DIR$/view/kategori_berita/update.php" />
-      <change beforePath="$PROJECT_DIR$/view/login.php" afterPath="$PROJECT_DIR$/view/login.php" />
-      <change beforePath="$PROJECT_DIR$/view/register.php" afterPath="$PROJECT_DIR$/view/register.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/detailJawaban.php" afterPath="$PROJECT_DIR$/view/survey/detailJawaban.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/insert.php" afterPath="$PROJECT_DIR$/view/survey/insert.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/insertPertanyaan.php" afterPath="$PROJECT_DIR$/view/survey/insertPertanyaan.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/isiSurvey.php" afterPath="$PROJECT_DIR$/view/survey/isiSurvey.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/jawabanSurvey.php" afterPath="$PROJECT_DIR$/view/survey/jawabanSurvey.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/pertanyaan.php" afterPath="$PROJECT_DIR$/view/survey/pertanyaan.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/survey.php" afterPath="$PROJECT_DIR$/view/survey/survey.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/surveyResponden.php" afterPath="$PROJECT_DIR$/view/survey/surveyResponden.php" />
-      <change beforePath="$PROJECT_DIR$/view/survey/templateForm.php" afterPath="$PROJECT_DIR$/view/survey/templateForm.php" />
-      <change beforePath="$PROJECT_DIR$/view/user/admin/data.php" afterPath="$PROJECT_DIR$/view/user/admin/data.php" />
-      <change beforePath="$PROJECT_DIR$/view/user/admin/insert.php" afterPath="$PROJECT_DIR$/view/user/admin/insert.php" />
-      <change beforePath="$PROJECT_DIR$/view/user/isiDataResponden.php" afterPath="$PROJECT_DIR$/view/user/isiDataResponden.php" />
-      <change beforePath="$PROJECT_DIR$/view/user/isiResponden.php" afterPath="$PROJECT_DIR$/view/user/isiResponden.php" />
-      <change beforePath="$PROJECT_DIR$/view/user/profile.php" afterPath="$PROJECT_DIR$/view/user/profile.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,21 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/login.php">
+      <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+            <state relative-caret-position="527">
+              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -114,7 +75,6 @@
         <option value="$PROJECT_DIR$/controller/RespondenController.php" />
         <option value="$PROJECT_DIR$/view/user/member/insertResponden.php" />
         <option value="$PROJECT_DIR$/controller/AuthController.php" />
-        <option value="$PROJECT_DIR$/sidebar.php" />
         <option value="$PROJECT_DIR$/assets/global/css/style.css" />
         <option value="$PROJECT_DIR$/view/footer.php" />
         <option value="$PROJECT_DIR$/view/kategori_berita/data.php" />
@@ -142,6 +102,7 @@
         <option value="$PROJECT_DIR$/view/home.php" />
         <option value="$PROJECT_DIR$/view/register.php" />
         <option value="$PROJECT_DIR$/view/login.php" />
+        <option value="$PROJECT_DIR$/sidebar.php" />
       </list>
     </option>
   </component>
@@ -299,7 +260,7 @@
       <workItem from="1521967877619" duration="11318000" />
       <workItem from="1521981938821" duration="7990000" />
       <workItem from="1522193734628" duration="11099000" />
-      <workItem from="1522558737870" duration="20514000" />
+      <workItem from="1522558737870" duration="20747000" />
     </task>
     <task id="LOCAL-00001" summary="register">
       <created>1521989115334</created>
@@ -326,7 +287,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111001000" />
+    <option name="totallyTimeSpent" value="111234000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -655,14 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -890,6 +843,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding />
         </state>
       </provider>

@@ -14,20 +14,20 @@
             if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 ?>
                 <li class="nav-parent">
-                    <a href="#"><i class="icon-docs"></i><span>Survey</span> <span class="fa arrow"></span></a>
-                    <ul class="children collapse">
-                        <li><a href="index.php?menu=insertSurvey"> Insert Survey</a></li>
-                        <li><a href="index.php?menu=survey"> Survey</a></li>
-<!--                        <li><a href="index.php?menu=survey"> Survey Draf</a></li>-->
-                        <li><a href="index.php?menu=jawabanSurvey"> Jawaban Survey</a></li>
-                    </ul>
-                </li>
-                <li class="nav-parent">
                     <a href="#"><i class="fa fa-newspaper-o"></i><span>Berita</span> <span class="fa arrow"></span></a>
                     <ul class="children collapse">
                         <li><a href="index.php?menu=berita"> Lihat Berita</a></li>
                         <li><a href="index.php?menu=dataBerita"> Data Berita</a></li>
                         <li><a href="index.php?menu=dataKategoriBerita"> Data Kategori Berita</a></li>
+                    </ul>
+                </li>
+                <li class="nav-parent">
+                    <a href="#"><i class="icon-docs"></i><span>Survey</span> <span class="fa arrow"></span></a>
+                    <ul class="children collapse">
+                        <li><a href="index.php?menu=insertSurvey"> Insert Survey</a></li>
+                        <li><a href="index.php?menu=survey"> Survey</a></li>
+                        <!--                        <li><a href="index.php?menu=survey"> Survey Draf</a></li>-->
+                        <li><a href="index.php?menu=jawabanSurvey"> Jawaban Survey</a></li>
                     </ul>
                 </li>
                 <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-user-secret  "></i><span>Responden</span></a>
