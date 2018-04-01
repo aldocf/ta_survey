@@ -65,7 +65,7 @@
         </div>
     </div>
     <p class="account-copyright">
-        <span>Copyright © 2015 </span><span>THEMES LAB</span>.<span>All rights reserved.</span>
+        <span>Copyright © 2018 </span><span>SURVEY ONLINE</span>. <span>All rights reserved.</span>
     </p>
 </div>
 <!-- END LOCKSCREEN BOX -->

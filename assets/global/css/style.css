@@ -3175,7 +3175,7 @@ body:not(.sidebar-collapsed) .sidebar .sidebar-inner .nav-sidebar > li.nav-paren
     right: auto;
     top: -50px;
     top: 0 !important;
-    width: 140px;
+    width: 240px;
     -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
@@ -3312,7 +3312,7 @@ body:not(.sidebar-collapsed) .sidebar .sidebar-inner .nav-sidebar > li.nav-paren
     margin-top: 0;
   }
   .sidebar-top.fixed-topbar .topbar {
-    left: 140px;
+    left: 240px;
     right: 0;
     position: fixed !important;
   }

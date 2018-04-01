@@ -36,7 +36,7 @@
         </div>
     </div>
     <p class="account-copyright">
-        <span>Copyright © 2015 </span><span>THEMES LAB</span>.<span>All rights reserved.</span>
+        <span>Copyright © 2018 </span><span>SURVEY ONLINE</span>. <span>All rights reserved.</span>
     </p>
 </div>
 <script src="./assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>

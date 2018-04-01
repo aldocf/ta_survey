@@ -2,7 +2,7 @@
 <div class="sidebar">
     <div class="logopanel">
         <h1>
-            <a href="index.php"></a>
+            <a href="index.php">SURVEY ONLINE</a>
         </h1>
     </div>
     <div class="sidebar-inner">
@@ -30,7 +30,7 @@
                         <li><a href="index.php?menu=dataKategoriBerita"> Data Kategori Berita</a></li>
                     </ul>
                 </li>
-                <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-user  "></i><span>Responden</span></a>
+                <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-user-secret  "></i><span>Responden</span></a>
                 </li>
                 <li class="nav-parent">
                     <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>

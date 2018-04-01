@@ -2,7 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4469139f-9643-49a7-9b96-44d41355cae4" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/footer.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/assets/global/css/style.css" afterPath="$PROJECT_DIR$/assets/global/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/assets/global/images/logo/logo-dark.png" afterPath="$PROJECT_DIR$/assets/global/images/logo/logo-dark.png" />
+      <change beforePath="$PROJECT_DIR$/sidebar.php" afterPath="$PROJECT_DIR$/sidebar.php" />
+      <change beforePath="$PROJECT_DIR$/view/berita/berita.php" afterPath="$PROJECT_DIR$/view/berita/berita.php" />
+      <change beforePath="$PROJECT_DIR$/view/berita/data.php" afterPath="$PROJECT_DIR$/view/berita/data.php" />
+      <change beforePath="$PROJECT_DIR$/view/berita/insert.php" afterPath="$PROJECT_DIR$/view/berita/insert.php" />
+      <change beforePath="$PROJECT_DIR$/view/berita/single_berita.php" afterPath="$PROJECT_DIR$/view/berita/single_berita.php" />
+      <change beforePath="$PROJECT_DIR$/view/berita/update.php" afterPath="$PROJECT_DIR$/view/berita/update.php" />
+      <change beforePath="$PROJECT_DIR$/view/home.php" afterPath="$PROJECT_DIR$/view/home.php" />
+      <change beforePath="$PROJECT_DIR$/view/kategori_berita/data.php" afterPath="$PROJECT_DIR$/view/kategori_berita/data.php" />
+      <change beforePath="$PROJECT_DIR$/view/kategori_berita/insert.php" afterPath="$PROJECT_DIR$/view/kategori_berita/insert.php" />
+      <change beforePath="$PROJECT_DIR$/view/kategori_berita/update.php" afterPath="$PROJECT_DIR$/view/kategori_berita/update.php" />
+      <change beforePath="$PROJECT_DIR$/view/login.php" afterPath="$PROJECT_DIR$/view/login.php" />
+      <change beforePath="$PROJECT_DIR$/view/register.php" afterPath="$PROJECT_DIR$/view/register.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/detailJawaban.php" afterPath="$PROJECT_DIR$/view/survey/detailJawaban.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/insert.php" afterPath="$PROJECT_DIR$/view/survey/insert.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/insertPertanyaan.php" afterPath="$PROJECT_DIR$/view/survey/insertPertanyaan.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/isiSurvey.php" afterPath="$PROJECT_DIR$/view/survey/isiSurvey.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/jawabanSurvey.php" afterPath="$PROJECT_DIR$/view/survey/jawabanSurvey.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/pertanyaan.php" afterPath="$PROJECT_DIR$/view/survey/pertanyaan.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/survey.php" afterPath="$PROJECT_DIR$/view/survey/survey.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/surveyResponden.php" afterPath="$PROJECT_DIR$/view/survey/surveyResponden.php" />
+      <change beforePath="$PROJECT_DIR$/view/survey/templateForm.php" afterPath="$PROJECT_DIR$/view/survey/templateForm.php" />
+      <change beforePath="$PROJECT_DIR$/view/user/admin/data.php" afterPath="$PROJECT_DIR$/view/user/admin/data.php" />
+      <change beforePath="$PROJECT_DIR$/view/user/admin/insert.php" afterPath="$PROJECT_DIR$/view/user/admin/insert.php" />
+      <change beforePath="$PROJECT_DIR$/view/user/isiDataResponden.php" afterPath="$PROJECT_DIR$/view/user/isiDataResponden.php" />
+      <change beforePath="$PROJECT_DIR$/view/user/isiResponden.php" afterPath="$PROJECT_DIR$/view/user/isiResponden.php" />
       <change beforePath="$PROJECT_DIR$/view/user/profile.php" afterPath="$PROJECT_DIR$/view/user/profile.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,31 +45,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/user/profile.php">
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="90" column="119" lean-forward="false" selection-start-line="90" selection-start-column="108" selection-end-line="90" selection-end-column="119" />
+            <state relative-caret-position="422">
+              <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/AuthController.php">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="388">
+              <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -58,7 +76,14 @@
       <find>dataBerita</find>
       <find>insertResponden</find>
       <find>profile</find>
+      <find>logo</find>
+      <find>logopanel</find>
+      <find>logo-dark</find>
+      <find>footer</find>
     </findStrings>
+    <replaceStrings>
+      <replace>logo</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,55 +91,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/Responden.php" />
-        <option value="$PROJECT_DIR$/view/berita/berita.php" />
-        <option value="$PROJECT_DIR$/dao/BeritaDao.php" />
-        <option value="$PROJECT_DIR$/model/Pilihan.php" />
-        <option value="$PROJECT_DIR$/model/Baris.php" />
-        <option value="$PROJECT_DIR$/model/Kolom.php" />
-        <option value="$PROJECT_DIR$/view/survey/pertanyaan.php" />
-        <option value="$PROJECT_DIR$/model/Pertanyaan.php" />
-        <option value="$PROJECT_DIR$/dao/PertanyaanDao.php" />
         <option value="$PROJECT_DIR$/dao/PilihanDao.php" />
         <option value="$PROJECT_DIR$/dao/KolomDao.php" />
         <option value="$PROJECT_DIR$/dao/BarisDao.php" />
         <option value="$PROJECT_DIR$/model/Jawaban.php" />
-        <option value="$PROJECT_DIR$/view/survey/jawabanSurvey.php" />
         <option value="$PROJECT_DIR$/dao/JawabanDao.php" />
-        <option value="$PROJECT_DIR$/view/survey/detailJawaban.php" />
-        <option value="$PROJECT_DIR$/view/register.php" />
         <option value="$PROJECT_DIR$/sendMail.php" />
         <option value="$PROJECT_DIR$/view/user/member/activation.php" />
-        <option value="$PROJECT_DIR$/view/login.php" />
-        <option value="$PROJECT_DIR$/view/home.php" />
         <option value="$PROJECT_DIR$/topbar.php" />
-        <option value="$PROJECT_DIR$/view/user/isiResponden.php" />
-        <option value="$PROJECT_DIR$/view/user/isiDataResponden.php" />
         <option value="$PROJECT_DIR$/dao/RespondenDao.php" />
-        <option value="$PROJECT_DIR$/view/survey/insert.php" />
         <option value="$PROJECT_DIR$/model/Survey.php" />
         <option value="$PROJECT_DIR$/dao/SurveyDao.php" />
-        <option value="$PROJECT_DIR$/view/survey/surveyResponden.php" />
         <option value="$PROJECT_DIR$/controller/SurveyController.php" />
-        <option value="$PROJECT_DIR$/view/survey/survey.php" />
-        <option value="$PROJECT_DIR$/view/survey/isiSurvey.php" />
         <option value="$PROJECT_DIR$/view/kategori_berita/kategori_berita.php" />
-        <option value="$PROJECT_DIR$/view/kategori_berita/insert.php" />
-        <option value="$PROJECT_DIR$/view/kategori_berita/update.php" />
         <option value="$PROJECT_DIR$/dao/KategoriDao.php" />
         <option value="$PROJECT_DIR$/controller/KategoriBeritaController.php" />
-        <option value="$PROJECT_DIR$/view/kategori_berita/data.php" />
-        <option value="$PROJECT_DIR$/view/berita/data.php" />
         <option value="$PROJECT_DIR$/controller/BeritaController.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/UserController.php" />
         <option value="$PROJECT_DIR$/view/user/member/data.php" />
-        <option value="$PROJECT_DIR$/sidebar.php" />
         <option value="$PROJECT_DIR$/dao/UserDao.php" />
         <option value="$PROJECT_DIR$/controller/RespondenController.php" />
         <option value="$PROJECT_DIR$/view/user/member/insertResponden.php" />
-        <option value="$PROJECT_DIR$/view/user/profile.php" />
         <option value="$PROJECT_DIR$/controller/AuthController.php" />
+        <option value="$PROJECT_DIR$/sidebar.php" />
+        <option value="$PROJECT_DIR$/assets/global/css/style.css" />
+        <option value="$PROJECT_DIR$/view/footer.php" />
+        <option value="$PROJECT_DIR$/view/kategori_berita/data.php" />
+        <option value="$PROJECT_DIR$/view/berita/berita.php" />
+        <option value="$PROJECT_DIR$/view/berita/data.php" />
+        <option value="$PROJECT_DIR$/view/berita/insert.php" />
+        <option value="$PROJECT_DIR$/view/berita/single_berita.php" />
+        <option value="$PROJECT_DIR$/view/berita/update.php" />
+        <option value="$PROJECT_DIR$/view/kategori_berita/insert.php" />
+        <option value="$PROJECT_DIR$/view/kategori_berita/update.php" />
+        <option value="$PROJECT_DIR$/view/survey/detailJawaban.php" />
+        <option value="$PROJECT_DIR$/view/survey/insert.php" />
+        <option value="$PROJECT_DIR$/view/survey/insertPertanyaan.php" />
+        <option value="$PROJECT_DIR$/view/survey/isiSurvey.php" />
+        <option value="$PROJECT_DIR$/view/survey/jawabanSurvey.php" />
+        <option value="$PROJECT_DIR$/view/survey/pertanyaan.php" />
+        <option value="$PROJECT_DIR$/view/survey/survey.php" />
+        <option value="$PROJECT_DIR$/view/survey/surveyResponden.php" />
+        <option value="$PROJECT_DIR$/view/survey/templateForm.php" />
+        <option value="$PROJECT_DIR$/view/user/admin/data.php" />
+        <option value="$PROJECT_DIR$/view/user/admin/insert.php" />
+        <option value="$PROJECT_DIR$/view/user/isiDataResponden.php" />
+        <option value="$PROJECT_DIR$/view/user/isiResponden.php" />
+        <option value="$PROJECT_DIR$/view/user/profile.php" />
+        <option value="$PROJECT_DIR$/view/home.php" />
+        <option value="$PROJECT_DIR$/view/register.php" />
+        <option value="$PROJECT_DIR$/view/login.php" />
       </list>
     </option>
   </component>
@@ -207,13 +234,6 @@
               <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="member" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -229,6 +249,9 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\panjul\ta_survey" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\panjul\ta_survey\view\user\member" />
       <recent name="C:\xampp\htdocs\panjul\ta_survey\view\kategori_berita" />
@@ -276,7 +299,7 @@
       <workItem from="1521967877619" duration="11318000" />
       <workItem from="1521981938821" duration="7990000" />
       <workItem from="1522193734628" duration="11099000" />
-      <workItem from="1522558737870" duration="18965000" />
+      <workItem from="1522558737870" duration="20514000" />
     </task>
     <task id="LOCAL-00001" summary="register">
       <created>1521989115334</created>
@@ -303,7 +326,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109452000" />
+    <option name="totallyTimeSpent" value="111001000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -365,93 +388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dao/PilihanDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/KolomDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Jawaban.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/jawabanSurvey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/detailJawaban.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="56" column="78" lean-forward="false" selection-start-line="56" selection-start-column="78" selection-end-line="56" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/BarisDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/insertPertanyaan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1320">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/v7_merge_alby_aldo/ta_survey.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1120">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/v8 tambah status/ta_survey.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utility/Koneksi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="67" lean-forward="false" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PHPMailer/PHPMailerAutoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utility/class.phpmailer.php" />
-    <entry file="file://$PROJECT_DIR$/sendMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/user/member/activation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -459,50 +395,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="127" column="26" lean-forward="false" selection-start-line="127" selection-start-column="26" selection-end-line="129" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="46" column="52" lean-forward="false" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="59" column="82" lean-forward="true" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/isiResponden.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -554,43 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/isiDataResponden.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="332" column="12" lean-forward="false" selection-start-line="332" selection-start-column="12" selection-end-line="332" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="141" column="88" lean-forward="false" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/isiSurvey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="213" column="61" lean-forward="false" selection-start-line="213" selection-start-column="61" selection-end-line="213" selection-end-column="61" />
-          <folding>
-            <marker date="1522572269021" expanded="true" signature="4231:4268" ph="..." />
-            <marker date="1522572269021" expanded="true" signature="4596:4634" ph="..." />
-            <marker date="1522572269021" expanded="true" signature="6816:6853" ph="..." />
-            <marker date="1522572269021" expanded="true" signature="7178:7216" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/berita/berita.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/kategori_berita/kategori_berita.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
@@ -603,14 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/surveyResponden.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="142" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -650,22 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/kategori_berita/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="37" column="58" lean-forward="false" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/kategori_berita/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/BeritaDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -692,14 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/berita/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="131" column="65" lean-forward="true" selection-start-line="131" selection-start-column="65" selection-end-line="131" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/KategoriBeritaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -716,14 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/kategori_berita/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="127" column="65" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="127" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/user/member/data.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
@@ -731,22 +550,6 @@
           <folding>
             <marker date="1522577800295" expanded="false" signature="1060:1073" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="93" lean-forward="false" selection-start-line="32" selection-start-column="93" selection-end-line="32" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/admin/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="158" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,26 +623,273 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/admin/layout4/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/global/css/ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/global/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="3177" column="12" lean-forward="false" selection-start-line="3177" selection-start-column="12" selection-end-line="3177" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="334">
+          <caret line="65" column="47" lean-forward="true" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/berita/berita.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="78" column="46" lean-forward="false" selection-start-line="78" selection-start-column="46" selection-end-line="78" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/berita/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="70" column="46" lean-forward="false" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/berita/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/berita/single_berita.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/berita/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="94" column="46" lean-forward="false" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/kategori_berita/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/kategori_berita/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/kategori_berita/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="57" column="46" lean-forward="false" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/detailJawaban.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="76" column="46" lean-forward="false" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="91" column="46" lean-forward="false" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/insertPertanyaan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="166" column="46" lean-forward="false" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+          <folding>
+            <marker date="1522581279162" expanded="true" signature="4549:4609" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/isiSurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="232" column="46" lean-forward="false" selection-start-line="232" selection-start-column="46" selection-end-line="232" selection-end-column="46" />
+          <folding>
+            <marker date="1522581278671" expanded="true" signature="4231:4268" ph="..." />
+            <marker date="1522581278671" expanded="true" signature="4596:4634" ph="..." />
+            <marker date="1522581278671" expanded="true" signature="6816:6853" ph="..." />
+            <marker date="1522581278671" expanded="true" signature="7178:7216" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/jawabanSurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="59" column="46" lean-forward="false" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/pertanyaan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="259" column="46" lean-forward="false" selection-start-line="259" selection-start-column="46" selection-end-line="259" selection-end-column="46" />
+          <folding>
+            <marker date="1522581280178" expanded="true" signature="4231:4268" ph="..." />
+            <marker date="1522581280178" expanded="true" signature="4596:4634" ph="..." />
+            <marker date="1522581280178" expanded="true" signature="6816:6853" ph="..." />
+            <marker date="1522581280178" expanded="true" signature="7178:7216" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/surveyResponden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/templateForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="316" column="46" lean-forward="false" selection-start-line="316" selection-start-column="46" selection-end-line="316" selection-end-column="46" />
+          <folding>
+            <marker date="1522581279939" expanded="true" signature="300:453" ph="..." />
+            <marker date="1522581279939" expanded="true" signature="393:421" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/admin/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/admin/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="75" column="46" lean-forward="false" selection-start-line="75" selection-start-column="46" selection-end-line="75" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/isiDataResponden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="253" column="46" lean-forward="false" selection-start-line="253" selection-start-column="46" selection-end-line="253" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/isiResponden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="43" column="46" lean-forward="false" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/user/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="90" column="119" lean-forward="false" selection-start-line="90" selection-start-column="108" selection-end-line="90" selection-end-column="119" />
+        <state relative-caret-position="419">
+          <caret line="126" column="46" lean-forward="false" selection-start-line="126" selection-start-column="46" selection-end-line="126" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/AuthController.php">
+    <entry file="file://$PROJECT_DIR$/view/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
+        <state relative-caret-position="385">
+          <caret line="98" column="46" lean-forward="false" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding />
         </state>
       </provider>
