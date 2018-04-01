@@ -2,13 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: ACF
-* Date: 2/11/2018
-* Time: 8:21 PM
-*/
+ * Date: 2/11/2018
+ * Time: 8:21 PM
+ */
 
 class RespondenDao
 {
-    public function insert_responden(Responden $responden) {
+    public function insert_responden(Responden $responden)
+    {
         $result = false;
         try {
             $conn = Koneksi::get_koneksi();
@@ -58,7 +59,8 @@ class RespondenDao
         return $responden;
     }
 
-    public function delete_responden($id) {
+    public function delete_responden($id)
+    {
         $result = FALSE;
         try {
             $conn = Koneksi::get_koneksi();
@@ -75,5 +77,85 @@ class RespondenDao
         }
         $conn = null;
         return $result;
+    }
+
+    public function checkResponden($id)
+    {
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM responden WHERE id_user=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+
+            $stmt->execute();
+            $row = $stmt->rowCount();
+
+            if ($row > 0) {
+                $result = TRUE;
+            } else {
+                $result = FALSE;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $result;
+    }
+
+    public function updateResponden(Responden $data)
+    {
+        $result = FALSE;
+        $id = $data->getIdUser();
+        $jabatan = $data->getJabatan();
+        $namaPerusahaan = $data->getNamaPerusahaan();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "UPDATE responden SET jabatan=?, nama_perusahaan=? WHERE id_user=?";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $jabatan);
+            $stmt->bindParam(2, $namaPerusahaan);
+            $stmt->bindParam(3, $id);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+    public function getAllResponden()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM responden JOIN user ON responden.id_user = user.id_user";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setJabatan($row['jabatan']);
+                $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
     }
 }

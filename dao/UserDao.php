@@ -79,7 +79,6 @@ class UserDao
         return $result;
     }
 
-
     public function insertAdmin(User $data)
     {
         $result = FALSE;
@@ -184,4 +183,71 @@ class UserDao
         return $result;
     }
 
+    public function updateMember(User $data)
+    {
+        $result = FALSE;
+        $id = $data->getIdUser();
+        $nama = $data->getNama();
+        $email = $data->getEmail();
+        $telepon = $data->getNomorTelepon();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "UPDATE user SET nama=?, nomor_telepon=?, email=? WHERE id_user=?";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $nama);
+            $stmt->bindParam(2, $telepon);
+            $stmt->bindParam(3, $email);
+            $stmt->bindParam(4, $id);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+    public function checkPassword($id, $password)
+    {
+        $result = TRUE;
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user WHERE password=MD5(?) AND id_user=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $password);
+            $stmt->bindParam(2, $id);
+            $stmt->execute();
+            if ($stmt->rowCount() >= 1) {//ada datanya
+                $result = FALSE;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
+    public function updatePassword($id, $password)
+    {
+        $result = FALSE;
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "UPDATE user SET password=MD5(?) WHERE id_user=?";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $password);
+            $stmt->bindParam(2, $id);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
 }

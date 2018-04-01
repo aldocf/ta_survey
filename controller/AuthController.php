@@ -9,18 +9,24 @@
 class AuthController
 {
 
-
+    private $kategoriDao;
+    private $beritaDao;
     private $userDao;
+    private $respondenDao;
 
     public function __construct()
     {
         $this->userDao = new UserDao();
+        $this->kategoriDao = new KategoriDao();
+        $this->beritaDao = new BeritaDao();
+        $this->respondenDao = new RespondenDao();
     }
 
-    public function login(){
+    public function login()
+    {
 
         $msg = 0;
-        if(isset($_POST['btnSubmit'])){
+        if (isset($_POST['btnSubmit'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
@@ -41,25 +47,40 @@ class AuthController
         require_once './view/login.php';
     }
 
-    public function register(){
+    public function register()
+    {
 
         require_once './view/register.php';
     }
 
-    public function index(){
+    public function index()
+    {
+
+        $data = $this->beritaDao->getAllBerita()->getIterator();
+        $kategori = $this->kategoriDao->getAllKategori()->getIterator();
 
         require_once './view/home.php';
     }
 
-    public function logout(){
+    public function logout()
+    {
 
         require_once './logout.php';
     }
 
-    public function profile(){
-
+    public function profile()
+    {
         $data = $this->userDao->getUser($_SESSION['id_user']);
 
         require_once './view/user/profile.php';
+    }
+
+    public function isiResponden()
+    {
+
+        $check = $this->respondenDao->checkResponden($_SESSION['id_user']);
+        $data = $this->userDao->getUser($_SESSION['id_user']);
+
+        require_once './view/user/isiResponden.php';
     }
 }

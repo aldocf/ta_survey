@@ -44,16 +44,20 @@
                 ?>
                 <li class="nav"><a href="index.php?menu=berita"><i class="fa fa-newspaper-o"></i><span>Berita</span></a>
                 </li>
-                <li class="nav"><a href="#"><i class="icons-office-02"></i><span>Lowongan Kerja</span></a>
+<!--                <li class="nav"><a href="#"><i class="icons-office-02"></i><span>Lowongan Kerja</span></a>-->
+<!--                </li>-->
+                <li class="nav"><a href="index.php?menu=surveyMember"><i class="icon-docs"></i><span>Survey</span></a>
                 </li>
-                <li class="nav"><a href="#"><i class="icon-docs"></i><span>Survey</span></a>
+                <li class="nav"><a href="index.php?menu=isiResponden"><i class="fa fa-user  "></i><span>Profile</span></a>
                 </li>
                 <?php
-            }else {
+            } else {
                 ?>
-            <li class="nav"><a href="#"><i class="icons-office-02"></i><span>Lowongan Kerja</span></a>
-            </li>
-            <?php
+                <li class="nav"><a href="index.php?menu=berita"><i class="fa fa-newspaper-o"></i><span>Berita</span></a>
+                </li>
+                <li class="nav"><a href="#"><i class="icons-office-02"></i><span>Lowongan Kerja</span></a>
+                </li>
+                <?php
             }
             ?>
         </ul>

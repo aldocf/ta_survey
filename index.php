@@ -94,6 +94,9 @@ switch ($menu) {
     case 'survey' :
         $surveyController->index();
         break;
+    case 'surveyMember' :
+        $surveyController->indexMember();
+        break;
     case 'insertSurvey' :
         $surveyController->insert();
         break;
@@ -117,6 +120,9 @@ switch ($menu) {
         break;
     case  'insertUser':
         $userController->register();
+        break;
+    case 'isiResponden' :
+        $respondenController->isiDataResponden();
         break;
     case 'profile' :
         $authController->profile();

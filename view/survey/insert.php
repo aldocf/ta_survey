@@ -36,44 +36,49 @@
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
                                                 <label>Nama Survey</label>
-                                                <input type="text" class="form-control form-white" placeholder="Nama Survey" name="nama_survey" required>
+                                                <input type="text" class="form-control form-white"
+                                                       placeholder="Nama Survey" name="nama_survey" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Deskripsi Survey</label>
-                                                <textarea class="form-control form-white" placeholder="Deskripsi Survey" name="deskripsi" required rows="4"></textarea>
+                                                <textarea class="form-control form-white" placeholder="Deskripsi Survey"
+                                                          name="deskripsi" required rows="4"></textarea>
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Target Responden</label>
                                                 <select class="form-control" name="target_responden" required>
-                                                    <option value="-" selected disabled>- Pilih Target Responden -</option>
-                                                    <option value="IT Manager">IT Manager</option>
-                                                    <option value="Programmer Java">Programmer Java</option>
-                                                    <option value="Sekuritas">Sekuritas</option>
-                                                    <option value="Database Administrator">Database Administrator</option>
-                                                    <option value="Programmer C#">Programmer C#</option>
-                                                    <option value="Psikolog">Psikolog</option>
-                                                    <option value="Dosen">Dosen</option>
-                                                    <option value="Project Manager">Project Manager</option>
-                                                    <option value="Direktur">Direktur</option>
+                                                    <option value="-" selected disabled>- Pilih Target Responden -
+                                                    </option>
+                                                    <?php
+                                                    while ($responden->valid()) {
+                                                        ?>
+                                                        <option value="<?php echo $responden->current()->getJabatan(); ?>"><?php echo $responden->current()->getJabatan(); ?></option>
+                                                        <?php
+                                                        $responden->next();
+                                                    }
+                                                    ?>
                                                     <option value="Semua Responden">Semua Responden</option>
                                                 </select>
                                             </div>
-<!--                                            <div class="col-md-12 m-b-10">-->
-<!--                                                <label>Status</label>-->
-<!--                                                <select class="form-control" name="Status">-->
-<!--                                                    <option value="Aktif">Aktif</option>-->
-<!--                                                </select>-->
-<!--                                            </div>-->
+                                            <!--                                            <div class="col-md-12 m-b-10">-->
+                                            <!--                                                <label>Status</label>-->
+                                            <!--                                                <select class="form-control" name="Status">-->
+                                            <!--                                                    <option value="Aktif">Aktif</option>-->
+                                            <!--                                                </select>-->
+                                            <!--                                            </div>-->
                                             <div class="col-md-12 m-b-10">
                                                 <label>Periode Survey</label>
-                                                <input type="date" class="form-control form-white input-sm" placeholder="Periode Survey" name="awal" required>
+                                                <input type="date" class="form-control form-white input-sm"
+                                                       placeholder="Periode Survey" name="awal" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Periode Survey Akhir</label>
-                                                <input type="date" class="form-control form-white input-sm" placeholder="Periode Akhir Survey" name="akhir" required>
+                                                <input type="date" class="form-control form-white input-sm"
+                                                       placeholder="Periode Akhir Survey" name="akhir" required>
                                             </div>
                                             <div class="col-md-12 m-b-10 m-t-10">
-                                                <button class="btn btn-primary" name="btnBuatSurvey">Buat Survey</button>
+                                                <button class="btn btn-primary" name="btnBuatSurvey">Buat Survey
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

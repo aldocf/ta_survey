@@ -1,3 +1,8 @@
+<!-- BEGIN PAGE STYLE -->
+<link href="./assets/global/plugins/magnific/magnific-popup.min.css" rel="stylesheet">
+<link href="./assets/global/plugins/hover-effects/hover-effects.min.css" rel="stylesheet">
+<!-- END PAGE STYLE -->
+
 <!-- BEGIN BODY -->
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default dashboard">
 
@@ -30,6 +35,59 @@
                                     <div class="slide">
                                         <img src="./assets/global/images/gallery/3.jpg" alt="" style="width: 100%">
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="header">
+                    <h2><strong>Berita</strong></h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 portlets">
+                        <div class="panel panel-transparent">
+                            <div class="panel-content">
+                                <div class="portfolioFilter">
+                                    <a href="#" data-filter="*" class="current">Semua Kategori</a>
+                                    <?php
+                                    while ($kategori->valid()){
+                                        ?>
+                                        <a href="#" data-filter=".<?php echo $kategori->current()->getNamaKategori();?>"><?php echo $kategori->current()->getNamaKategori();?></a>
+                                        <?php
+                                        $kategori->next();
+                                    }
+                                    ?>
+                                </div>
+                                <div class="portfolioContainer grid">
+                                    <?php
+                                    while ($data->valid()){
+                                        ?>
+                                        <figure class="<?php echo $data->current()->getKategori();?> effect-zoe" onclick="window.location = 'index.php?menu=berita_s&id=<?php echo $data->current()->getIdBerita()?>'">
+                                            <img src="./assets/img_berita/<?php echo $data->current()->getCover()?>" alt="Berita"/>
+                                            <figcaption>
+                                                <h2 style="word-spacing: normal; font-weight: 700">
+                                                    <?php
+                                                    if(strlen($data->current()->getJudul()) <= 40){
+                                                        echo $data->current()->getJudul();
+                                                    } else {
+                                                        echo substr($data->current()->getJudul(), 0, 36) . " ...";
+                                                    }
+                                                    ;?>
+                                                </h2>
+                                                <!--                                            <p>-->
+                                                <!--                                                --><?php
+                                                //                                                echo html_entity_decode($data->current()->getDeskripsi());
+                                                //                                                ?>
+                                                <!--                                            </p>-->
+                                            </figcaption>
+                                        </figure>
+                                        <?php
+                                        $data->next();
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -95,6 +153,25 @@
 <script src="./assets/admin/layout4/js/layout.js"></script>
 
 <script src="./assets/global/plugins/slick/slick.min.js"></script> <!-- Slider -->
+
+<script src="./assets/global/plugins/magnific/jquery.magnific-popup.min.js"></script>  <!-- Image Popup -->
+<script src="./assets/global/plugins/isotope/isotope.pkgd.min.js"></script>  <!-- Filter & sort magical Gallery -->
+<!-- END PAGE SCRIPTS -->
+<script>
+    $(window).load(function(){
+        var $container = $('.portfolioContainer');
+        $container.isotope();
+        $('.portfolioFilter a').click(function(){
+            $('.portfolioFilter .current').removeClass('current');
+            $(this).addClass('current');
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 
 <script>

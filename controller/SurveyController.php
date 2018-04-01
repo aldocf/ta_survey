@@ -15,6 +15,7 @@ class SurveyController
     private $barisDao;
     private $kolomDao;
     private $jawabanDao;
+    private $respondenDao;
 
     public function __construct()
     {
@@ -24,6 +25,7 @@ class SurveyController
         $this->barisDao = new BarisDao();
         $this->kolomDao = new KolomDao();
         $this->jawabanDao = new JawabanDao();
+        $this->respondenDao = new RespondenDao();
     }
 
     public function index()
@@ -32,8 +34,29 @@ class SurveyController
         require_once './view/survey/survey.php';
     }
 
+    public function indexMember()
+    {
+
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
+        $check = $this->respondenDao->checkResponden($_SESSION['id_user']);
+        $resp = $this->respondenDao->getResponden($_SESSION['id_user']);
+        $data = $this->surveyDao->getAllSurveyForResponden($resp->getJabatan())->getIterator();
+
+        if (!$check) {
+            header("location:index.php?menu=isiResponden");
+        }
+
+        require_once './view/survey/surveyResponden.php';
+    }
+
     public function insert()
     {
+        $responden = $this->respondenDao->getAllResponden()->getIterator();
 
         if (isset($_POST['btnBuatSurvey'])) {
             $namaSurvey = $_POST['nama_survey'];
@@ -263,7 +286,6 @@ class SurveyController
 
     public function isiSurvey()
     {
-
         $survey = $this->surveyDao->getSurvey($_GET['id']);
         $pertanyaan = $this->surveyDao->getSurveyAllPertanyaan($_GET['id'])->getIterator();
 
@@ -372,8 +394,11 @@ class SurveyController
 
             if ($result) {
                 while ($pertanyaan->valid()) {
+
+                    $resp = $this->respondenDao->getResponden($_SESSION['id_user']);
+
                     $jawaban = new Jawaban();
-                    $jawaban->setResponden(28);
+                    $jawaban->setResponden($resp->getIdResponden());
                     $jawaban->setPertanyaan($pertanyaan->current()->getIdPertanyaan());
 
                     if ($pertanyaan->current()->getTipeSoal() == "SingleTextBox") {
@@ -416,6 +441,7 @@ class SurveyController
 
                     $pertanyaan->next();
                 }
+                header("location:index.php?menu=surveyMember&msg=1");
             }
         }
 

@@ -23,9 +23,15 @@
                         <span class="username"><?php echo $_SESSION['nama_user'] ?></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="index.php?menu=profile"><i class="icon-user"></i><span>My Profile</span></a>
-                        </li>
+                        <?php
+                        if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
+                            ?>
+                            <li>
+                                <a href="index.php?menu=profile"><i class="icon-user"></i><span>My Profile</span></a>
+                            </li>
+                            <?php
+                        }
+                        ?>
                         <li>
                             <a href="index.php?menu=logout"><i class="icon-logout"></i><span>Logout</span></a>
                         </li>

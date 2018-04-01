@@ -92,6 +92,33 @@ class SurveyDao
         return $data;
     }
 
+    public function getAllSurveyForResponden($jabatan)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM survey WHERE target_responden = ? OR target_responden = 'Semua Responden'";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $jabatan);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $data->append($survey);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
     public function getAllCountRespondenSurvey()
     {
         $data = new ArrayObject();

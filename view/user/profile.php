@@ -57,7 +57,8 @@
                                                                     <label>Nomor Telepon</label>
                                                                     <input type="number" class="form-control form-white"
                                                                            placeholder="Nomor Telepon" name="telepon"
-                                                                           required value="<?php echo $data->getNomorTelepon(); ?>">
+                                                                           required
+                                                                           value="<?php echo $data->getNomorTelepon(); ?>">
                                                                 </div>
                                                                 <div class="col-md-12 m-b-10">
                                                                     <label>Email</label>
