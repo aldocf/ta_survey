@@ -88,7 +88,7 @@
                                                                     <label>Old Password</label>
                                                                     <input type="password"
                                                                            class="form-control form-white"
-                                                                           placeholder="Old Password" name="password"
+                                                                           placeholder="Old Password" name="oldPassword"
                                                                            required>
                                                                 </div>
                                                                 <div class="col-md-12 m-b-10">
