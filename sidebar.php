@@ -17,8 +17,8 @@
                     <a href="#"><i class="icon-docs"></i><span>Survey</span> <span class="fa arrow"></span></a>
                     <ul class="children collapse">
                         <li><a href="index.php?menu=insertSurvey"> Insert Survey</a></li>
-                        <li><a href="index.php?menu=survey"> Survey Aktif</a></li>
-                        <li><a href="index.php?menu=survey"> Survey Draf</a></li>
+                        <li><a href="index.php?menu=survey"> Survey</a></li>
+<!--                        <li><a href="index.php?menu=survey"> Survey Draf</a></li>-->
                         <li><a href="index.php?menu=jawabanSurvey"> Jawaban Survey</a></li>
                     </ul>
                 </li>
@@ -27,15 +27,15 @@
                     <ul class="children collapse">
                         <li><a href="index.php?menu=berita"> Lihat Berita</a></li>
                         <li><a href="index.php?menu=dataBerita"> Data Berita</a></li>
-                        <li><a href="index.php?menu=dataKategori"> Data Kategori Berita</a></li>
+                        <li><a href="index.php?menu=dataKategoriBerita"> Data Kategori Berita</a></li>
                     </ul>
                 </li>
-                <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-file-sound-o  "></i><span>Responden</span></a>
+                <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-user  "></i><span>Responden</span></a>
                 </li>
                 <li class="nav-parent">
                     <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>
                     <ul class="children collapse">
-                        <li><a href=""> Member</a></li>
+                        <li><a href="index.php?menu=userMember"> Member</a></li>
                         <li><a href="index.php?menu=userAdmin"> Admin</a></li>
                     </ul>
                 </li>

@@ -14,6 +14,7 @@ class Survey
     private $targetResponden;
     private $periodeSurvey;
     private $periodeSurveyAkhir;
+    private $isJawab;
 
     /**
      * @return mixed
@@ -109,6 +110,22 @@ class Survey
     public function setPeriodeSurveyAkhir($periodeSurveyAkhir): void
     {
         $this->periodeSurveyAkhir = $periodeSurveyAkhir;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getisJawab()
+    {
+        return $this->isJawab;
+    }
+
+    /**
+     * @param mixed $isJawab
+     */
+    public function setIsJawab($isJawab): void
+    {
+        $this->isJawab = $isJawab;
     }
 
 

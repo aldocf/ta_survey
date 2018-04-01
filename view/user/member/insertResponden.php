@@ -5,163 +5,92 @@
     include_once 'sidebar.php';
     ?>
 
-<div class="main-content">
+    <div class="main-content">
 
-    <?php
-    include_once 'topbar.php';
-    ?>
-    <!-- BEGIN PAGE CONTENT -->
-    <?php
-        if($cekId > 0) {
-
-    ?>
-            <div class="page-content">
-                <div class="header">
-                    <h2><strong>Responden</strong> </h2>
-                    <div class="breadcrumb-wrapper">
-                        <ol class="breadcrumb">
-                            <li><a href="index.php">Home</a>
-                            </li>
-                            <li class="active"> Responden</li>
-                        </ol>
-                    </div>
+        <?php
+        include_once 'topbar.php';
+        ?>
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content">
+            <div class="header">
+                <h2><strong>Insert</strong> Responden</h2>
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li><a href="index.php">Home</a>
+                        </li>
+                        <li class="active">Insert Responden</li>
+                    </ol>
                 </div>
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="panel">
-                            <div class="panel-header">
-                                <h3><i class="fa fa-power-off"></i> <strong>Responden</strong> Aktif</h3>
-                            </div>
-                            <div class="panel-content">
-                                <div class="row">
-                                    <form class="form-horizontal" method="post">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="col-md-12 m-b-10">
-                                                    <input type="checkbox" class="form-control form-white"
-                                                           name="cekResponden" required>saya setuju untuk menghapus
-                                                    status  responden<br>
-                                                </div>
-                                                <div class="col-md-12 m-t-10">
-                                                    <button class="btn btn-primary" name="btnDelete">Hapus Responden</button>
-                                                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3><i class="icon-doc"></i> <strong>Form</strong> Responden</h3>
+                        </div>
+                        <div class="panel-content">
+                            <div class="row">
+                                <form class="form-horizontal" method="post">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Nama</label>
+                                                <input type="text" class="form-control form-white"
+                                                       placeholder="Nama"
+                                                       name="nama" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Nomor Telepon</label>
+                                                <input type="text" class="form-control form-white"
+                                                       placeholder="Nomor Telepon" name="telepon" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Email</label>
+                                                <input type="email" class="form-control form-white"
+                                                       placeholder="Email"
+                                                       name="email" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Jabatan</label>
+                                                <input type="text" class="form-control form-white"
+                                                       placeholder="Jabatan" name="jabatan" required>
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Nama Perusahaan</label>
+                                                <input type="text" class="form-control form-white"
+                                                       placeholder="Nama Perusahaan" name="nmPerusahaan" required>
+                                            </div>
+                                            <div class="col-md-12 m-t-10">
+                                                <button class="btn btn-primary" name="btnInsert">Insert</button>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2"></div>
                 </div>
-                <div class="footer">
-                    <div class="copyright">
-                        <p class="pull-left sm-pull-reset">
-                            <span>Copyright <span class="copyright">©</span> 2016 </span>
-                            <span>THEMES LAB</span>.
-                            <span>All rights reserved. </span>
-                        </p>
-                        <p class="pull-right sm-pull-reset">
+                <div class="col-md-2"></div>
+            </div>
+            <div class="footer">
+                <div class="copyright">
+                    <p class="pull-left sm-pull-reset">
+                        <span>Copyright <span class="copyright">©</span> 2016 </span>
+                        <span>THEMES LAB</span>.
+                        <span>All rights reserved. </span>
+                    </p>
+                    <p class="pull-right sm-pull-reset">
                         <span><a href="#" class="m-r-10">Support</a> | <a href="#"
                                                                           class="m-l-10 m-r-10">Terms of use</a> | <a
                                     href="#" class="m-l-10">Privacy Policy</a></span>
-                        </p>
-                    </div>
+                    </p>
                 </div>
             </div>
-    <?php
-        }else {
-      ?>
-            <div class="page-content">
-                <div class="header">
-                    <h2><strong>Insert</strong> Responden</h2>
-                    <div class="breadcrumb-wrapper">
-                        <ol class="breadcrumb">
-                            <li><a href="index.php">Home</a>
-                            </li>
-                            <li class="active">Insert Responden</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="panel">
-                            <div class="panel-header">
-                                <h3><i class="icon-doc"></i> <strong>Form</strong> Responden</h3>
-                            </div>
-                            <div class="panel-content">
-                                <div class="row">
-                                    <form class="form-horizontal" method="post">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="col-md-12 m-b-10">
-                                                    <label>Nama</label>
-                                                    <input type="text" class="form-control form-white"
-                                                           placeholder="Nama"
-                                                           name="nama" required value="<?php echo $nama; ?>" disabled>
-                                                </div>
-                                                <div class="col-md-12 m-b-10">
-                                                    <label>Nomor Telepon</label>
-                                                    <input type="text" class="form-control form-white"
-                                                           placeholder="Nomor Telepon" name="telepon" required
-                                                           value="<?php echo $telepon; ?>" disabled>
-                                                </div>
-                                                <div class="col-md-12 m-b-10">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control form-white"
-                                                           placeholder="Email"
-                                                           name="email" required value="<?php echo $email; ?>" disabled>
-                                                </div>
-                                                <div class="col-md-12 m-b-10">
-                                                    <label>Jabatan</label>
-                                                    <input type="text" class="form-control form-white"
-                                                           placeholder="Jabatan" name="jabatan" required>
-                                                </div>
-                                                <div class="col-md-12 m-b-10">
-                                                    <label>Nama Perusahaan</label>
-                                                    <input type="text" class="form-control form-white"
-                                                           placeholder="Nama Perusahaan" name="nmPerusahaan" required>
-                                                </div>
-                                                <div class="col-md-12 m-b-10">
-                                                    <input type="checkbox" class="form-control form-white"
-                                                           name="cekResponden" required>saya setuju untuk mengupdate
-                                                    status menjadi responden<br>
-                                                </div>
-                                                <div class="col-md-12 m-t-10">
-                                                    <button class="btn btn-primary" name="btnUpdate">Update</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-                <div class="footer">
-                    <div class="copyright">
-                        <p class="pull-left sm-pull-reset">
-                            <span>Copyright <span class="copyright">©</span> 2016 </span>
-                            <span>THEMES LAB</span>.
-                            <span>All rights reserved. </span>
-                        </p>
-                        <p class="pull-right sm-pull-reset">
-                        <span><a href="#" class="m-r-10">Support</a> | <a href="#"
-                                                                          class="m-l-10 m-r-10">Terms of use</a> | <a
-                                    href="#" class="m-l-10">Privacy Policy</a></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!-- END PAGE CONTENT -->
-    <?php
-        }
-    ?>
-</div>
-<!-- END MAIN CONTENT -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END MAIN CONTENT -->
 </section>
 <!-- BEGIN PRELOADER -->
 <div class="loader-overlay">

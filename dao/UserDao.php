@@ -250,4 +250,33 @@ class UserDao
         }
         return $result;
     }
+
+    public function getAllMember()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user LEFT JOIN responden ON responden.id_user = user.id_user WHERE user.role = 0";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

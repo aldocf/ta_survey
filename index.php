@@ -37,8 +37,7 @@ include_once './controller/SurveyController.php';
 include_once './controller/UserController.php';
 include_once './controller/RespondenController.php';
 include_once './controller/BeritaController.php';
-
-
+include_once './controller/KategoriBeritaController.php';
 
 
 $authController = new AuthController();
@@ -46,6 +45,7 @@ $surveyController = new SurveyController();
 $userController = new UserController();
 $respondenController = new RespondenController();
 $beritaController = new BeritaController();
+$kategoriBeritaController = new KategoriBeritaController();
 ?>
 
 <!DOCTYPE html>
@@ -115,6 +115,9 @@ switch ($menu) {
     case 'userAdmin' :
         $userController->indexAdmin();
         break;
+    case 'userMember' :
+        $userController->indexMember();
+        break;
     case 'insertAdmin' :
         $userController->insertAdmin();
         break;
@@ -147,6 +150,15 @@ switch ($menu) {
         break;
     case 'activation' :
         $userController->activation();
+        break;
+    case 'dataKategoriBerita' :
+        $kategoriBeritaController->index();
+        break;
+    case 'insertKategoriBerita' :
+        $kategoriBeritaController->insertKategoriBerita();
+        break;
+    case 'updateKategoriBerita' :
+        $kategoriBeritaController->updateKategoriBerita();
         break;
     default:
         $authController->index();

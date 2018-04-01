@@ -29,6 +29,19 @@ class UserController
         require_once './view/user/admin/data.php';
     }
 
+    public function indexMember()
+    {
+
+        if(isset($_GET['msg'])){
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
+        $data = $this->userDao->getAllMember()->getIterator();
+        require_once './view/user/member/data.php';
+    }
+
     public function insertAdmin()
     {
         $msg = 0;

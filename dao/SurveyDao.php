@@ -97,7 +97,7 @@ class SurveyDao
         $data = new ArrayObject();
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT * FROM survey WHERE target_responden = ? OR target_responden = 'Semua Responden'";
+            $sql = "SELECT survey.*, IFNULL(COUNT(jawaban.id_responden), 0) AS jawaban FROM survey LEFT JOIN pertanyaan ON pertanyaan.id_survey = survey.id_survey LEFT JOIN jawaban ON jawaban.id_pertanyaan = pertanyaan.id_pertanyaan LEFT JOIN responden ON responden.id_responden = jawaban.id_responden WHERE target_responden = ? OR target_responden = 'Semua Responden' GROUP BY survey.id_survey";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $jabatan);
             $stmt->execute();
@@ -109,6 +109,7 @@ class SurveyDao
                 $survey->setTargetResponden($row['target_responden']);
                 $survey->setPeriodeSurvey($row['periode_survey']);
                 $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $survey->setIsJawab($row['jawaban']);
                 $data->append($survey);
             }
         } catch (PDOException $e) {

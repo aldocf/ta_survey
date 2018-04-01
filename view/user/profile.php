@@ -68,7 +68,7 @@
                                                                            value="<?php echo $data->getEmail(); ?>">
                                                                 </div>
                                                                 <div class="col-md-12 m-t-10">
-                                                                    <button class="btn btn-primary" name="btnInsert">
+                                                                    <button class="btn btn-primary" name="btnUpdate">
                                                                         Update Profile
                                                                     </button>
                                                                 </div>
@@ -106,7 +106,7 @@
                                                                            name="re-password" required>
                                                                 </div>
                                                                 <div class="col-md-12 m-t-10">
-                                                                    <button class="btn btn-primary" name="btnInsert">
+                                                                    <button class="btn btn-primary" name="btnChange">
                                                                         Change Password
                                                                     </button>
                                                                 </div>
@@ -198,11 +198,13 @@
     $(document).ready(function () {
         <?php
         if ($msg == 1) {
-            echo "makeAlert('danger', 'Insert Failed!', 'Password dan Confirm Password tidak sama.')";
+            echo "makeAlert('success', 'Update Success!', 'Data profile berhasil diubah.')";
         } else if ($msg == 2) {
-            echo "makeAlert('danger', 'Insert Failed!', 'Email sudah tersedia.')";
+            echo "makeAlert('success', 'Update Success!', 'Password berhasil diubah.')";
         } else if ($msg == 3) {
-            echo "makeAlert('danger', 'Insert Failed!', 'Terjadi kesalahan didalam database.')";
+            echo "makeAlert('danger', 'Update Failed!', 'Password lama tidak sesuai.')";
+        } else if ($msg == 4) {
+            echo "makeAlert('danger', 'Update Failed!', 'Password baru dan konfirmasi password tidak sesuai.')";
         }
         ?>
     });

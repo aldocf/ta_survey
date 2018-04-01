@@ -30,6 +30,12 @@ class SurveyController
 
     public function index()
     {
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
         $data = $this->surveyDao->getAllSurvey()->getIterator();
         require_once './view/survey/survey.php';
     }
@@ -278,7 +284,7 @@ class SurveyController
                     $soalKolom = $soalKolom + 1;
                 }
             }
-
+            header("location:index.php?menu=survey&msg=1");
         }
 
         require_once './view/survey/pertanyaan.php';

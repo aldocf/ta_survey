@@ -36,6 +36,12 @@ class BeritaController
 
     public function index(){
 
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
         $data = $this->beritaDao->getAllBerita()->getIterator();
         require_once './view/berita/data.php';
     }
@@ -70,6 +76,7 @@ class BeritaController
 
             if ($this->beritaDao->updateBerita($berita)) {
                 $data = $this->beritaDao->getBerita($_GET['id']);
+                header("location:index.php?menu=dataBerita&msg=2");
             }
         }
 
@@ -99,7 +106,7 @@ class BeritaController
             move_uploaded_file($lokasi_file, $new_location);
 
             if ($this->beritaDao->insertBerita($berita)) {
-
+                header("location:index.php?menu=dataBerita&msg=1");
             }
         }
 

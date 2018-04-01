@@ -1,6 +1,5 @@
-<link href="./assets/global/plugins/datatables/dataTables.min.css" rel="stylesheet">
-
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
+
 <section>
     <?php
     include_once 'sidebar.php';
@@ -14,59 +13,46 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Data <strong>Berita</strong></h2>
+                <h2><strong>Insert</strong> Kategori Berita</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Data Berita</li>
+                        <li class="active">Insert Kategori Berita</li>
                     </ol>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-2 "></div>
+                <div class="col-md-8 portlets">
                     <div class="panel">
-                        <a href="index.php?menu=insertBerita" class="btn btn-primary" style="margin: 20px;"><i class="icon-plus"></i> Insert Berita</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel">
-                        <div class="panel-content pagination2 table-responsive">
-                            <table class="table table-hover table-dynamic">
-                                <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Kategori</th>
-                                    <th>User</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $no = 1;
-                                while ($data->valid()) {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $no; ?></td>
-                                        <td><?php echo $data->current()->getJudul(); ?></td>
-                                        <td><?php echo $data->current()->getKategori(); ?></td>
-                                        <td><?php echo $data->current()->getUser(); ?></td>
-                                        <td><a href="index.php?menu=updateBerita&id=<?php echo $data->current()->getIdBerita();?>" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a></td>
-                                    </tr>
-                                    <?php
-                                    $no++;
-                                    $data->next();
-                                }
+                        <div class="panel-header">
+                            <h3><i class="icon-doc"></i> <strong>Form</strong> Buat Kategori Berita</h3>
+                        </div>
+                        <div class="panel-content">
+                            <div class="row">
+                                <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Nama Kategori Berita</label>
+                                                <input type="text" class="form-control form-white" name="kategori"
+                                                       placeholder="Nama Kategori Berita">
+                                            </div>
 
-                                ?>
-                                </tbody>
-                            </table>
+
+                                            <div class="col-md-12 m-b-10 m-t-10">
+                                                <button class="btn btn-primary" name="btnSubmit">Buat Kategori Berita
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-2 "></div>
             </div>
             <div class="footer">
                 <div class="copyright">
@@ -96,13 +82,15 @@
     </div>
 </div>
 <!-- END PRELOADER -->
+<a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
 <script src="./assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="./assets/global/plugins/jquery/jquery-migrate-3.0.0.min.js"></script>
 <script src="./assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="./assets/global/plugins/gsap/main-gsap.min.js"></script>
 <script src="./assets/global/plugins/tether/js/tether.min.js"></script>
 <script src="./assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="./assets/global/plugins/appear/jquery.appear.js"></script>
+<script src="./assets/global/plugins/bootstrap/js/jasny-bootstrap.min.js"></script>
+
 <script src="./assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->
 <script src="./assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script>
 <!-- simulate synchronous behavior when using AJAX -->
@@ -126,25 +114,13 @@
 <script src="./assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
 <script src="./assets/global/js/quickview.js"></script> <!-- Chat Script -->
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
-<!-- BEGIN PAGE SCRIPTS -->
-<script src="./assets/global/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
-<script src="./assets/global/js/pages/notifications.js"></script>
-<!-- Tables Filtering, Sorting & Editing -->
-<script src="./assets/global/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script src="./assets/global/js/pages/table_dynamic.js"></script>
-<!-- END PAGE SCRIPTS -->
+<!-- BEGIN PAGE SCRIPT -->
+<script src="./assets/global/plugins/switchery/switchery.min.js"></script> <!-- IOS Switch -->
+<script src="./assets/global/plugins/summernote/summernote.min.js"></script> <!-- Simple HTML Editor -->
+<script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
+<script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
+<script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
+<!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
-</body>
 
-<script>
-    $(document).ready(function () {
-        <?php
-        if ($msg == 1) {
-            echo "makeAlert('success', 'Insert Success!', 'Data berita telah dimasukan kedalam database.')";
-        } else if ($msg == 2) {
-            echo "makeAlert('success', 'Update Success!', 'Data berita telah berhasil diubah.')";
-        }
-        ?>
-    });
-</script>
+</body>

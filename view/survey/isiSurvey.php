@@ -210,9 +210,15 @@
                                             <?php echo $soal; ?>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 m-t-20">
-                                        <button class="btn btn-success" name="btnSimpan">Simpan</button>
-                                    </div>
+                                    <?php
+                                    if($_SESSION['role'] == 0){
+                                      ?>
+                                        <div class="col-md-12 m-t-20">
+                                            <button class="btn btn-success" name="btnSimpan">Simpan</button>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
                                 </form>
                             </div>
                             <!--                                --><?php

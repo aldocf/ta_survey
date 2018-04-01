@@ -14,19 +14,19 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Data <strong>Berita</strong></h2>
+                <h2>Data <strong>Kategori Berita</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Data Berita</li>
+                        <li class="active">Data Kategori Berita</li>
                     </ol>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel">
-                        <a href="index.php?menu=insertBerita" class="btn btn-primary" style="margin: 20px;"><i class="icon-plus"></i> Insert Berita</a>
+                        <a href="index.php?menu=insertKategoriBerita" class="btn btn-primary" style="margin: 20px;"><i class="icon-plus"></i> Insert Kategori Berita</a>
                     </div>
                 </div>
             </div>
@@ -38,9 +38,7 @@
                                 <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Kategori</th>
-                                    <th>User</th>
+                                    <th>Nama Kategori</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -51,10 +49,8 @@
                                     ?>
                                     <tr>
                                         <td><?php echo $no; ?></td>
-                                        <td><?php echo $data->current()->getJudul(); ?></td>
-                                        <td><?php echo $data->current()->getKategori(); ?></td>
-                                        <td><?php echo $data->current()->getUser(); ?></td>
-                                        <td><a href="index.php?menu=updateBerita&id=<?php echo $data->current()->getIdBerita();?>" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a></td>
+                                        <td><?php echo $data->current()->getNamaKategori(); ?></td>
+                                        <td><a href="index.php?menu=updateKategoriBerita&id=<?php echo $data->current()->getIdKategori();?>" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a></td>
                                     </tr>
                                     <?php
                                     $no++;
@@ -133,6 +129,8 @@
 <!-- Tables Filtering, Sorting & Editing -->
 <script src="./assets/global/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="./assets/global/js/pages/table_dynamic.js"></script>
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
 <!-- END PAGE SCRIPTS -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
 </body>
@@ -141,9 +139,9 @@
     $(document).ready(function () {
         <?php
         if ($msg == 1) {
-            echo "makeAlert('success', 'Insert Success!', 'Data berita telah dimasukan kedalam database.')";
+            echo "makeAlert('success', 'Insert Success!', 'Data kategori berita telah dimasukan kedalam database.')";
         } else if ($msg == 2) {
-            echo "makeAlert('success', 'Update Success!', 'Data berita telah berhasil diubah.')";
+            echo "makeAlert('success', 'Update Success!', 'Data kategori berita telah berhasil diubah.')";
         }
         ?>
     });

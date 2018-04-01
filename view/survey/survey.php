@@ -126,9 +126,21 @@
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
 <!-- BEGIN PAGE SCRIPTS -->
 <script src="./assets/global/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
 <!-- Tables Filtering, Sorting & Editing -->
 <script src="./assets/global/plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="./assets/global/js/pages/table_dynamic.js"></script>
 <!-- END PAGE SCRIPTS -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('success', 'Survey success!', 'Data survey berhasil ditambah.')";
+        }
+        ?>
+    });
+</script>

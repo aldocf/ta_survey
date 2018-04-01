@@ -48,13 +48,27 @@
                                 while ($data->valid()) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $data->current()->getIdSurvey();?></td>
-                                        <td><?php echo $data->current()->getNamaSurvey();?></td>
-                                        <td><?php echo $data->current()->getDeskripsiSurvey();?></td>
-                                        <td><?php echo $data->current()->getTargetResponden();?></td>
-                                        <td><?php echo $data->current()->getPeriodeSurvey();?></td>
-                                        <td><?php echo $data->current()->getPeriodeSurveyAkhir();?></td>
-                                        <td><a href="index.php?menu=isiSurvey&id=<?php echo $data->current()->getIdSurvey();?>" class="btn btn-primary btn-sm">ISI SURVEY</a></td>
+                                        <td><?php echo $data->current()->getIdSurvey(); ?></td>
+                                        <td><?php echo $data->current()->getNamaSurvey(); ?></td>
+                                        <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
+                                        <td><?php echo $data->current()->getTargetResponden(); ?></td>
+                                        <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
+                                        <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
+                                        <?php
+                                        if ($data->current()->getIsJawab() > 0) {
+                                            ?>
+                                            <td>
+                                                <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
+                                            </td>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <td>
+                                                <a href="index.php?menu=isiSurvey&id=<?php echo $data->current()->getIdSurvey(); ?>"
+                                                   class="btn btn-primary btn-sm">ISI SURVEY</a></td>
+                                            <?php
+                                        }
+                                        ?>
                                     </tr>
                                     <?php
                                     $data->next();

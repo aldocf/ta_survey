@@ -70,7 +70,39 @@ class AuthController
 
     public function profile()
     {
+
+        if(isset($_GET['msg'])){
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
         $data = $this->userDao->getUser($_SESSION['id_user']);
+
+        if (isset($_POST['btnUpdate'])) {
+
+            $user = new User();
+            $user->setIdUser($_SESSION['id_user']);
+            $user->setEmail($_POST['email']);
+            $user->setNomorTelepon($_POST['telepon']);
+            $user->setNama($_POST['nama']);
+
+            $this->userDao->updateMember($user);
+            header("location:index.php?menu=profile&msg=1");
+        }
+
+        if (isset($_POST['btnChange'])) {
+            if ($_POST['password'] == $_POST['re-password']) {
+                if (!$this->userDao->checkPassword($_SESSION['id_user'], $_POST['oldPassword'])) {
+                    $this->userDao->updatePassword($_SESSION['id_user'], $_POST['password']);
+                    header("location:index.php?menu=profile&msg=2");
+                } else {
+                    header("location:index.php?menu=profile&msg=3");
+                }
+            } else {
+                header("location:index.php?menu=profile&msg=4");
+            }
+        }
 
         require_once './view/user/profile.php';
     }
