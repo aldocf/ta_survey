@@ -37,11 +37,11 @@
                                             <div class="col-md-12 m-b-10">
                                                 <label>Judul Berita</label>
                                                 <input type="text" class="form-control form-white" name="judul"
-                                                       placeholder="Judul Berita">
+                                                       placeholder="Judul Berita" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Kategori</label>
-                                                <select name="kategori" class="form-control form-white">
+                                                <select name="kategori" class="form-control form-white" required>
                                                     <option value="0" disabled selected>- Pilih Kategori -</option>
                                                     <?php
                                                     while ($kategori->valid()){
@@ -60,7 +60,7 @@
                                                 <?php
 //                                                echo html_entity_decode("&lt;span style=&quot;font-weight: bold;&quot;&gt;SI ALDI SOMBONG&lt;/span&gt;");
                                                 ?>
-                                                <input type="file" class="form-control form-white" name="cover">
+                                                <input type="file" class="form-control form-white" name="cover" required>
                                             </div>
 
                                             <div class="col-md-12 m-b-10">
@@ -136,7 +136,21 @@
 <script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
 <script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
 <script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
 <!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
 
 </body>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Kategori berita harus diisi.')";
+        } else if ($msg == 2) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Konten berita harus diisi.')";
+        }
+        ?>
+    });
+</script>

@@ -62,15 +62,28 @@ class SurveyController
 
     public function insert()
     {
+
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
         $responden = $this->respondenDao->getAllResponden()->getIterator();
 
         if (isset($_POST['btnBuatSurvey'])) {
-            $namaSurvey = $_POST['nama_survey'];
-            $deskripsi = $_POST['deskripsi'];
-            $targetResponden = $_POST['target_responden'];
-            $awal = $_POST['awal'];
-            $akhir = $_POST['akhir'];
-            header('location:index.php?menu=insertPertanyaan&namaSurvey=' . $namaSurvey . '&deskripsi=' . $deskripsi . '&targetResponden=' . $targetResponden . '&awal=' . $awal . '&akhir=' . $akhir);
+            if (!isset($_POST['target_responden'])) {
+                header("location:index.php?menu=insertSurvey&msg=1");
+            } else if (strtotime($_POST['awal']) > strtotime($_POST['akhir'])) {
+                header("location:index.php?menu=insertSurvey&msg=2");
+            } else {
+                $namaSurvey = $_POST['nama_survey'];
+                $deskripsi = $_POST['deskripsi'];
+                $targetResponden = $_POST['target_responden'];
+                $awal = $_POST['awal'];
+                $akhir = $_POST['akhir'];
+                header('location:index.php?menu=insertPertanyaan&namaSurvey=' . $namaSurvey . '&deskripsi=' . $deskripsi . '&targetResponden=' . $targetResponden . '&awal=' . $awal . '&akhir=' . $akhir);
+            }
         }
 
         require_once './view/survey/insert.php';

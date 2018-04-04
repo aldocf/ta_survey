@@ -27,13 +27,10 @@
                             <div class="widget widget_slider">
                                 <div class="slick" data-arrows="true">
                                     <div class="slide">
-                                        <img src="./assets/global/images/gallery/1.jpg" alt="" style="width: 100%">
+                                        <img src="./assets/global/images/banner/1.jpg" alt="" style="width: 100%">
                                     </div>
                                     <div class="slide">
-                                        <img src="./assets/global/images/gallery/2.jpg" alt="" style="width: 100%">
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./assets/global/images/gallery/3.jpg" alt="" style="width: 100%">
+                                        <img src="./assets/global/images/banner/2.jpg" alt="" style="width: 100%">
                                     </div>
                                 </div>
                             </div>

@@ -1,161 +1,3 @@
-<script>
-
-    var countGlobal = 0;
-    var countElement = 0;
-
-    // function selectPage() {
-    //     var p = document.getElementById("pages").value;
-    //
-    //     window.location = "index.php?menu=insertPertanyaan&p=" + p;
-    // }
-    //
-    // function deletePage() {
-    //     var p = document.getElementById("pages").value;
-    //
-    //     window.location = "index.php?menu=insertPertanyaan&del=" + p;
-    // }
-
-    function addFormSingleTextBox() {
-        var c = countGlobal
-        c = c + 1;
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban" disabled></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
-        $("#form-js").append(txt1);
-
-        var number = "number" + c;
-        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
-
-        countGlobal = countGlobal + 1;
-        countElement = countElement + 1;
-    }
-
-    function addFormCommentBox() {
-        var c = countGlobal;
-        c = c + 1;
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="CommentBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><textarea class="form-control" placeholder="Jawaban" disabled rows="5"></textarea></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
-        $("#form-js").append(txt1);
-
-        var number = "number" + c;
-        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
-
-        countGlobal = countGlobal + 1;
-        countElement = countElement + 1;
-    }
-
-    function addFormMultipleAnswer() {
-        var multipleAnswer = document.getElementsByName("totalMultipleAnswer")[0].value;
-        var lainnya = document.getElementsByName("lainnyaMultipleAnswer")[0].checked;
-
-        var c = countGlobal;
-        c = c + 1;
-
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleAnswer" readonly name="type[]"><input type="text" class="form-control" value="' + multipleAnswer + '" readonly name="multiple_answer[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div>';
-
-        for (var i = 1; i <= multipleAnswer; i++) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]" required></div></div>';
-        }
-
-        if (lainnya) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled></div></div>';
-            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="1" name="lainnya[]"></div>';
-        } else {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="0" name="lainnya[]"></div>';
-        }
-
-        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
-
-        $("#form-js").append(txt1);
-
-        var number = "number" + c;
-        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
-
-        countGlobal = countGlobal + 1;
-        countElement = countElement + 1;
-    }
-
-    function addFormMultipleChoice() {
-        var multipleChoice = document.getElementsByName("totalMultipleChoice")[0].value;
-        var lainnya = document.getElementsByName("lainnyaMultipleChoice")[0].checked;
-
-        var c = countGlobal;
-        c = c + 1;
-
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleChoice" readonly name="type[]"><input type="text" class="form-control" value="' + multipleChoice + '" readonly name="multiple_choice[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white"placeholder="Penjelasan" name="penjelasan[]" required></div>';
-
-        for (var i = 1; i <= multipleChoice; i++) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]" required></div></div>';
-        }
-
-        if (lainnya) {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled ></div></div>';
-            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="1" name="lainnya[]"></div>';
-        } else {
-            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="0" name="lainnya[]"></div>';
-        }
-
-        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
-
-        $("#form-js").append(txt1);
-
-        var number = "number" + c;
-        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
-
-        countGlobal = countGlobal + 1;
-        countElement = countElement + 1;
-    }
-
-    function addFormMatrix() {
-        var totalBaris = document.getElementsByName("totalBaris")[0].value;
-        var totalKolom = document.getElementsByName("totalKolom")[0].value;
-
-        var c = countGlobal;
-        c = c + 1;
-
-        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="Matrix" readonly name="type[]"><input type="text" class="form-control" value="' + totalBaris + '" readonly name="total_baris[]"><input type="text" class="form-control" value="' + totalKolom + '" readonly name="total_kolom[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Baris</label>';
-
-        for (var i = 1; i <= totalBaris; i++) {
-            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Baris ' + i + '" name="baris[]" required>';
-        }
-
-        txt1 = txt1 + '</div><div class="col-md-12 m-b-10"><label for="">Kolom</label>';
-
-        for (var i = 1; i <= totalKolom; i++) {
-            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Kolom ' + i + '" name="kolom[]" required>';
-        }
-
-
-        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div></div>';
-
-        $("#form-js").append(txt1);
-
-        var number = "number" + c;
-        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
-
-        countGlobal = countGlobal + 1;
-        countElement = countElement + 1;
-    }
-
-    function deleteRow(c) {
-        var variable = "form" + c;
-        var parent = document.getElementById("form-js");
-        var child = document.getElementById(variable);
-        parent.removeChild(child);
-
-        countElement = countElement - 1;
-
-        var count = 1;
-        for (var i = 1; i <= countGlobal; i++) {
-            var number = "number" + parseInt(i);
-            var obj = document.getElementById(number);
-            if (obj != null) {
-                document.getElementById("number" + parseInt(i)).innerHTML = parseInt(count) + ".";
-                count = count + 1;
-            }
-
-        }
-    }
-
-</script>
-
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
 
 <section>
@@ -228,16 +70,11 @@
                     </div>
                 </div>
                 <div class="col-md-9 portlets">
-                    <div class="panel" <?php //if (count($_SESSION['survey']) == 0) echo 'style="height: 319px"'; ?>>
+                    <div class="panel" id="questionSurvey">
                         <div class="panel-header">
                             <h3><i class="icon-doc"></i> <strong> Form</strong> Survey</h3>
                         </div>
                         <div class="panel-content">
-                            <!--                            --><?php
-                            //                            if (count($_SESSION['survey']) == 0) {
-                            //                                echo '<h1 style="text-align: center;vertical-align: middle; margin-top: 84px;">Form Survey Kosong</h1>';
-                            //                            } else {
-                            //                                ?>
                             <div class="row">
                                 <form class="form-horizontal" method="post">
                                     <div class="col-md-12">
@@ -250,9 +87,22 @@
                                     </div>
                                 </form>
                             </div>
-                            <!--                                --><?php
-                            //                            }
-                            //                            ?>
+                        </div>
+                    </div>
+                    <div class="panel" style="height: 305px;" id="emptySurvey">
+                        <div class="panel-header">
+                            <h3><i class="icon-doc"></i> <strong> Form</strong> Survey</h3>
+                        </div>
+                        <div class="panel-content">
+                            <div class="row">
+                                <form class="form-horizontal" method="post">
+                                    <div class="col-md-12">
+                                        <div id="">
+                                            <h1 style="text-align: center;  margin-top: 80px;">Empty Questions</h1>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -429,4 +279,180 @@
 <script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
 <!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
+
+<script>
+
+    var countGlobal = 0;
+    var countElement = 0;
+
+    checkIsEmpty();
+
+    function checkIsEmpty() {
+        var myElem = document.getElementById('form-js');
+        var x = document.getElementById("questionSurvey");
+        var y = document.getElementById("emptySurvey");
+
+        var length = $("#form-js > div").length;
+
+        if (length <= 0) {
+            x.style.display = "none";
+            y.style.display = "block";
+        } else {
+            x.style.display = "block";
+            y.style.display = "none";
+        }
+    }
+
+    function addFormSingleTextBox() {
+        var c = countGlobal;
+        c = c + 1;
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="SingleTextBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><input type="text" class="form-control" placeholder="Jawaban" disabled></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+
+        checkIsEmpty();
+    }
+
+    function addFormCommentBox() {
+        var c = countGlobal;
+        c = c + 1;
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="CommentBox" readonly name="type[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Jawaban</label><textarea class="form-control" placeholder="Jawaban" disabled rows="5"></textarea></div><div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+
+        checkIsEmpty();
+    }
+
+    function addFormMultipleAnswer() {
+        var multipleAnswer = document.getElementsByName("totalMultipleAnswer")[0].value;
+        var lainnya = document.getElementsByName("lainnyaMultipleAnswer")[0].checked;
+
+        var c = countGlobal;
+        c = c + 1;
+
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleAnswer" readonly name="type[]"><input type="text" class="form-control" value="' + multipleAnswer + '" readonly name="multiple_answer[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div>';
+
+        for (var i = 1; i <= multipleAnswer; i++) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]" required></div></div>';
+        }
+
+        if (lainnya) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="checkbox" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="1" name="lainnya[]"></div>';
+        } else {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="0" name="lainnya[]"></div>';
+        }
+
+        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+
+        checkIsEmpty();
+    }
+
+    function addFormMultipleChoice() {
+        var multipleChoice = document.getElementsByName("totalMultipleChoice")[0].value;
+        var lainnya = document.getElementsByName("lainnyaMultipleChoice")[0].checked;
+
+        var c = countGlobal;
+        c = c + 1;
+
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="MultipleChoice" readonly name="type[]"><input type="text" class="form-control" value="' + multipleChoice + '" readonly name="multiple_choice[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white"placeholder="Penjelasan" name="penjelasan[]" required></div>';
+
+        for (var i = 1; i <= multipleChoice; i++) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 6px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><input type="text" class="form-control form-white" placeholder="Jawaban ' + i + '" name="pilihan[]" required></div></div>';
+        }
+
+        if (lainnya) {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10"><div class="col-md-1" style="padding-top: 30px; padding-left: 30px;"><input type="radio" class="form-control" disabled></div><div class="col-md-11"><label for="">Lainnya</label><input type="text" class="form-control" placeholder="Jawaban Mereka" disabled ></div></div>';
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="1" name="lainnya[]"></div>';
+        } else {
+            txt1 = txt1 + '<div class="col-md-12 m-b-10 hidden"><label for="">Lainnya</label><input type="text" class="form-control" value="0" name="lainnya[]"></div>';
+        }
+
+        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div>';
+
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+
+        checkIsEmpty();
+    }
+
+    function addFormMatrix() {
+        var totalBaris = document.getElementsByName("totalBaris")[0].value;
+        var totalKolom = document.getElementsByName("totalKolom")[0].value;
+
+        var c = countGlobal;
+        c = c + 1;
+
+        var txt1 = '<div class="form-group" id="form' + c + '"><div class="col-md-12"><div class="col-md-1"><label><div id="number' + c + '"></div></label></div><div class="col-md-10"><div class="form-group"><div class="col-md-12 m-b-10 hidden"><label for="">Tipe Soal</label><input type="text" class="form-control" value="Matrix" readonly name="type[]"><input type="text" class="form-control" value="' + totalBaris + '" readonly name="total_baris[]"><input type="text" class="form-control" value="' + totalKolom + '" readonly name="total_kolom[]"></div><div class="col-md-12 m-b-10"><label for="">Soal</label><input type="text" class="form-control form-white" placeholder="Soal" name="soal[]" required></div><div class="col-md-12 m-b-10"><label for="">Penjelasan</label><input type="text" class="form-control form-white" placeholder="Penjelasan" name="penjelasan[]" required></div><div class="col-md-12 m-b-10"><label for="">Baris</label>';
+
+        for (var i = 1; i <= totalBaris; i++) {
+            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Baris ' + i + '" name="baris[]" required>';
+        }
+
+        txt1 = txt1 + '</div><div class="col-md-12 m-b-10"><label for="">Kolom</label>';
+
+        for (var i = 1; i <= totalKolom; i++) {
+            txt1 = txt1 + '<input type="text" class="form-control m-b-10 form-white" placeholder="Kolom ' + i + '" name="kolom[]" required>';
+        }
+
+
+        txt1 = txt1 + '<div class="col-md-12 m-b-10"><a class="btn btn-danger" onclick="deleteRow(' + c + ')">Hapus Soal</a></div></div></div></div></div></div>';
+
+        $("#form-js").append(txt1);
+
+        var number = "number" + c;
+        document.getElementById(number).innerHTML = parseInt(countElement + 1) + ".";
+
+        countGlobal = countGlobal + 1;
+        countElement = countElement + 1;
+
+        checkIsEmpty();
+    }
+
+    function deleteRow(c) {
+        var variable = "form" + c;
+        var parent = document.getElementById("form-js");
+        var child = document.getElementById(variable);
+        parent.removeChild(child);
+
+        countElement = countElement - 1;
+
+        var count = 1;
+        for (var i = 1; i <= countGlobal; i++) {
+            var number = "number" + parseInt(i);
+            var obj = document.getElementById(number);
+            if (obj != null) {
+                document.getElementById("number" + parseInt(i)).innerHTML = parseInt(count) + ".";
+                count = count + 1;
+            }
+
+        }
+
+        checkIsEmpty();
+    }
+
+</script>
 </body>

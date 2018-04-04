@@ -17,16 +17,18 @@ class BeritaController
         $this->beritaDao = new BeritaDao();
     }
 
-    public function berita(){
+    public function berita()
+    {
 
         $data = $this->beritaDao->getAllBerita()->getIterator();
         $kategori = $this->kategoriDao->getAllKategori()->getIterator();
         require_once './view/berita/berita.php';
     }
 
-    public function singleBerita(){
+    public function singleBerita()
+    {
 
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
         }
 
@@ -34,7 +36,8 @@ class BeritaController
         require_once './view/berita/single_berita.php';
     }
 
-    public function index(){
+    public function index()
+    {
 
         if (isset($_GET['msg'])) {
             $msg = $_GET['msg'];
@@ -46,7 +49,8 @@ class BeritaController
         require_once './view/berita/data.php';
     }
 
-    public function updateBerita(){
+    public function updateBerita()
+    {
 
         $data = $this->beritaDao->getBerita($_GET['id']);
 
@@ -64,7 +68,7 @@ class BeritaController
             $ukuran_file = $_FILES['cover']['size'];
             $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
 
-            if($nama_file == ""){
+            if ($nama_file == "") {
                 $nama_file = $data->getCover();
             } else {
                 $new_location = "./assets/img_berita/" . $nama_file;
@@ -87,27 +91,40 @@ class BeritaController
     public function insertBerita()
     {
 
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
+
         if (isset($_POST['btnSubmit'])) {
 
-            $berita = new Berita();
-            $berita->setUser($_SESSION['id_user']);
-            $berita->setJudul($_POST['judul']);
-            $berita->setKategori($_POST['kategori']);
-            $berita->setDeskripsi(htmlentities($_POST['deskripsi']));
+            if ($_POST['kategori'] == 0) {
+                header("location:index.php?menu=insertBerita&msg=1");
+            } else if ($_POST['deskripsi'] == "") {
+                header("location:index.php?menu=insertBerita&msg=2");
+            } else {
+                $berita = new Berita();
+                $berita->setUser($_SESSION['id_user']);
+                $berita->setJudul($_POST['judul']);
+                $berita->setKategori($_POST['kategori']);
+                $berita->setDeskripsi(htmlentities($_POST['deskripsi']));
 
-            $lokasi_file = $_FILES['cover']['tmp_name'];
-            $nama_file = $_FILES['cover']['name'];
-            $ukuran_file = $_FILES['cover']['size'];
-            $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
+                $lokasi_file = $_FILES['cover']['tmp_name'];
+                $nama_file = $_FILES['cover']['name'];
+                $ukuran_file = $_FILES['cover']['size'];
+                $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
 
-            $berita->setCover($nama_file);
+                $berita->setCover($nama_file);
 
-            $new_location = "./assets/img_berita/" . $nama_file;
-            move_uploaded_file($lokasi_file, $new_location);
+                $new_location = "./assets/img_berita/" . $nama_file;
+                move_uploaded_file($lokasi_file, $new_location);
 
-            if ($this->beritaDao->insertBerita($berita)) {
-                header("location:index.php?menu=dataBerita&msg=1");
+                if ($this->beritaDao->insertBerita($berita)) {
+                    header("location:index.php?menu=dataBerita&msg=1");
+                }
             }
+
         }
 
         $kategori = $this->kategoriDao->getAllKategori()->getIterator();

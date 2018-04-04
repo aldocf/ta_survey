@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Target Responden</label>
-                                                <select class="form-control" name="target_responden" required>
+                                                <select class="form-control" name="target_responden">
                                                     <option value="-" selected disabled>- Pilih Target Responden -
                                                     </option>
                                                     <?php
@@ -141,6 +141,20 @@
 <script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
 <script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
 <script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
 <!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Target responden harus diisi.')";
+        } else if ($msg == 2) {
+            echo "makeAlert('danger', 'Insert Failed!', 'Tanggal periode survey harus lebih kecil daripada tanggal periode survey akhir.')";
+        }
+        ?>
+    });
+</script>
 </body>
