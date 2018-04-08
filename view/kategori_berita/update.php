@@ -37,7 +37,7 @@
                                             <div class="col-md-12 m-b-10">
                                                 <label>Nama Kategori Berita</label>
                                                 <input type="text" class="form-control form-white" name="kategori"
-                                                       placeholder="Nama Kategori Berita"
+                                                       placeholder="Nama Kategori Berita" required
                                                        value="<?php echo $data->getNamaKategori(); ?>">
                                             </div>
 

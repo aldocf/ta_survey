@@ -53,35 +53,49 @@ class BeritaController
     {
 
         $data = $this->beritaDao->getBerita($_GET['id']);
+        $id = $_GET['id'];
+
+        if (isset($_GET['msg'])) {
+            $msg = $_GET['msg'];
+        } else {
+            $msg = 0;
+        }
 
         if (isset($_POST['btnUpdate'])) {
 
-            $berita = new Berita();
-            $berita->setIdBerita($data->getIdBerita());
-            $berita->setUser($_SESSION['id_user']);
-            $berita->setJudul($_POST['judul']);
-            $berita->setKategori($_POST['kategori']);
-            $berita->setDeskripsi(htmlentities($_POST['deskripsi']));
-
-            $lokasi_file = $_FILES['cover']['tmp_name'];
-            $nama_file = $_FILES['cover']['name'];
-            $ukuran_file = $_FILES['cover']['size'];
-            $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
-
-            if ($nama_file == "") {
-                $nama_file = $data->getCover();
+            if ($_POST['kategori'] == 0) {
+                header("location:index.php?menu=updateBerita&id=" . $id . "&msg=1");
+            } else if ($_POST['deskripsi'] == "") {
+                header("location:index.php?menu=updateBerita&id=" . $id . "&msg=2");
             } else {
-                $new_location = "./assets/img_berita/" . $nama_file;
+                $berita = new Berita();
+                $berita->setIdBerita($data->getIdBerita());
+                $berita->setUser($_SESSION['id_user']);
+                $berita->setJudul($_POST['judul']);
+                $berita->setKategori($_POST['kategori']);
+                $berita->setDeskripsi(htmlentities($_POST['deskripsi']));
+
+                $lokasi_file = $_FILES['cover']['tmp_name'];
                 $nama_file = $_FILES['cover']['name'];
-                move_uploaded_file($lokasi_file, $new_location);
+                $ukuran_file = $_FILES['cover']['size'];
+                $tipe_file = pathinfo($nama_file, PATHINFO_EXTENSION);
+
+                if ($nama_file == "") {
+                    $nama_file = $data->getCover();
+                } else {
+                    $new_location = "./assets/img_berita/" . $nama_file;
+                    $nama_file = $_FILES['cover']['name'];
+                    move_uploaded_file($lokasi_file, $new_location);
+                }
+
+                $berita->setCover($nama_file);
+
+                if ($this->beritaDao->updateBerita($berita)) {
+                    $data = $this->beritaDao->getBerita($_GET['id']);
+                    header("location:index.php?menu=dataBerita&msg=2");
+                }
             }
 
-            $berita->setCover($nama_file);
-
-            if ($this->beritaDao->updateBerita($berita)) {
-                $data = $this->beritaDao->getBerita($_GET['id']);
-                header("location:index.php?menu=dataBerita&msg=2");
-            }
         }
 
         $kategori = $this->kategoriDao->getAllKategori()->getIterator();

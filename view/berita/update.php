@@ -38,11 +38,11 @@
                                                 <label>Judul Berita</label>
                                                 <input type="text" class="form-control form-white" name="judul"
                                                        placeholder="Judul Berita"
-                                                       value="<?php echo $data->getJudul() ?>">
+                                                       value="<?php echo $data->getJudul() ?>" required>
                                             </div>
                                             <div class="col-md-12 m-b-10">
                                                 <label>Kategori</label>
-                                                <select name="kategori" class="form-control form-white">
+                                                <select name="kategori" class="form-control form-white" required>
                                                     <option value="0" disabled selected>- Pilih Kategori -</option>
                                                     <?php
                                                     while ($kategori->valid()) {
@@ -145,7 +145,21 @@
 <script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
 <script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
 <script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
+<script src="./assets/global/plugins/noty/jquery.noty.packaged.min.js"></script>  <!-- Notifications -->
+<script src="./assets/global/js/pages/notifications.js"></script>
 <!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
+
+<script>
+    $(document).ready(function () {
+        <?php
+        if ($msg == 1) {
+            echo "makeAlert('danger', 'Update Failed!', 'Kategori berita harus diisi.')";
+        } else if ($msg == 2) {
+            echo "makeAlert('danger', 'Update Failed!', 'Konten berita harus diisi.')";
+        }
+        ?>
+    });
+</script>
 
 </body>
