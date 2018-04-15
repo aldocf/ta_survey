@@ -47,7 +47,7 @@
                     <div class="col-lg-12 portlets">
                         <div class="panel panel-transparent">
                             <div class="panel-content">
-                                <div class="portfolioFilter">
+                                <div class="portfolioFilter" style="display: none">
                                     <a href="#" data-filter="*" class="current">Semua Kategori</a>
                                     <?php
                                     while ($kategori->valid()){
