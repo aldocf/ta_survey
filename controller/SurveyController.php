@@ -51,7 +51,8 @@ class SurveyController
 
         $check = $this->respondenDao->checkResponden($_SESSION['id_user']);
         $resp = $this->respondenDao->getResponden($_SESSION['id_user']);
-        $data = $this->surveyDao->getAllSurveyForResponden($resp->getJabatan())->getIterator();
+        $data = $this->surveyDao->getAllSurveyForResponden($resp->getJabatan(), $resp->getIdResponden())->getIterator();
+//        $data2 = $this->surveyDao->getAllSurveyForRespondenAnswered($resp->getJabatan(), $resp->getIdResponden())->getIterator();
 
         if (!$check) {
             header("location:index.php?menu=isiResponden");
@@ -69,7 +70,7 @@ class SurveyController
             $msg = 0;
         }
 
-        $responden = $this->respondenDao->getAllResponden()->getIterator();
+        $responden = $this->respondenDao->getAllRespondenJabatanFilter()->getIterator();
 
         if (isset($_POST['btnBuatSurvey'])) {
             if (!isset($_POST['target_responden'])) {

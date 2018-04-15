@@ -79,6 +79,8 @@
                                             <div class="col-md-12 m-b-10 m-t-10">
                                                 <button class="btn btn-primary" name="btnBuatSurvey">Buat Survey
                                                 </button>
+                                                <a href="index.php" class="btn btn-danger">Kembali
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

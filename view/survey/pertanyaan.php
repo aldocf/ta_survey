@@ -84,6 +84,7 @@
                                     </div>
                                     <div class="col-md-12 m-t-20">
                                         <button class="btn btn-success" name="btnSimpan">Simpan</button>
+                                        <a class="btn btn-danger" href="index.php?menu=insertSurvey">Kembali</a>
                                     </div>
                                 </form>
                             </div>
@@ -102,6 +103,9 @@
                                         </div>
                                     </div>
                                 </form>
+                                <div class="col-md-12 m-t-20" style="margin-top: 60px !important;">
+                                    <a class="btn btn-danger" href="index.php?menu=insertSurvey">Kembali</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,6 +124,9 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
+                                <div class="col-md-12">
+                                    <p>Ini merupakan jenis pertanyaan yang dapat memilih jawaban lebih dari 1.</p>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="field-1" class="control-label">Total Pilihan</label>
@@ -160,6 +167,9 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p>Ini merupakan jenis pertanyaan yang hanya dapat memilih 1 jawaban.</p>
+                                </div>
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="field-1" class="control-label">Total Pilihan</label>
                                         <input type="number" class="form-control form-white"
@@ -199,11 +209,17 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p>Ini merupakan form untuk pertanyaan.</p>
+                                </div>
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="field-1" class="control-label">Total Baris</label>
                                         <input type="number" class="form-control form-white" name="totalBaris"
                                                placeholder="Total Baris" required>
                                     </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Ini merupakan form untuk jawaban.</p>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">

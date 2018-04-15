@@ -215,6 +215,7 @@
                                       ?>
                                         <div class="col-md-12 m-t-20">
                                             <button class="btn btn-success" name="btnSimpan">Simpan</button>
+                                            <a href="index.php?menu=surveyMember" class="btn btn-danger" name="btnSimpan">Kembali</a>
                                         </div>
                                         <?php
                                     }

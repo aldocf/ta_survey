@@ -15,6 +15,7 @@ class Berita
     private $deskripsi;
     private $cover;
     private $created;
+    private $deflag;
 
     /**
      * @return mixed
@@ -126,6 +127,22 @@ class Berita
     public function setCreated($created)
     {
         $this->created = $created;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeflag()
+    {
+        return $this->deflag;
+    }
+
+    /**
+     * @param mixed $deflag
+     */
+    public function setDeflag($deflag): void
+    {
+        $this->deflag = $deflag;
     }
 
 

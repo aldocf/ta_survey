@@ -82,6 +82,8 @@
                                             <div class="col-md-12 m-b-10 m-t-10">
                                                 <button class="btn btn-primary" name="btnUpdate">Update Berita
                                                 </button>
+                                                <a href="index.php?menu=dataBerita" class="btn btn-danger" name="btnSubmit">Kembali
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

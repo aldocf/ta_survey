@@ -1,5 +1,19 @@
 <link href="./assets/global/plugins/datatables/dataTables.min.css" rel="stylesheet">
 
+<script>
+    function deleteBerita($id) {
+        if (confirm("Apakah anda yakin akan menghapus berita ini?")) {
+            window.location = "index.php?menu=dataBerita&delete=" + $id;
+        }
+    }
+
+    function restoredBerita($id) {
+        if (confirm("Apakah anda yakin akan mengembalikan berita ini?")) {
+            window.location = "index.php?menu=dataBerita&restored=" + $id;
+        }
+    }
+</script>
+
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
 <section>
     <?php
@@ -26,7 +40,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel">
-                        <a href="index.php?menu=insertBerita" class="btn btn-primary" style="margin: 20px;"><i class="icon-plus"></i> Insert Berita</a>
+                        <a href="index.php?menu=insertBerita" class="btn btn-primary" style="margin: 20px;"><i
+                                    class="icon-plus"></i> Insert Berita</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +69,27 @@
                                         <td><?php echo $data->current()->getJudul(); ?></td>
                                         <td><?php echo $data->current()->getKategori(); ?></td>
                                         <td><?php echo $data->current()->getUser(); ?></td>
-                                        <td><a href="index.php?menu=updateBerita&id=<?php echo $data->current()->getIdBerita();?>" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a></td>
+                                        <td>
+                                            <a href="index.php?menu=updateBerita&id=<?php echo $data->current()->getIdBerita(); ?>"
+                                               class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
+
+                                            <?php
+                                            if ($data->current()->getDeflag() == 0) {
+                                                ?>
+                                                <a class="btn btn-danger btn-sm"
+                                                   onclick="deleteBerita(<?php echo $data->current()->getIdBerita() ?>)"><i
+                                                            class="fa fa-trash"></i></a>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <a class="btn btn-warning btn-sm"
+                                                   onclick="restoredBerita(<?php echo $data->current()->getIdBerita() ?>)"><i
+                                                            class="fa fa-refresh"></i></a>
+                                                <?php
+                                            }
+                                            ?>
+
+                                        </td>
                                     </tr>
                                     <?php
                                     $no++;
@@ -131,6 +166,10 @@
             echo "makeAlert('success', 'Insert Success!', 'Data berita telah dimasukan kedalam database.')";
         } else if ($msg == 2) {
             echo "makeAlert('success', 'Update Success!', 'Data berita telah berhasil diubah.')";
+        } else if ($msg == 3) {
+            echo "makeAlert('success', 'Delete Success!', 'Data berita telah berhasil dihapus.')";
+        } else if ($msg == 4) {
+            echo "makeAlert('success', 'Restored Success!', 'Data berita telah berhasil dikembalikan.')";
         }
         ?>
     });

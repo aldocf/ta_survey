@@ -92,14 +92,15 @@ class SurveyDao
         return $data;
     }
 
-    public function getAllSurveyForResponden($jabatan)
+    public function getAllSurveyForRespondenAnswered($jabatan, $id)
     {
         $data = new ArrayObject();
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT survey.*, IFNULL(COUNT(jawaban.id_responden), 0) AS jawaban FROM survey LEFT JOIN pertanyaan ON pertanyaan.id_survey = survey.id_survey LEFT JOIN jawaban ON jawaban.id_pertanyaan = pertanyaan.id_pertanyaan LEFT JOIN responden ON responden.id_responden = jawaban.id_responden WHERE target_responden = ? OR target_responden = 'Semua Responden' GROUP BY survey.id_survey";
+            $sql = "SELECT survey.* FROM jawaban JOIN pertanyaan on pertanyaan.id_pertanyaan = jawaban.id_pertanyaan join survey on survey.id_survey = pertanyaan.id_survey WHERE jawaban.id_responden = ? AND (target_responden = ? OR target_responden = 'Semua Responden') GROUP BY survey.id_survey";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $jabatan);
+            $stmt->bindParam(1, $id);
+            $stmt->bindParam(2, $jabatan);
             $stmt->execute();
             while ($row = $stmt->fetch()) {
                 $survey = new Survey();
@@ -109,9 +110,57 @@ class SurveyDao
                 $survey->setTargetResponden($row['target_responden']);
                 $survey->setPeriodeSurvey($row['periode_survey']);
                 $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
-                $survey->setIsJawab($row['jawaban']);
+//                $survey->setIsJawab($row['jawaban']);
                 $data->append($survey);
             }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllSurveyForResponden($jabatan, $id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT survey.* FROM survey JOIN pertanyaan on pertanyaan.id_survey = survey.id_survey WHERE (target_responden = ? OR target_responden = 'Semua Responden') AND survey.id_survey NOT IN (SELECT survey.id_survey FROM jawaban JOIN pertanyaan on pertanyaan.id_pertanyaan = jawaban.id_pertanyaan join survey on survey.id_survey = pertanyaan.id_survey WHERE jawaban.id_responden = ? AND (target_responden = ? OR target_responden = 'Semua Responden') GROUP BY survey.id_survey) GROUP BY survey.id_survey";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $jabatan);
+            $stmt->bindParam(2, $id);
+            $stmt->bindParam(3, $jabatan);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $survey->setIsJawab(0);
+                $data->append($survey);
+            }
+
+            $sql = "SELECT survey.* FROM jawaban JOIN pertanyaan on pertanyaan.id_pertanyaan = jawaban.id_pertanyaan join survey on survey.id_survey = pertanyaan.id_survey WHERE jawaban.id_responden = ? AND (target_responden = ? OR target_responden = 'Semua Responden') GROUP BY survey.id_survey";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->bindParam(2, $jabatan);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $survey->setIsJawab(1);
+                $data->append($survey);
+            }
+
         } catch (PDOException $e) {
             echo $e->getMessage();
             die();
@@ -125,7 +174,7 @@ class SurveyDao
         $data = new ArrayObject();
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT *, COUNT(*) AS jumlah FROM (SELECT survey.*, COUNT(jawaban.id_responden) FROM jawaban JOIN pertanyaan ON pertanyaan.id_pertanyaan = jawaban.id_pertanyaan JOIN survey ON survey.id_survey = pertanyaan.id_survey GROUP BY jawaban.id_responden) jawaban";
+            $sql = "SELECT survey.*, IFNULL(COUNT(DISTINCT(responden.id_responden)),0) AS jumlah FROM survey LEFT JOIN pertanyaan ON pertanyaan.id_survey = survey.id_survey LEFT JOIN jawaban ON jawaban.id_pertanyaan = pertanyaan.id_pertanyaan LEFT JOIN responden ON responden.id_responden = jawaban.id_responden GROUP by survey.id_survey";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             while ($row = $stmt->fetch()) {

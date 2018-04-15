@@ -63,6 +63,8 @@
                                             </div>
                                             <div class="col-md-12 m-t-10">
                                                 <button class="btn btn-primary" name="btnInsert">Insert Admin</button>
+                                                <a href="index.php?menu=userAdmin" class="btn btn-danger" name="btnSubmit">Kembali
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -28,7 +28,7 @@
                 <div class="col-lg-12 portlets">
                     <div class="panel">
                         <div class="panel-header">
-                            <h3><i class="fa fa-table"></i> <strong>Survey </strong> Aktif</h3>
+                            <h3><i class="fa fa-table"></i> <strong>Data </strong> Survey</h3>
                         </div>
                         <div class="panel-content pagination2 table-responsive">
                             <table class="table table-hover table-dynamic">
@@ -55,18 +55,45 @@
                                         <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
                                         <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
                                         <?php
-                                        if ($data->current()->getIsJawab() > 0) {
+                                        if (date('Y-m-d', strtotime($data->current()->getPeriodeSurvey())) > date('Y-m-d')) {
                                             ?>
                                             <td>
-                                                <button class="btn btn-success btn-sm"><i class="fa fa-check"></i></button>
+                                                <button class="btn btn-warning btn-sm">SURVEY BELUM DIMULAI</i>
+                                                </button>
                                             </td>
                                             <?php
-                                        } else {
-                                            ?>
-                                            <td>
-                                                <a href="index.php?menu=isiSurvey&id=<?php echo $data->current()->getIdSurvey(); ?>"
-                                                   class="btn btn-primary btn-sm">ISI SURVEY</a></td>
-                                            <?php
+                                        } else if (date('Y-m-d', strtotime($data->current()->getPeriodeSurvey())) <= date('Y-m-d') && date('Y-m-d', strtotime($data->current()->getPeriodeSurveyAkhir())) >= date('Y-m-d')) {
+                                            if ($data->current()->getIsJawab() == 0) {
+                                                ?>
+                                                <td>
+                                                    <a href="index.php?menu=isiSurvey&id=<?php echo $data->current()->getIdSurvey(); ?>"
+                                                       class="btn btn-primary btn-sm">ISI SURVEY</a>
+                                                </td>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm"><i class="fa fa-check"></i>
+                                                    </button>
+                                                </td>
+                                                <?php
+                                            }
+                                        } else if(date('Y-m-d', strtotime($data->current()->getPeriodeSurveyAkhir())) < date('Y-m-d')){
+                                            if ($data->current()->getIsJawab() == 0) {
+                                                ?>
+                                                <td>
+                                                    <button class="btn btn-danger btn-sm">SURVEY SUDAH TIDAK AKTIF</i>
+                                                    </button>
+                                                </td>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <td>
+                                                    <button class="btn btn-success btn-sm"><i class="fa fa-check"></i>
+                                                    </button>
+                                                </td>
+                                                <?php
+                                            }
                                         }
                                         ?>
                                     </tr>

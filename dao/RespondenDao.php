@@ -158,4 +158,35 @@ class RespondenDao
         $conn = null;
         return $data;
     }
+
+    public function getAllRespondenJabatanFilter()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM responden JOIN user ON responden.id_user = user.id_user GROUP BY responden.jabatan";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setJabatan($row['jabatan']);
+                $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

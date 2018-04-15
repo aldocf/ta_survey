@@ -45,7 +45,17 @@ class BeritaController
             $msg = 0;
         }
 
-        $data = $this->beritaDao->getAllBerita()->getIterator();
+        if(isset($_GET['delete'])){
+            $this->beritaDao->deleteBerita($_GET['delete']);
+            header("location:index.php?menu=dataBerita&msg=3");
+        }
+
+        if(isset($_GET['restored'])){
+            $this->beritaDao->restoreBerita($_GET['restored']);
+            header("location:index.php?menu=dataBerita&msg=4");
+        }
+
+        $data = $this->beritaDao->getAllBeritaData()->getIterator();
         require_once './view/berita/data.php';
     }
 
@@ -65,7 +75,7 @@ class BeritaController
 
             if ($_POST['kategori'] == 0) {
                 header("location:index.php?menu=updateBerita&id=" . $id . "&msg=1");
-            } else if ($_POST['deskripsi'] == "") {
+            } else if (trim($_POST['deskripsi']) == "") {
                 header("location:index.php?menu=updateBerita&id=" . $id . "&msg=2");
             } else {
                 $berita = new Berita();

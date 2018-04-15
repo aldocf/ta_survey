@@ -56,7 +56,7 @@ class AuthController
     public function index()
     {
 
-        $data = $this->beritaDao->getAllBerita()->getIterator();
+        $data = $this->beritaDao->getAllBeritaHome()->getIterator();
         $kategori = $this->kategoriDao->getAllKategori()->getIterator();
 
         require_once './view/home.php';
