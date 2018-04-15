@@ -39,15 +39,19 @@
                                 </thead>
                                 <tbody>
                                 <?php
+                                $no = 1;
                                 while ($data->valid()) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $data->current()->getIdSurvey();?></td>
-                                        <td><?php echo $data->current()->getNamaSurvey();?></td>
-                                        <td><?php echo $data->current()->getDeskripsiSurvey();?></td>
-                                        <td><a href="index.php?menu=detailJawaban&id=<?php echo $data->current()->getIdSurvey();?>" class="btn btn-primary btn-sm">Detail Jawaban</a></td>
+                                        <td><?php echo $no; ?></td>
+                                        <td><?php echo $data->current()->getNamaSurvey(); ?></td>
+                                        <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
+                                        <td>
+                                            <a href="index.php?menu=detailJawaban&id=<?php echo $data->current()->getIdSurvey(); ?>"
+                                               class="btn btn-primary btn-sm">Detail Jawaban</a></td>
                                     </tr>
                                     <?php
+                                    $no++;
                                     $data->next();
                                 }
                                 ?>

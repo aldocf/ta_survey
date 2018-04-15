@@ -45,10 +45,11 @@
                                 </thead>
                                 <tbody>
                                 <?php
+                                $no = 1;
                                 while ($data->valid()) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $data->current()->getIdSurvey();?></td>
+                                        <td><?php echo $no;?></td>
                                         <td><?php echo $data->current()->getNamaSurvey();?></td>
                                         <td><?php echo $data->current()->getDeskripsiSurvey();?></td>
                                         <td><?php echo $data->current()->getTargetResponden();?></td>
@@ -57,6 +58,7 @@
                                         <td><a href="index.php?menu=isiSurvey&id=<?php echo $data->current()->getIdSurvey();?>" class="btn btn-primary btn-sm">Detail</a></td>
                                     </tr>
                                     <?php
+                                    $no++;
                                     $data->next();
                                 }
                                 ?>

@@ -45,10 +45,11 @@
                                 </thead>
                                 <tbody>
                                 <?php
+                                $no = 1;
                                 while ($data->valid()) {
                                     ?>
                                     <tr>
-                                        <td><?php echo $data->current()->getIdSurvey(); ?></td>
+                                        <td><?php echo $no; ?></td>
                                         <td><?php echo $data->current()->getNamaSurvey(); ?></td>
                                         <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
                                         <td><?php echo $data->current()->getTargetResponden(); ?></td>
@@ -98,6 +99,7 @@
                                         ?>
                                     </tr>
                                     <?php
+                                    $no++;
                                     $data->next();
                                 }
                                 ?>
