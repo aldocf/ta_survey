@@ -75,6 +75,7 @@
                                             </div>
                                             <div class="col-md-12 m-t-10">
                                                 <button class="btn btn-primary" name="btnInsert">Insert</button>
+                                                <a href="index.php" class="btn btn-danger" name="btnInsert">Kembali</a>
                                             </div>
                                         </div>
                                     </div>

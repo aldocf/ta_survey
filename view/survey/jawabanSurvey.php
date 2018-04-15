@@ -37,7 +37,7 @@
                             <table class="table table-hover table-dynamic">
                                 <thead>
                                 <tr>
-                                    <th>ID Survey</th>
+                                    <th>No</th>
                                     <th>Nama Survey</th>
                                     <th>Jumlah Responden</th>
                                     <th>Jawaban</th>
