@@ -14,6 +14,12 @@
     }
 </script>
 
+<style>
+    .select2-container{
+        z-index: 0;
+    }
+</style>
+
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
 <section>
     <?php

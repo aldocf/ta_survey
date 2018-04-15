@@ -1,6 +1,12 @@
 <link href="./assets/global/plugins/datatables/dataTables.min.css" rel="stylesheet">
 
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
+
+<style>
+    .select2-container{
+        z-index: 0;
+    }
+</style>
 <section>
 
     <?php
