@@ -69,6 +69,12 @@ $kategoriBeritaController = new KategoriBeritaController();
     <link href="./assets/global/plugins/maps-amcharts/ammap/ammap.css" rel="stylesheet">
     <!-- END PAGE STYLE -->
     <script src="./assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <style>
+        .select2-container{
+            z-index: 0;
+        }
+    </style>
 </head>
 <?php
 
