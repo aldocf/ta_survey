@@ -39,6 +39,18 @@
                         <li><a href="index.php?menu=userAdmin"> Admin</a></li>
                     </ul>
                 </li>
+                <li class="nav"><a href="index.php?menu=dataFeedback"><i class="fa fa-envelope  "></i><span>Feedback</span></a>
+                </li>
+                <li class="nav-parent">
+                    <a href="#"><i class="fa fa-file-archive-o"></i><span>Laporan</span> <span class="fa arrow"></span></a>
+                    <ul class="children collapse">
+                        <li><a href="index.php?menu=indexLaporanBerita"> Berita</a></li>
+                        <li><a href="index.php?menu=userAdmin"> Pengguna</a></li>
+                        <li><a href="index.php?menu=userAdmin"> Responden</a></li>
+                        <li><a href="index.php?menu=userAdmin"> Survey</a></li>
+                        <li><a href="index.php?menu=userAdmin"> Jawaban</a></li>
+                    </ul>
+                </li>
                 <?php
             } else if (isset($_SESSION['role']) && $_SESSION['role'] == 0) {
                 ?>
@@ -49,6 +61,8 @@
                 <li class="nav"><a href="index.php?menu=surveyMember"><i class="icon-docs"></i><span>Survey</span></a>
                 </li>
                 <li class="nav"><a href="index.php?menu=isiResponden"><i class="fa fa-user  "></i><span>Profile</span></a>
+                </li>
+                <li class="nav"><a href="index.php?menu=insertFeedback"><i class="fa fa-envelope  "></i><span>Feedback</span></a>
                 </li>
                 <?php
             } else {

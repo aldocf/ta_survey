@@ -224,5 +224,32 @@ class BeritaDao
         return $result;
     }
 
-
+    public function getAllBeritaFilterKategori($kategori)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM berita JOIN kategori ON kategori.id_kategori = berita.id_kategori JOIN user ON user.id_user = berita.id_user WHERE berita.deflag = 0 AND kategori.id_kategori = ? ORDER BY id_berita DESC";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $kategori);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $berita = new Berita();
+                $berita->setIdBerita($row['id_berita']);
+                $berita->setKategori($row['nama_kategori']);
+                $berita->setUser($row['nama']);
+                $berita->setCover($row['cover']);
+                $berita->setJudul($row['judul']);
+                $berita->setDeskripsi($row['deskripsi']);
+                $berita->setCreated($row['created']);
+                $berita->setDeflag($row['deflag']);
+                $data->append($berita);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

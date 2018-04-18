@@ -20,6 +20,7 @@ include_once './model/Baris.php';
 include_once './model/Kolom.php';
 include_once './model/Survey.php';
 include_once './model/Jawaban.php';
+include_once './model/Feedback.php';
 
 include_once './dao/UserDao.php';
 include_once './dao/RespondenDao.php';
@@ -31,6 +32,7 @@ include_once './dao/BarisDao.php';
 include_once './dao/KolomDao.php';
 include_once './dao/SurveyDao.php';
 include_once './dao/JawabanDao.php';
+include_once './dao/FeedbackDao.php';
 
 include_once './controller/AuthController.php';
 include_once './controller/SurveyController.php';
@@ -38,6 +40,8 @@ include_once './controller/UserController.php';
 include_once './controller/RespondenController.php';
 include_once './controller/BeritaController.php';
 include_once './controller/KategoriBeritaController.php';
+include_once './controller/FeedbackController.php';
+include_once './controller/LaporanController.php';
 
 
 $authController = new AuthController();
@@ -46,6 +50,8 @@ $userController = new UserController();
 $respondenController = new RespondenController();
 $beritaController = new BeritaController();
 $kategoriBeritaController = new KategoriBeritaController();
+$feedbackController = new FeedbackController();
+$laporanController = new LaporanController();
 ?>
 
 <!DOCTYPE html>
@@ -159,6 +165,18 @@ switch ($menu) {
         break;
     case 'updateKategoriBerita' :
         $kategoriBeritaController->updateKategoriBerita();
+        break;
+    case 'insertFeedback' :
+        $feedbackController->insert();
+        break;
+    case 'dataFeedback' :
+        $feedbackController->index();
+        break;
+    case 'indexLaporanBerita' :
+        $laporanController->indexBerita();
+        break;
+    case 'laporanBeritaKategori' :
+        $laporanController->beritaByKategori();
         break;
     default:
         $authController->index();
