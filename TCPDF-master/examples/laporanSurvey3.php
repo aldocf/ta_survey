@@ -2,20 +2,19 @@
 
 session_start();
 
-require_once('tcpdf_include_berita.php');
+require_once('tcpdf_include_survey.php');
 
 include_once "../../utility/koneksi.php";
-include_once '../../dao/BeritaDao.php';
-include_once '../../model/Berita.php';
-include_once '../../model/Kategori.php';
+include_once '../../dao/SurveyDao.php';
+include_once '../../model/Survey.php';
 
 
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor("Admin");
-$pdf->SetTitle('Laporan Berita');
-$pdf->SetSubject('Laporan Berita');
+$pdf->SetTitle('Laporan Survey');
+$pdf->SetSubject('Laporan Survey');
 $pdf->SetKeywords('PDF');
 
 // set default header data
@@ -48,8 +47,8 @@ if (@file_exists(dirname(__FILE__) . '/lang/eng.php')) {
 $pdf->AddPage();
 $pdf->SetFont('helvetica', '', 10);
 
-$beritaDao = new BeritaDao();
-$berita = $beritaDao->getAllBeritaFilterKategori($_GET['id'])->getIterator();
+$surveyDao = new SurveyDao();
+$survey = $surveyDao->getAllSurveyFilterByJumlahResponden($_GET['jumlah'])->getIterator();
 
 $i = 1;
 
@@ -92,21 +91,25 @@ $html = "<style>"
     . "<table class='first'>"
     . "<tr>"
     . "<th>    No.</th>"
-    . "<th>    Judul</th>"
-    . "<th>    Kategori</th>"
-    . "<th>    User</th>"
-    . "<th>    Created</th>"
+    . "<th>    Nama Survey</th>"
+    . "<th>    Deskripsi Survey</th>"
+    . "<th>    Target Responden</th>"
+    . "<th>    Periode Survey</th>"
+    . "<th>    Periode Survey Akhir</th>"
+    . "<th>    Jumlah Responden</th>"
     . "</tr>";
-while ($berita->valid()) {
+while ($survey->valid()) {
     $html = $html . "<tr>";
     $html = $html . "<td>  " . $i . "</td>";
-    $html = $html . "<td>  " . $berita->current()->getJudul() . "</td>";
-    $html = $html . "<td>  " . $berita->current()->getKategori() . "</td>";
-    $html = $html . "<td>  " . $berita->current()->getUser() . "</td>";
-    $html = $html ."<td>  ".date("d - F - Y", strtotime($berita->current()->getCreated()))."</td>";
+    $html = $html . "<td>  " . $survey->current()->getNamaSurvey() . "</td>";
+    $html = $html . "<td>  " . $survey->current()->getDeskripsiSurvey() . "</td>";
+    $html = $html . "<td>  " . $survey->current()->getTargetResponden() . "</td>";
+    $html = $html . "<td>  " . $survey->current()->getPeriodeSurvey() . "</td>";
+    $html = $html . "<td>  " . $survey->current()->getPeriodeSurveyAkhir() . "</td>";
+    $html = $html . "<td>  " . $survey->current()->getPeriodeSurveyAkhir() . "</td>";
     $html = $html . "</tr>";
     $i++;
-    $berita->next();
+    $survey->next();
 }
 
 $html = $html . "</table>";
@@ -119,4 +122,4 @@ $pdf->writeHTML($html, true, false, true, false, '');
 //$tgl1 = date("dFY", strtotime($tgl1));
 //$tgl2 = date("dFY", strtotime($tgl2));
 
-$pdf->Output('Laporan_Berita.pdf', 'I');
+$pdf->Output('Laporan_Survey.pdf', 'I');

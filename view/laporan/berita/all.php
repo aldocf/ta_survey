@@ -20,12 +20,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Berita By<strong> Kategori Berita</strong></h2>
+                <h2>Laporan Berita <strong> Semua</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita By Kategori Berita</li>
+                        <li class="active">Laporan Berita Semua</li>
                     </ol>
                 </div>
             </div>
@@ -34,48 +34,17 @@
                     <div class="panel">
                         <div class="panel-content">
                             <div class="row">
-                                <form class="form-horizontal" method="post">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="col-md-12 m-b-10">
-                                                <label>Kategori Berita</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="-" selected disabled>- Pilih Kategori -
-                                                    </option>
-                                                    <?php
-                                                    while ($kategori->valid()) {
-                                                        if ($kategori->current()->getIdKategori() == $_GET['id']) {
-                                                            ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"
-                                                                    selected><?php echo $kategori->current()->getNamaKategori(); ?></option>
-                                                            <?php
-                                                        } else {
-                                                            ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"><?php echo $kategori->current()->getNamaKategori(); ?></option>
-                                                            <?php
-                                                        }
-                                                        $kategori->next();
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-12 m-b-10 m-t-10">
-                                                <button class="btn btn-primary" name="btnFilter">Filter
-                                                </button>
-                                                <?php
-                                                if (isset($_GET['id'])) {
-                                                    ?>
-                                                    <a href="./TCPDF-master/examples/laporanBerita1.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
-                                                    </a>
-                                                    <?php
-                                                }
-                                                ?>
-                                                <a href="index.php?menu=indexLaporanBerita" class="btn btn-danger">Kembali
-                                                </a>
-                                            </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12 m-b-10 m-t-10">
+                                            <a href="./TCPDF-master/examples/laporanBerita4.php"
+                                               target="_blank" class="btn btn-warning">Export PDF
+                                            </a>
+                                            <a href="index.php?menu=indexLaporanBerita" class="btn btn-danger">Kembali
+                                            </a>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,21 +66,19 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                if (isset($_GET['id'])) {
-                                    $no = 1;
-                                    while ($data->valid()) {
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $data->current()->getJudul(); ?></td>
-                                            <td><?php echo $data->current()->getKategori(); ?></td>
-                                            <td><?php echo $data->current()->getUser(); ?></td>
-                                            <td><?php echo date("d F Y", strtotime($data->current()->getCreated())); ?></td>
-                                        </tr>
-                                        <?php
-                                        $no++;
-                                        $data->next();
-                                    }
+                                $no = 1;
+                                while ($data->valid()) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $no; ?></td>
+                                        <td><?php echo $data->current()->getJudul(); ?></td>
+                                        <td><?php echo $data->current()->getKategori(); ?></td>
+                                        <td><?php echo $data->current()->getUser(); ?></td>
+                                        <td><?php echo date("d F Y", strtotime($data->current()->getCreated())); ?></td>
+                                    </tr>
+                                    <?php
+                                    $no++;
+                                    $data->next();
                                 }
                                 ?>
                                 </tbody>

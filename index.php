@@ -65,7 +65,7 @@ $laporanController = new LaporanController();
     <meta name="description" content="admin-themes-lab">
     <meta name="author" content="themes-lab">
     <link rel="shortcut icon" href="./assets/global/images/favicon.png" type="image/png">
-    <title>Make Admin Template &amp; Builder</title>
+    <title>Survey Online</title>
     <link href="./assets/global/css/style.css" rel="stylesheet">
     <link href="./assets/global/css/theme.css" rel="stylesheet">
     <link href="./assets/global/css/ui.css" rel="stylesheet">
@@ -177,6 +177,51 @@ switch ($menu) {
         break;
     case 'laporanBeritaKategori' :
         $laporanController->beritaByKategori();
+        break;
+    case 'laporanBeritaUser' :
+        $laporanController->beritaByUser();
+        break;
+    case 'laporanBeritaTanggal' :
+        $laporanController->beritaByTanggal();
+        break;
+    case 'laporanBeritaAll' :
+        $laporanController->beritaAll();
+        break;
+    case 'indexLaporanPengguna' :
+        $laporanController->indexPengguna();
+        break;
+    case 'laporanPenggunaRole' :
+        $laporanController->penggunaByRole();
+        break;
+    case 'laporanPenggunaStatus' :
+        $laporanController->penggunaByStatus();
+        break;
+    case 'indexLaporanResponden' :
+        $laporanController->indexResponden();
+        break;
+    case 'laporanRespondenJabatan' :
+        $laporanController->respondenByJabatan();
+        break;
+    case 'laporanRespondenPerusahaan' :
+        $laporanController->respondenByPerusahaan();
+        break;
+    case 'laporanRespondenAll' :
+        $laporanController->respondenByAll();
+        break;
+    case 'indexLaporanSurvey' :
+        $laporanController->indexSurvey();
+        break;
+    case 'laporanSurveyStatus' :
+        $laporanController->surveyByStatus();
+        break;
+    case 'laporanSurveyPeriode' :
+        $laporanController->surveyByPeriode();
+        break;
+    case 'laporanSurveyResponden' :
+        $laporanController->surveyByJumlahResponden();
+        break;
+    case 'laporanSurveyAll' :
+        $laporanController->surveyByAll();
         break;
     default:
         $authController->index();

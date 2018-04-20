@@ -20,12 +20,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Berita By<strong> Kategori Berita</strong></h2>
+                <h2>Laporan Berita By<strong> Tanggal</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita By Kategori Berita</li>
+                        <li class="active">Laporan Berita By Tanggal</li>
                     </ol>
                 </div>
             </div>
@@ -38,34 +38,29 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
-                                                <label>Kategori Berita</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="-" selected disabled>- Pilih Kategori -
-                                                    </option>
-                                                    <?php
-                                                    while ($kategori->valid()) {
-                                                        if ($kategori->current()->getIdKategori() == $_GET['id']) {
-                                                            ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"
-                                                                    selected><?php echo $kategori->current()->getNamaKategori(); ?></option>
-                                                            <?php
-                                                        } else {
-                                                            ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"><?php echo $kategori->current()->getNamaKategori(); ?></option>
-                                                            <?php
-                                                        }
-                                                        $kategori->next();
-                                                    }
-                                                    ?>
-                                                </select>
+                                                <label>Tanggal Awal</label>
+                                                <input type="date" class="form-control form-white input-sm"
+                                                       placeholder="Tanggal Awal" name="awal" required
+                                                       value="<?php if (isset($_GET['awal'])) {
+                                                           echo $_GET['awal'];
+                                                       } ?>">
+                                            </div>
+                                            <div class="col-md-12 m-b-10">
+                                                <label>Tanggal Akhir</label>
+                                                <input type="date" class="form-control form-white input-sm"
+                                                       placeholder="Tanggal Akhir" name="akhir" required
+                                                       value="<?php if (isset($_GET['akhir'])) {
+                                                           echo $_GET['akhir'];
+                                                       } ?>">
                                             </div>
                                             <div class="col-md-12 m-b-10 m-t-10">
                                                 <button class="btn btn-primary" name="btnFilter">Filter
                                                 </button>
                                                 <?php
-                                                if (isset($_GET['id'])) {
+                                                if (isset($_GET['awal'])) {
                                                     ?>
-                                                    <a href="./TCPDF-master/examples/laporanBerita1.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
+                                                    <a href="./TCPDF-master/examples/laporanBerita3.php?awal=<?php echo $_GET['awal'] ?>&akhir=<?php echo $_GET['akhir'] ?>"
+                                                       target="_blank" class="btn btn-warning">Export PDF
                                                     </a>
                                                     <?php
                                                 }
@@ -97,7 +92,7 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                if (isset($_GET['id'])) {
+                                if (isset($_GET['awal'])) {
                                     $no = 1;
                                     while ($data->valid()) {
                                         ?>
@@ -182,9 +177,7 @@
     $(document).ready(function () {
         <?php
         if ($msg == 1) {
-            echo "makeAlert('success', 'Insert Success!', 'Data kategori berita telah dimasukan kedalam database.')";
-        } else if ($msg == 2) {
-            echo "makeAlert('success', 'Update Success!', 'Data kategori berita telah berhasil diubah.')";
+            echo "makeAlert('danger', 'Filter Failed!', 'Tanggal awal harus lebih kecil daripada tanggal akhir.')";
         }
         ?>
     });

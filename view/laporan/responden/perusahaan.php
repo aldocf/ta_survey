@@ -20,12 +20,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Berita By<strong> Kategori Berita</strong></h2>
+                <h2>Laporan Responden By<strong> Perusahaan</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita By Kategori Berita</li>
+                        <li class="active">Laporan Responden By Perusahaan</li>
                     </ol>
                 </div>
             </div>
@@ -38,23 +38,23 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
-                                                <label>Kategori Berita</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="-" selected disabled>- Pilih Kategori -
+                                                <label>Perusahaan</label>
+                                                <select class="form-control" name="perusahaan">
+                                                    <option value="-" selected disabled>- Pilih Perusahaan -
                                                     </option>
                                                     <?php
-                                                    while ($kategori->valid()) {
-                                                        if ($kategori->current()->getIdKategori() == $_GET['id']) {
+                                                    while ($perusahaan->valid()) {
+                                                        if ($perusahaan->current()->getNamaPerusahaan() == $_GET['perusahaan']) {
                                                             ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"
-                                                                    selected><?php echo $kategori->current()->getNamaKategori(); ?></option>
+                                                            <option value="<?php echo $perusahaan->current()->getNamaPerusahaan(); ?>"
+                                                                    selected><?php echo $perusahaan->current()->getNamaPerusahaan(); ?></option>
                                                             <?php
                                                         } else {
                                                             ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"><?php echo $kategori->current()->getNamaKategori(); ?></option>
+                                                            <option value="<?php echo $perusahaan->current()->getNamaPerusahaan(); ?>"><?php echo $perusahaan->current()->getNamaPerusahaan(); ?></option>
                                                             <?php
                                                         }
-                                                        $kategori->next();
+                                                        $perusahaan->next();
                                                     }
                                                     ?>
                                                 </select>
@@ -63,14 +63,14 @@
                                                 <button class="btn btn-primary" name="btnFilter">Filter
                                                 </button>
                                                 <?php
-                                                if (isset($_GET['id'])) {
+                                                if (isset($_GET['perusahaan'])) {
                                                     ?>
-                                                    <a href="./TCPDF-master/examples/laporanBerita1.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
+                                                    <a href="./TCPDF-master/examples/laporanResponden2.php?id=<?php echo $_GET['perusahaan']?>" target="_blank" class="btn btn-warning">Export PDF
                                                     </a>
                                                     <?php
                                                 }
                                                 ?>
-                                                <a href="index.php?menu=indexLaporanBerita" class="btn btn-danger">Kembali
+                                                <a href="index.php?menu=indexLaporanResponden" class="btn btn-danger">Kembali
                                                 </a>
                                             </div>
                                         </div>
@@ -89,24 +89,26 @@
                                 <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Kategori</th>
-                                    <th>User</th>
-                                    <th>Created</th>
+                                    <th>Nama Responden</th>
+                                    <th>Jabatan</th>
+                                    <th>Nama Perusahaan</th>
+                                    <th>No Telepon</th>
+                                    <th>Email</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                if (isset($_GET['id'])) {
+                                if (isset($_GET['perusahaan'])) {
                                     $no = 1;
                                     while ($data->valid()) {
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $data->current()->getJudul(); ?></td>
-                                            <td><?php echo $data->current()->getKategori(); ?></td>
-                                            <td><?php echo $data->current()->getUser(); ?></td>
-                                            <td><?php echo date("d F Y", strtotime($data->current()->getCreated())); ?></td>
+                                            <td><?php echo $data->current()->getIdUser()->getNama(); ?></td>
+                                            <td><?php echo $data->current()->getJabatan(); ?></td>
+                                            <td><?php echo $data->current()->getNamaPerusahaan(); ?></td>
+                                            <td><?php echo $data->current()->getIdUser()->getNomorTelepon(); ?></td>
+                                            <td><?php echo $data->current()->getIdUser()->getEmail(); ?></td>
                                         </tr>
                                         <?php
                                         $no++;

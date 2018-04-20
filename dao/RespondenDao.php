@@ -189,4 +189,94 @@ class RespondenDao
         $conn = null;
         return $data;
     }
+
+    public function getAllRespondenFilterJabatan($jabatan)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM responden JOIN user ON responden.id_user = user.id_user WHERE responden.jabatan = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $jabatan);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setJabatan($row['jabatan']);
+                $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllRespondenFilterPerusahaan($perusahaan)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM responden JOIN user ON responden.id_user = user.id_user WHERE responden.nama_perusahaan = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $perusahaan);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setJabatan($row['jabatan']);
+                $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllPerusahaan()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM responden JOIN user ON responden.id_user = user.id_user GROUP BY responden.nama_perusahaan";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $perusahaan);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setJabatan($row['jabatan']);
+                $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setIdUser($row['id_user']);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

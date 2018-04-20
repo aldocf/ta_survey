@@ -49,7 +49,7 @@ $pdf->AddPage();
 $pdf->SetFont('helvetica', '', 10);
 
 $beritaDao = new BeritaDao();
-$berita = $beritaDao->getAllBeritaFilterKategori($_GET['id'])->getIterator();
+$berita = $beritaDao->getAllBeritaActive()->getIterator();
 
 $i = 1;
 

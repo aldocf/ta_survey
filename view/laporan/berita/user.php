@@ -20,12 +20,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Berita By<strong> Kategori Berita</strong></h2>
+                <h2>Laporan Berita By<strong> User</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita By Kategori Berita</li>
+                        <li class="active">Laporan Berita By User</li>
                     </ol>
                 </div>
             </div>
@@ -38,23 +38,23 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
-                                                <label>Kategori Berita</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="-" selected disabled>- Pilih Kategori -
+                                                <label>User</label>
+                                                <select class="form-control" name="user">
+                                                    <option value="-" selected disabled>- Pilih User -
                                                     </option>
                                                     <?php
-                                                    while ($kategori->valid()) {
-                                                        if ($kategori->current()->getIdKategori() == $_GET['id']) {
+                                                    while ($user->valid()) {
+                                                        if ($user->current()->getIdUser() == $_GET['id']) {
                                                             ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"
-                                                                    selected><?php echo $kategori->current()->getNamaKategori(); ?></option>
+                                                            <option value="<?php echo $user->current()->getIdUser(); ?>"
+                                                                    selected><?php echo $user->current()->getNama(); ?></option>
                                                             <?php
                                                         } else {
                                                             ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"><?php echo $kategori->current()->getNamaKategori(); ?></option>
+                                                            <option value="<?php echo $user->current()->getIdUser(); ?>"><?php echo $user->current()->getNama(); ?></option>
                                                             <?php
                                                         }
-                                                        $kategori->next();
+                                                        $user->next();
                                                     }
                                                     ?>
                                                 </select>
@@ -65,7 +65,7 @@
                                                 <?php
                                                 if (isset($_GET['id'])) {
                                                     ?>
-                                                    <a href="./TCPDF-master/examples/laporanBerita1.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
+                                                    <a href="./TCPDF-master/examples/laporanBerita2.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
                                                     </a>
                                                     <?php
                                                 }

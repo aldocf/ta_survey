@@ -257,4 +257,92 @@ class SurveyDao
         $conn = null;
         return $data;
     }
+
+    public function getAllSurveyFilterByStatus($id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            if ($id == 0) {
+                $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey > CURRENT_DATE()";
+            } else if ($id == 1) {
+                $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE CURRENT_DATE() BETWEEN survey.periode_survey AND survey.periode_survey_akhir";
+            } else {
+                $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey_akhir > CURRENT_DATE()";
+            }
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $data->append($survey);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllSurveyFilterByPeriode($awal, $akhir)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey >= ? AND survey.periode_survey_akhir <= ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $awal);
+            $stmt->bindParam(2, $akhir);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $data->append($survey);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllSurveyFilterByJumlahResponden($jumlah)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT survey.*, IFNULL(COUNT(DISTINCT(responden.id_responden)),0) AS jumlah FROM survey LEFT JOIN pertanyaan ON pertanyaan.id_survey = survey.id_survey LEFT JOIN jawaban ON jawaban.id_pertanyaan = pertanyaan.id_pertanyaan LEFT JOIN responden ON responden.id_responden = jawaban.id_responden GROUP by survey.id_survey HAVING IFNULL(COUNT(DISTINCT(responden.id_responden)),0) >= ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $jumlah);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $survey = new Survey();
+                $survey->setIdSurvey($row['id_survey']);
+                $survey->setNamaSurvey($row['nama_survey']);
+                $survey->setDeskripsiSurvey($row['deskripsi_survey']);
+                $survey->setTargetResponden($row['target_responden']);
+                $survey->setPeriodeSurvey($row['periode_survey']);
+                $survey->setPeriodeSurveyAkhir($row['periode_survey_akhir']);
+                $survey->setIsJawab($row['jumlah']);
+                $data->append($survey);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

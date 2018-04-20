@@ -2,20 +2,20 @@
 
 session_start();
 
-require_once('tcpdf_include_berita.php');
+require_once('tcpdf_include_pengguna.php');
 
 include_once "../../utility/koneksi.php";
-include_once '../../dao/BeritaDao.php';
-include_once '../../model/Berita.php';
-include_once '../../model/Kategori.php';
+include_once '../../dao/UserDao.php';
+include_once '../../model/User.php';
+include_once '../../model/Responden.php';
 
 
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor("Admin");
-$pdf->SetTitle('Laporan Berita');
-$pdf->SetSubject('Laporan Berita');
+$pdf->SetTitle('Laporan Pengguna');
+$pdf->SetSubject('Laporan Pengguna');
 $pdf->SetKeywords('PDF');
 
 // set default header data
@@ -48,8 +48,8 @@ if (@file_exists(dirname(__FILE__) . '/lang/eng.php')) {
 $pdf->AddPage();
 $pdf->SetFont('helvetica', '', 10);
 
-$beritaDao = new BeritaDao();
-$berita = $beritaDao->getAllBeritaFilterKategori($_GET['id'])->getIterator();
+$userDao = new UserDao();
+$user = $userDao->getAllAdmin()->getIterator();
 
 $i = 1;
 
@@ -92,21 +92,19 @@ $html = "<style>"
     . "<table class='first'>"
     . "<tr>"
     . "<th>    No.</th>"
-    . "<th>    Judul</th>"
-    . "<th>    Kategori</th>"
-    . "<th>    User</th>"
-    . "<th>    Created</th>"
+    . "<th>    Nama</th>"
+    . "<th>    No. Telepon</th>"
+    . "<th>    Email</th>"
     . "</tr>";
-while ($berita->valid()) {
+while ($user->valid()) {
     $html = $html . "<tr>";
     $html = $html . "<td>  " . $i . "</td>";
-    $html = $html . "<td>  " . $berita->current()->getJudul() . "</td>";
-    $html = $html . "<td>  " . $berita->current()->getKategori() . "</td>";
-    $html = $html . "<td>  " . $berita->current()->getUser() . "</td>";
-    $html = $html ."<td>  ".date("d - F - Y", strtotime($berita->current()->getCreated()))."</td>";
+    $html = $html . "<td>  " . $user->current()->getNama() . "</td>";
+    $html = $html . "<td>  " . $user->current()->getNomorTelepon() . "</td>";
+    $html = $html . "<td>  " . $user->current()->getEmail() . "</td>";
     $html = $html . "</tr>";
     $i++;
-    $berita->next();
+    $user->next();
 }
 
 $html = $html . "</table>";
@@ -119,4 +117,4 @@ $pdf->writeHTML($html, true, false, true, false, '');
 //$tgl1 = date("dFY", strtotime($tgl1));
 //$tgl2 = date("dFY", strtotime($tgl2));
 
-$pdf->Output('Laporan_Berita.pdf', 'I');
+$pdf->Output('Laporan_Pengguna.pdf', 'I');

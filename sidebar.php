@@ -45,10 +45,10 @@
                     <a href="#"><i class="fa fa-file-archive-o"></i><span>Laporan</span> <span class="fa arrow"></span></a>
                     <ul class="children collapse">
                         <li><a href="index.php?menu=indexLaporanBerita"> Berita</a></li>
-                        <li><a href="index.php?menu=userAdmin"> Pengguna</a></li>
-                        <li><a href="index.php?menu=userAdmin"> Responden</a></li>
-                        <li><a href="index.php?menu=userAdmin"> Survey</a></li>
-                        <li><a href="index.php?menu=userAdmin"> Jawaban</a></li>
+                        <li><a href="index.php?menu=indexLaporanPengguna"> Pengguna</a></li>
+                        <li><a href="index.php?menu=indexLaporanResponden"> Responden</a></li>
+                        <li><a href="index.php?menu=indexLaporanSurvey"> Survey</a></li>
+                        <li><a href="index.php?menu=indexLaporanJawaban"> Jawaban</a></li>
                     </ul>
                 </li>
                 <?php

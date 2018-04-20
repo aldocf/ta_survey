@@ -20,12 +20,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Berita By<strong> Kategori Berita</strong></h2>
+                <h2>Laporan Survey By<strong> Periode</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita By Kategori Berita</li>
+                        <li class="active">Laporan Survey By Periode</li>
                     </ol>
                 </div>
             </div>
@@ -38,39 +38,26 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
-                                                <label>Kategori Berita</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="-" selected disabled>- Pilih Kategori -
-                                                    </option>
-                                                    <?php
-                                                    while ($kategori->valid()) {
-                                                        if ($kategori->current()->getIdKategori() == $_GET['id']) {
-                                                            ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"
-                                                                    selected><?php echo $kategori->current()->getNamaKategori(); ?></option>
-                                                            <?php
-                                                        } else {
-                                                            ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"><?php echo $kategori->current()->getNamaKategori(); ?></option>
-                                                            <?php
-                                                        }
-                                                        $kategori->next();
-                                                    }
-                                                    ?>
-                                                </select>
+                                                <label>Jumlah Minimal Responden</label>
+                                                <input type="number" class="form-control form-white input-sm"
+                                                       placeholder="Jumlah Minimal Responden" name="jumlah" required
+                                                       value="<?php if (isset($_GET['jumlah'])) {
+                                                           echo $_GET['jumlah'];
+                                                       } ?>">
                                             </div>
                                             <div class="col-md-12 m-b-10 m-t-10">
                                                 <button class="btn btn-primary" name="btnFilter">Filter
                                                 </button>
                                                 <?php
-                                                if (isset($_GET['id'])) {
+                                                if (isset($_GET['jumlah'])) {
                                                     ?>
-                                                    <a href="./TCPDF-master/examples/laporanBerita1.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
+                                                    <a href="./TCPDF-master/examples/laporanSurvey3.php?jumlah=<?php echo $_GET['jumlah'] ?>"
+                                                       target="_blank" class="btn btn-warning">Export PDF
                                                     </a>
                                                     <?php
                                                 }
                                                 ?>
-                                                <a href="index.php?menu=indexLaporanBerita" class="btn btn-danger">Kembali
+                                                <a href="index.php?menu=indexLaporanSurvey" class="btn btn-danger">Kembali
                                                 </a>
                                             </div>
                                         </div>
@@ -89,24 +76,28 @@
                                 <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Kategori</th>
-                                    <th>User</th>
-                                    <th>Created</th>
+                                    <th>Nama Survey</th>
+                                    <th>Deskripsi Survey</th>
+                                    <th>Target Responden</th>
+                                    <th>Periode Survey</th>
+                                    <th>Periode Survey Akhir</th>
+                                    <th>Jumlah Responden</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                if (isset($_GET['id'])) {
+                                if (isset($_GET['jumlah'])) {
                                     $no = 1;
                                     while ($data->valid()) {
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $data->current()->getJudul(); ?></td>
-                                            <td><?php echo $data->current()->getKategori(); ?></td>
-                                            <td><?php echo $data->current()->getUser(); ?></td>
-                                            <td><?php echo date("d F Y", strtotime($data->current()->getCreated())); ?></td>
+                                            <td><?php echo $data->current()->getNamaSurvey(); ?></td>
+                                            <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
+                                            <td><?php echo $data->current()->getTargetResponden(); ?></td>
+                                            <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
+                                            <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
+                                            <td><?php echo $data->current()->getIsJawab(); ?></td>
                                         </tr>
                                         <?php
                                         $no++;
@@ -182,9 +173,7 @@
     $(document).ready(function () {
         <?php
         if ($msg == 1) {
-            echo "makeAlert('success', 'Insert Success!', 'Data kategori berita telah dimasukan kedalam database.')";
-        } else if ($msg == 2) {
-            echo "makeAlert('success', 'Update Success!', 'Data kategori berita telah berhasil diubah.')";
+            echo "makeAlert('danger', 'Filter Failed!', 'Tanggal awal harus lebih kecil daripada tanggal akhir.')";
         }
         ?>
     });

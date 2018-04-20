@@ -229,9 +229,96 @@ class BeritaDao
         $data = new ArrayObject();
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT * FROM berita JOIN kategori ON kategori.id_kategori = berita.id_kategori JOIN user ON user.id_user = berita.id_user WHERE berita.deflag = 0 AND kategori.id_kategori = ? ORDER BY id_berita DESC";
+            $sql = "SELECT * FROM berita JOIN kategori ON kategori.id_kategori = berita.id_kategori JOIN user ON user.id_user = berita.id_user WHERE berita.deflag = 0 AND kategori.id_kategori = ? ORDER BY id_berita ASC";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $kategori);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $berita = new Berita();
+                $berita->setIdBerita($row['id_berita']);
+                $berita->setKategori($row['nama_kategori']);
+                $berita->setUser($row['nama']);
+                $berita->setCover($row['cover']);
+                $berita->setJudul($row['judul']);
+                $berita->setDeskripsi($row['deskripsi']);
+                $berita->setCreated($row['created']);
+                $berita->setDeflag($row['deflag']);
+                $data->append($berita);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllBeritaFilterUser($user)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM berita JOIN kategori ON kategori.id_kategori = berita.id_kategori JOIN user ON user.id_user = berita.id_user WHERE berita.deflag = 0 AND user.id_user = ? ORDER BY id_berita ASC ";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $user);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $berita = new Berita();
+                $berita->setIdBerita($row['id_berita']);
+                $berita->setKategori($row['nama_kategori']);
+                $berita->setUser($row['nama']);
+                $berita->setCover($row['cover']);
+                $berita->setJudul($row['judul']);
+                $berita->setDeskripsi($row['deskripsi']);
+                $berita->setCreated($row['created']);
+                $berita->setDeflag($row['deflag']);
+                $data->append($berita);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllBeritaFilterTanggal($awal, $akhir)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM berita JOIN kategori ON kategori.id_kategori = berita.id_kategori JOIN user ON user.id_user = berita.id_user WHERE berita.deflag = 0 AND berita.created BETWEEN ? AND ? ORDER BY id_berita ASC";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $awal);
+            $stmt->bindParam(2, $akhir);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $berita = new Berita();
+                $berita->setIdBerita($row['id_berita']);
+                $berita->setKategori($row['nama_kategori']);
+                $berita->setUser($row['nama']);
+                $berita->setCover($row['cover']);
+                $berita->setJudul($row['judul']);
+                $berita->setDeskripsi($row['deskripsi']);
+                $berita->setCreated($row['created']);
+                $berita->setDeflag($row['deflag']);
+                $data->append($berita);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllBeritaActive()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM berita JOIN kategori ON kategori.id_kategori = berita.id_kategori JOIN user ON user.id_user = berita.id_user WHERE berita.deflag = 0 ORDER BY id_berita ASC";
+            $stmt = $conn->prepare($sql);
             $stmt->execute();
             while ($row = $stmt->fetch()) {
                 $berita = new Berita();

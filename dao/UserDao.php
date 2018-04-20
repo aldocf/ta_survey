@@ -338,4 +338,62 @@ class UserDao
         }
         return $result;
     }
+
+    public function getAllMemberDiDaftarkan()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user LEFT JOIN responden ON responden.id_user = user.id_user WHERE user.role = 0 AND responden.id_responden IS NOT NULL";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllMemberTidakDiDaftarkan()
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT * FROM user LEFT JOIN responden ON responden.id_user = user.id_user WHERE user.role = 0 AND responden.id_responden IS NULL";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $user = new User();
+                $user->setIdUser($row['id_user']);
+                $user->setNama($row['nama']);
+                $user->setNomorTelepon($row['nomor_telepon']);
+                $user->setEmail($row['email']);
+
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setIdUser($user);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

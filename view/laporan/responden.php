@@ -13,12 +13,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2><strong>Laporan</strong> Berita</h2>
+                <h2><strong>Laporan</strong> Responden</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita</li>
+                        <li class="active">Laporan Responden</li>
                     </ol>
                 </div>
             </div>
@@ -27,15 +27,14 @@
                 <div class="col-md-6 portlets">
                     <div class="panel">
                         <div class="panel-header">
-                            <h3><i class="icon-doc"></i> <strong>Tipe</strong> Laporan Berita</h3>
+                            <h3><i class="icon-doc"></i> <strong>Tipe</strong> Laporan Responden</h3>
                         </div>
                         <div class="panel-content">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="index.php?menu=laporanBeritaKategori" class="btn btn-primary" style="width: 100%">Filter By Kategori</a>
-                                    <a href="index.php?menu=laporanBeritaUser" class="btn btn-primary" style="width: 100%">Filter By User</a>
-                                    <a href="index.php?menu=laporanBeritaTanggal"class="btn btn-primary" style="width: 100%">Filter By Tanggal</a>
-                                    <a href="index.php?menu=laporanBeritaAll" class="btn btn-primary" style="width: 100%">Semua</a>
+                                    <a href="index.php?menu=laporanRespondenJabatan" class="btn btn-primary" style="width: 100%">Jabatan</a>
+                                    <a href="index.php?menu=laporanRespondenPerusahaan" class="btn btn-primary" style="width: 100%">Perusahaan</a>
+                                    <a href="index.php?menu=laporanRespondenAll" class="btn btn-primary" style="width: 100%">Semua</a>
                                 </div>
                             </div>
                         </div>

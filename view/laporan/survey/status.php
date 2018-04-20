@@ -20,12 +20,12 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Berita By<strong> Kategori Berita</strong></h2>
+                <h2>Laporan Survey By<strong> Status</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Berita By Kategori Berita</li>
+                        <li class="active">Laporan Survey By Status</li>
                     </ol>
                 </div>
             </div>
@@ -38,25 +38,49 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="col-md-12 m-b-10">
-                                                <label>Kategori Berita</label>
-                                                <select class="form-control" name="kategori">
-                                                    <option value="-" selected disabled>- Pilih Kategori -
+                                                <label>Status</label>
+                                                <select class="form-control" name="status">
+                                                    <option value="-" selected disabled>- Pilih Status -
                                                     </option>
-                                                    <?php
-                                                    while ($kategori->valid()) {
-                                                        if ($kategori->current()->getIdKategori() == $_GET['id']) {
+                                                    <?php if (isset($_GET['id'])) {
+                                                        if ($_GET['id'] == 0) {
                                                             ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"
-                                                                    selected><?php echo $kategori->current()->getNamaKategori(); ?></option>
+                                                            <option value="0" selected>Belum dimulai
+                                                            </option>
+                                                            <option value="1">Dimulai
+                                                            </option>
+                                                            <option value="2">Sudah beres
+                                                            </option>
+                                                            <?php
+                                                        } else if ($_GET['id'] == 1) {
+                                                            ?>
+                                                            <option value="0">Belum dimulai
+                                                            </option>
+                                                            <option value="1" selected>Dimulai
+                                                            </option>
+                                                            <option value="2">Sudah beres
+                                                            </option>
                                                             <?php
                                                         } else {
                                                             ?>
-                                                            <option value="<?php echo $kategori->current()->getIdKategori(); ?>"><?php echo $kategori->current()->getNamaKategori(); ?></option>
+                                                            <option value="0">Belum dimulai
+                                                            </option>
+                                                            <option value="1">Dimulai
+                                                            </option>
+                                                            <option value="2" selected>Sudah beres
+                                                            </option>
                                                             <?php
                                                         }
-                                                        $kategori->next();
-                                                    }
-                                                    ?>
+                                                    } else {
+                                                        ?>
+                                                        <option value="0">Belum dimulai
+                                                        </option>
+                                                        <option value="1">Dimulai
+                                                        </option>
+                                                        <option value="2">Sudah beres
+                                                        </option>
+                                                        <?php
+                                                    } ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-12 m-b-10 m-t-10">
@@ -65,12 +89,13 @@
                                                 <?php
                                                 if (isset($_GET['id'])) {
                                                     ?>
-                                                    <a href="./TCPDF-master/examples/laporanBerita1.php?id=<?php echo $_GET['id']?>" target="_blank" class="btn btn-warning">Export PDF
+                                                    <a href="./TCPDF-master/examples/laporanSurvey1.php?id=<?php echo $_GET['id'] ?>"
+                                                       target="_blank" class="btn btn-warning">Export PDF
                                                     </a>
                                                     <?php
                                                 }
                                                 ?>
-                                                <a href="index.php?menu=indexLaporanBerita" class="btn btn-danger">Kembali
+                                                <a href="index.php?menu=indexLaporanSurvey" class="btn btn-danger">Kembali
                                                 </a>
                                             </div>
                                         </div>
@@ -89,10 +114,11 @@
                                 <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Judul</th>
-                                    <th>Kategori</th>
-                                    <th>User</th>
-                                    <th>Created</th>
+                                    <th>Nama Survey</th>
+                                    <th>Deskripsi Survey</th>
+                                    <th>Target Responden</th>
+                                    <th>Periode Survey</th>
+                                    <th>Periode Survey Akhir</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -103,10 +129,11 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $no; ?></td>
-                                            <td><?php echo $data->current()->getJudul(); ?></td>
-                                            <td><?php echo $data->current()->getKategori(); ?></td>
-                                            <td><?php echo $data->current()->getUser(); ?></td>
-                                            <td><?php echo date("d F Y", strtotime($data->current()->getCreated())); ?></td>
+                                            <td><?php echo $data->current()->getNamaSurvey(); ?></td>
+                                            <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
+                                            <td><?php echo $data->current()->getTargetResponden(); ?></td>
+                                            <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
+                                            <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
                                         </tr>
                                         <?php
                                         $no++;
