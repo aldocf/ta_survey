@@ -32,6 +32,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel">
+                        <div class="panel-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-12 m-b-10 m-t-10">
+                                            <a href="index.php?menu=indexLaporanJawaban" class="btn btn-danger">Kembali
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
                         <div class="panel-content pagination2 table-responsive">
                             <table class="table table-hover table-dynamic">
                                 <thead>
@@ -55,8 +73,8 @@
                                         <td><?php echo $data->current()->getNamaSurvey(); ?></td>
                                         <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
                                         <td><?php echo $data->current()->getTargetResponden(); ?></td>
-                                        <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
-                                        <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
+                                        <td><?php echo date_format(date_create($data->current()->getPeriodeSurvey()), "d F Y"); ?></td>
+                                        <td><?php echo date_format(date_create($data->current()->getPeriodeSurveyAkhir()), "d F Y"); ?></td>
                                         <td>
                                             <a href="./view/laporan/jawaban/jawabanSurveyPDF.php?id=<?php echo $data->current()->getIdSurvey(); ?>" class="btn btn-warning btn-sm" target="_blank">Export to PDF</a>
                                         </td>
