@@ -119,6 +119,9 @@ while ($pertanyaan->valid()) {
         <h2 style="font-weight: 700; font-size: 35px; margin-top: 5px">Laporan Jawaban</h2>
     </div>
 </div>
+<div class="col-md-12" style="margin-top: 5px;  margin-left: -12px">
+    <span>Tanggal Laporan : <?php echo date("l, d F Y");?></span>
+</div>
 
 <div class="panel-content" style="margin-top: 10px">
     <div class="row">

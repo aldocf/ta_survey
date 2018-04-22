@@ -51,6 +51,7 @@ $surveyDao = new SurveyDao();
 $survey = $surveyDao->getAllSurvey()->getIterator();
 
 $i = 1;
+$tgl = date("l, d F Y");
 
 $html = "<style>"
     . "table.first {"
@@ -84,10 +85,10 @@ $html = "<style>"
     . "background-color: #D3D3D3;"
     . "}"
     . "</style>"
-    . ""
     . "<div>"
-    . "</div>"
+    . "<span style='text-align:center'>Tanggal Laporan : " . $tgl . " </span>"
     . "<br>"
+    . "</div>"
     . "<table class='first'>"
     . "<tr>"
     . "<th>    No.</th>"

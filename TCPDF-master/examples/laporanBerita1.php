@@ -51,6 +51,8 @@ $pdf->SetFont('helvetica', '', 10);
 $beritaDao = new BeritaDao();
 $berita = $beritaDao->getAllBeritaFilterKategori($_GET['id'])->getIterator();
 
+$tgl = date("l, d F Y");
+
 $i = 1;
 
 $html = "<style>"
@@ -87,8 +89,9 @@ $html = "<style>"
     . "</style>"
     . ""
     . "<div>"
-    . "</div>"
+    . "<span style='text-align:center'>Tanggal Laporan : " . $tgl . " </span>"
     . "<br>"
+    . "</div>"
     . "<table class='first'>"
     . "<tr>"
     . "<th>    No.</th>"
