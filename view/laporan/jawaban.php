@@ -27,7 +27,7 @@
                 <div class="col-md-6 portlets">
                     <div class="panel">
                         <div class="panel-header">
-                            <h3><i class="icon-doc"></i> <strong>Tipe</strong> Laporan Survey</h3>
+                            <h3><i class="icon-doc"></i> <strong>Tipe</strong> Laporan Jawaban Survey</h3>
                         </div>
                         <div class="panel-content">
                             <div class="row">
