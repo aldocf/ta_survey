@@ -147,4 +147,11 @@ class RespondenController
 
         require_once './view/user/isiDataResponden.php';
     }
+
+    public function responden()
+    {
+        $data = $this->respondenDao->getAllResponden()->getIterator();
+
+        require_once './view/user/member/responden.php';
+    }
 }

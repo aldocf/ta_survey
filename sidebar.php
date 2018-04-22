@@ -30,7 +30,12 @@
                         <li><a href="index.php?menu=jawabanSurvey"> Jawaban Survey</a></li>
                     </ul>
                 </li>
-                <li class="nav"><a href="index.php?menu=insertResponden"><i class="fa fa-user-secret  "></i><span>Responden</span></a>
+                <li class="nav-parent">
+                    <a href="#"><i class="fa fa-user-secret"></i><span>Responden</span> <span class="fa arrow"></span></a>
+                    <ul class="children collapse">
+                        <li><a href="index.php?menu=insertResponden"> Insert Responden</a></li>
+                        <li><a href="index.php?menu=dataResponden"> Lihat Responden</a></li>
+                    </ul>
                 </li>
                 <li class="nav-parent">
                     <a href="#"><i class="icon-users"></i><span>Users</span> <span class="fa arrow"></span></a>

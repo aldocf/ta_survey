@@ -166,6 +166,9 @@ switch ($menu) {
     case 'updateKategoriBerita' :
         $kategoriBeritaController->updateKategoriBerita();
         break;
+    case 'dataResponden' :
+        $respondenController->responden();
+        break;
     case 'insertFeedback' :
         $feedbackController->insert();
         break;
@@ -228,6 +231,9 @@ switch ($menu) {
         break;
     case 'laporanJawabanPDF' :
         $laporanController->jawabanPDF();
+        break;
+    case 'laporanJawabanCSV' :
+        $laporanController->jawabanCSV();
         break;
     default:
         $authController->index();

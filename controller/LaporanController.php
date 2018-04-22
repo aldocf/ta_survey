@@ -264,5 +264,10 @@ class LaporanController
         $data = $this->surveyDao->getAllSurvey()->getIterator();
         require_once './view/laporan/jawaban/jawabanPDF.php';
     }
+    public function jawabanCSV()
+    {
+        $data = $this->surveyDao->getAllSurvey()->getIterator();
+        require_once './view/laporan/jawaban/jawabanCSV.php';
+    }
     //endregion
 }
