@@ -103,7 +103,7 @@ while ($berita->valid()) {
     $html = $html . "<td>  " . $berita->current()->getJudul() . "</td>";
     $html = $html . "<td>  " . $berita->current()->getKategori() . "</td>";
     $html = $html . "<td>  " . $berita->current()->getUser() . "</td>";
-    $html = $html ."<td>  ".date("d - F - Y", strtotime($berita->current()->getCreated()))."</td>";
+    $html = $html ."<td>  ".date("d F Y", strtotime($berita->current()->getCreated()))."</td>";
     $html = $html . "</tr>";
     $i++;
     $berita->next();

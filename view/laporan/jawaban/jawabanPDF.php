@@ -20,34 +20,13 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Laporan Survey By<strong> Semua</strong></h2>
+                <h2>Laporan <strong>Jawaban Survey PDF</strong></h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Laporan Survey By Periode</li>
+                        <li class="active">Laporan Jawaban Survey PDF</li>
                     </ol>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel">
-                        <div class="panel-content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-12 m-b-10 m-t-10">
-                                            <a href="./TCPDF-master/examples/laporanSurvey4.php"
-                                               target="_blank" class="btn btn-warning">Export PDF
-                                            </a>
-                                            <a href="index.php?menu=indexLaporanSurvey" class="btn btn-danger">Kembali
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row">
@@ -63,6 +42,7 @@
                                     <th>Target Responden</th>
                                     <th>Periode Survey</th>
                                     <th>Periode Survey Akhir</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -75,8 +55,11 @@
                                         <td><?php echo $data->current()->getNamaSurvey(); ?></td>
                                         <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
                                         <td><?php echo $data->current()->getTargetResponden(); ?></td>
-                                        <td><?php echo date_format(date_create($data->current()->getPeriodeSurvey()), "d F Y"); ?></td>
-                                        <td><?php echo date_format(date_create($data->current()->getPeriodeSurveyAkhir()), "d F Y"); ?></td>
+                                        <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
+                                        <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
+                                        <td>
+                                            <a href="./view/laporan/jawaban/jawabanSurveyPDF.php?id=<?php echo $data->current()->getIdSurvey(); ?>" class="btn btn-warning btn-sm" target="_blank">Export to PDF</a>
+                                        </td>
                                     </tr>
                                     <?php
                                     $no++;

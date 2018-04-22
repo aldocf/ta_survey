@@ -223,6 +223,12 @@ switch ($menu) {
     case 'laporanSurveyAll' :
         $laporanController->surveyByAll();
         break;
+    case 'indexLaporanJawaban' :
+        $laporanController->indexJawaban();
+        break;
+    case 'laporanJawabanPDF' :
+        $laporanController->jawabanPDF();
+        break;
     default:
         $authController->index();
         break;

@@ -102,8 +102,8 @@
                                             <td><?php echo $data->current()->getNamaSurvey(); ?></td>
                                             <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
                                             <td><?php echo $data->current()->getTargetResponden(); ?></td>
-                                            <td><?php echo $data->current()->getPeriodeSurvey(); ?></td>
-                                            <td><?php echo $data->current()->getPeriodeSurveyAkhir(); ?></td>
+                                            <td><?php echo date_format(date_create($data->current()->getPeriodeSurvey()), "d F Y"); ?></td>
+                                            <td><?php echo date_format(date_create($data->current()->getPeriodeSurveyAkhir()), "d F Y"); ?></td>
                                         </tr>
                                         <?php
                                         $no++;

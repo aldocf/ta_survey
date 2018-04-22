@@ -1,14 +1,6 @@
-<link href="./assets/global/plugins/datatables/dataTables.min.css" rel="stylesheet">
-
 <body class="sidebar-top fixed-topbar fixed-sidebar theme-sdtl color-default">
 
-<style>
-    .select2-container{
-        z-index: 0;
-    }
-</style>
 <section>
-
     <?php
     include_once 'sidebar.php';
     ?>
@@ -21,58 +13,33 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="header">
-                <h2>Data <strong>Survey</strong></h2>
+                <h2><strong>Laporan</strong> Jawaban Survey</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
                         <li><a href="index.php">Home</a>
                         </li>
-                        <li class="active">Survey</li>
+                        <li class="active">Laporan Jawaban Survey</li>
                     </ol>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 portlets">
+                <div class="col-md-3 "></div>
+                <div class="col-md-6 portlets">
                     <div class="panel">
-                        <div class="panel-content pagination2 table-responsive">
-                            <table class="table table-hover table-dynamic">
-                                <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Survey</th>
-                                    <th>Periode Survey</th>
-                                    <th>Periode Survey Akhir</th>
-                                    <th>Jumlah Responden</th>
-                                    <th>Jawaban</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $no = 1;
-                                while ($data->valid()) {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $no; ?></td>
-                                        <td><?php echo $data->current()->getNamaSurvey(); ?></td>
-                                        <td><?php echo date_format(date_create($data->current()->getPeriodeSurvey()), "d F Y"); ?></td>
-                                        <td><?php echo date_format(date_create($data->current()->getPeriodeSurveyAkhir()), "d F Y"); ?></td>
-                                        <td><?php echo $data->current()->getDeskripsiSurvey(); ?></td>
-                                        <td>
-                                            <a href="index.php?menu=detailJawaban&id=<?php echo $data->current()->getIdSurvey(); ?>"
-                                               class="btn btn-primary btn-sm">Detail Jawaban</a>
-<!--                                            <a href="index.php?menu=jawabanResponden&id=--><?php //echo $data->current()->getIdSurvey(); ?><!--"-->
-<!--                                               class="btn btn-primary btn-sm">Sort By Responden</a>-->
-                                        </td>
-                                    </tr>
-                                    <?php
-                                    $no++;
-                                    $data->next();
-                                }
-                                ?>
-                                </tbody>
-                            </table>
+                        <div class="panel-header">
+                            <h3><i class="icon-doc"></i> <strong>Tipe</strong> Laporan Survey</h3>
+                        </div>
+                        <div class="panel-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="index.php?menu=laporanJawabanPDF" class="btn btn-primary" style="width: 100%">Export PDF</a>
+                                    <a href="index.php?menu=laporanJawabanCSV" class="btn btn-primary" style="width: 100%">Export CSV</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3 "></div>
             </div>
             <?php include_once 'footer.php' ?>
         </div>
@@ -89,13 +56,15 @@
     </div>
 </div>
 <!-- END PRELOADER -->
+<a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
 <script src="./assets/global/plugins/jquery/jquery-3.1.0.min.js"></script>
 <script src="./assets/global/plugins/jquery/jquery-migrate-3.0.0.min.js"></script>
 <script src="./assets/global/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="./assets/global/plugins/gsap/main-gsap.min.js"></script>
 <script src="./assets/global/plugins/tether/js/tether.min.js"></script>
 <script src="./assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="./assets/global/plugins/appear/jquery.appear.js"></script>
+<script src="./assets/global/plugins/bootstrap/js/jasny-bootstrap.min.js"></script>
+
 <script src="./assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->
 <script src="./assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script>
 <!-- simulate synchronous behavior when using AJAX -->
@@ -119,11 +88,13 @@
 <script src="./assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
 <script src="./assets/global/js/quickview.js"></script> <!-- Chat Script -->
 <script src="./assets/global/js/pages/search.js"></script> <!-- Search Script -->
-<!-- BEGIN PAGE SCRIPTS -->
-<script src="./assets/global/plugins/datatables/jquery.dataTables.min.js"></script>
-<!-- Tables Filtering, Sorting & Editing -->
-<script src="./assets/global/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<script src="./assets/global/js/pages/table_dynamic.js"></script>
-<!-- END PAGE SCRIPTS -->
+<!-- BEGIN PAGE SCRIPT -->
+<script src="./assets/global/plugins/switchery/switchery.min.js"></script> <!-- IOS Switch -->
+<script src="./assets/global/plugins/summernote/summernote.min.js"></script> <!-- Simple HTML Editor -->
+<script src="./assets/global/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script> <!-- Select Inputs -->
+<script src="./assets/global/plugins/dropzone/dropzone.min.js"></script>  <!-- Upload Image & File in dropzone -->
+<script src="./assets/global/js/pages/form_icheck.js"></script>  <!-- Change Icheck Color - DEMO PURPOSE - OPTIONAL -->
+<!-- END PAGE SCRIPT -->
 <script src="./assets/admin/layout4/js/layout.js"></script>
+
 </body>

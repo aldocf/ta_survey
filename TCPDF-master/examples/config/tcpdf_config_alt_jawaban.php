@@ -9,7 +9,7 @@ define ('PDF_PAGE_FORMAT', 'A4');
 define ('PDF_PAGE_ORIENTATION', 'L');
 define ('PDF_CREATOR', 'TCPDF');
 define ('PDF_AUTHOR', 'TCPDF');
-define ('PDF_HEADER_TITLE', '                     LAPORAN PENGGUNA');
+define ('PDF_HEADER_TITLE', '                      LAPORAN JAWABAN');
 define ('PDF_HEADER_STRING', "                                 ");
 define ('PDF_UNIT', 'mm');
 define ('PDF_MARGIN_HEADER', 10);

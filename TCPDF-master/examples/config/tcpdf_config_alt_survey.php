@@ -2,14 +2,14 @@
 define ('K_TCPDF_EXTERNAL_CONFIG', true);
 define ('K_PATH_IMAGES', dirname(__FILE__).'/../images/');
 define ('PDF_HEADER_LOGO', 'logo.png');
-define ('PDF_HEADER_LOGO_WIDTH', 50);
+define ('PDF_HEADER_LOGO_WIDTH', 40);
 define ('K_PATH_CACHE', sys_get_temp_dir().'/');
 define ('K_BLANK_IMAGE', '_blank.png');
 define ('PDF_PAGE_FORMAT', 'A4');
 define ('PDF_PAGE_ORIENTATION', 'L');
 define ('PDF_CREATOR', 'TCPDF');
 define ('PDF_AUTHOR', 'TCPDF');
-define ('PDF_HEADER_TITLE', '                   LAPORAN SURVEY');
+define ('PDF_HEADER_TITLE', '                       LAPORAN SURVEY');
 define ('PDF_HEADER_STRING', "                                 ");
 define ('PDF_UNIT', 'mm');
 define ('PDF_MARGIN_HEADER', 10);

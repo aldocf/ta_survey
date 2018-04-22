@@ -279,4 +279,30 @@ class RespondenDao
         $conn = null;
         return $data;
     }
+
+    public function getAllRespondenBySurvey($id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT responden.* FROM survey JOIN pertanyaan ON pertanyaan.id_survey = survey.id_survey JOIN jawaban ON jawaban.id_pertanyaan = pertanyaan.id_pertanyaan JOIN responden ON responden.id_responden = jawaban.id_responden WHERE survey.id_survey = ? GROUP by jawaban.id_responden";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $responden->setJabatan($row['jabatan']);
+                $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setIdUser($row['id_user']);
+
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

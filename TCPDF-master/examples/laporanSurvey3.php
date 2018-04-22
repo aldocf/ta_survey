@@ -104,9 +104,9 @@ while ($survey->valid()) {
     $html = $html . "<td>  " . $survey->current()->getNamaSurvey() . "</td>";
     $html = $html . "<td>  " . $survey->current()->getDeskripsiSurvey() . "</td>";
     $html = $html . "<td>  " . $survey->current()->getTargetResponden() . "</td>";
-    $html = $html . "<td>  " . $survey->current()->getPeriodeSurvey() . "</td>";
-    $html = $html . "<td>  " . $survey->current()->getPeriodeSurveyAkhir() . "</td>";
-    $html = $html . "<td>  " . $survey->current()->getPeriodeSurveyAkhir() . "</td>";
+    $html = $html . "<td>" . date_format(date_create($survey->current()->getPeriodeSurvey()), 'd F Y') . "</td>";
+    $html = $html . "<td>" . date_format(date_create($survey->current()->getPeriodeSurveyAkhir()), 'd F Y') . "</td>";
+    $html = $html . "<td>  " . $survey->current()->getIsJawab() . "</td>";
     $html = $html . "</tr>";
     $i++;
     $survey->next();

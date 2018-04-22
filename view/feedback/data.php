@@ -50,7 +50,7 @@
                                     <tr>
                                         <td><?php echo $no; ?></td>
                                         <td><?php echo $data->current()->getUser()->getNama(); ?></td>
-                                        <td><?php echo $data->current()->getCreated(); ?></td>
+                                        <td><?php echo date_format(date_create($data->current()->getCreated()), "d F Y H:i"); ?></td>
                                         <td><?php echo $data->current()->getFeedback(); ?></td>
                                         <td></td>
                                     </tr>

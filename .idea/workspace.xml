@@ -2,65 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4469139f-9643-49a7-9b96-44d41355cae4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_berita.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanResponden1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanResponden2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanResponden3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_berita.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_pengguna.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_responden.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_survey.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/berita/all.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/berita/tanggal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/berita/user.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/pengguna.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/pengguna/role.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/pengguna/status.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/responden.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/responden/all.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/responden/jabatan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/responden/perusahaan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/survey.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/survey/all.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/survey/jumlah.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/survey/periode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/laporan/survey/status.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_jawaban.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/images/logo_old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanJawaban1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_jawaban.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/laporan/jawaban.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/laporan/jawaban/jawabanPDF.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_3.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita1.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanPembelian.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanPemesanan.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanPengiriman.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_berita.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_berita.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php" beforeDir="false" afterPath="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/LaporanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/LaporanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/BeritaDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/BeritaDao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/RespondenDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/RespondenDao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/SurveyDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/SurveyDao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/UserDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/UserDao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/laporan/berita.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/laporan/berita.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/laporan/berita/kategori.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/laporan/berita/kategori.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/feedback/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/feedback/data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/laporan/survey/all.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/laporan/survey/all.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/laporan/survey/jumlah.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/laporan/survey/jumlah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/laporan/survey/periode.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/laporan/survey/periode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/laporan/survey/status.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/laporan/survey/status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/survey/jawabanSurvey.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/survey/jawabanSurvey.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/survey/survey.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/survey/survey.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,11 +42,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="laporanSurvey1.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laporanSurvey2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laporanSurvey3.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="108" column="66" lean-forward="true" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laporanSurvey4.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="periode.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/laporan/survey/periode.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="105" column="122" selection-start-line="105" selection-start-column="122" selection-end-line="105" selection-end-column="122" />
             </state>
           </provider>
         </entry>
@@ -87,17 +91,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>question</find>
-      <find>questionSurvey</find>
-      <find>emptySurvey</find>
-      <find>insertsurvey</find>
       <find>updateBerita</find>
-      <find>jawabans</find>
       <find>home</find>
       <find>insertSurvey</find>
       <find>insertPertanyaan</find>
       <find>surveymem</find>
-      <find>jawabanSurvey</find>
       <find>surveyMember</find>
       <find>isisurvey</find>
       <find>isiResponden</find>
@@ -108,7 +106,6 @@
       <find>insertres</find>
       <find>usermem</find>
       <find>surveymember</find>
-      <find>table</find>
       <find>&lt;table&gt;</find>
       <find>thead</find>
       <find>&lt;table</find>
@@ -117,6 +114,13 @@
       <find>insertResponden</find>
       <find>survey</find>
       <find>inserts</find>
+      <find>jawabans</find>
+      <find>detailJawaban</find>
+      <find>this</find>
+      <find>jawabanSurvey</find>
+      <find>table</find>
+      <find>de</find>
+      <find>nama responden</find>
     </findStrings>
     <replaceStrings>
       <replace>logo</replace>
@@ -128,43 +132,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controller/FeedbackController.php" />
-        <option value="$PROJECT_DIR$/view/feedback/data.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanPembayaran.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_2.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_berita1.php" />
-        <option value="$PROJECT_DIR$/view/laporan/berita.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita3.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita2.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita1.php" />
-        <option value="$PROJECT_DIR$/dao/BeritaDao.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita4.php" />
         <option value="$PROJECT_DIR$/view/laporan/pengguna.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_pengguna.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php" />
         <option value="$PROJECT_DIR$/dao/UserDao.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna1.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna2.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna3.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna4.php" />
-        <option value="$PROJECT_DIR$/dao/RespondenDao.php" />
         <option value="$PROJECT_DIR$/view/laporan/responden.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_responden.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanResponden1.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanResponden2.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanResponden3.php" />
         <option value="$PROJECT_DIR$/view/laporan/berita/survey.php" />
         <option value="$PROJECT_DIR$/sidebar.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_survey.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php" />
         <option value="$PROJECT_DIR$/dao/SurveyDao.php" />
-        <option value="$PROJECT_DIR$/controller/LaporanController.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php" />
-        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php" />
         <option value="$PROJECT_DIR$/view/laporan/berita/all.php" />
         <option value="$PROJECT_DIR$/view/laporan/berita/kategori.php" />
         <option value="$PROJECT_DIR$/view/laporan/berita/tanggal.php" />
@@ -174,11 +159,30 @@
         <option value="$PROJECT_DIR$/view/laporan/responden/all.php" />
         <option value="$PROJECT_DIR$/view/laporan/responden/jabatan.php" />
         <option value="$PROJECT_DIR$/view/laporan/responden/perusahaan.php" />
+        <option value="$PROJECT_DIR$/dao/RespondenDao.php" />
+        <option value="$PROJECT_DIR$/view/laporan/jawaban.php" />
+        <option value="$PROJECT_DIR$/controller/LaporanController.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_jawaban.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanJawaban1.php" />
+        <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php" />
+        <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanPDF.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_berita.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_jawaban.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php" />
+        <option value="$PROJECT_DIR$/view/feedback/data.php" />
+        <option value="$PROJECT_DIR$/view/survey/jawabanSurvey.php" />
+        <option value="$PROJECT_DIR$/view/survey/survey.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/all.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/jumlah.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/periode.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/status.php" />
-        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php" />
+        <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php" />
       </list>
     </option>
   </component>
@@ -188,7 +192,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="476" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -227,46 +231,44 @@
             <path>
               <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
               <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="TCPDF-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="TCPDF-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="examples" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="TCPDF-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="examples" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="TCPDF-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="examples" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
               <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="berita" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="kategori_berita" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="feedback" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
               <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="laporan" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="laporan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="berita" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="laporan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pengguna" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="laporan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="responden" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
@@ -289,16 +291,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\panjul\ta_survey\TCPDF-master\examples\images" />
+      <recent name="C:\xampp\htdocs\panjul\ta_survey\view\laporan\jawaban" />
+      <recent name="C:\xampp\htdocs\panjul\ta_survey\TCPDF-master\examples" />
+      <recent name="C:\xampp\htdocs\panjul\ta_survey\TCPDF-master\examples\config" />
+      <recent name="C:\xampp\htdocs\panjul\ta_survey\view\laporan" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\panjul\ta_survey\view\laporan" />
       <recent name="C:\xampp\htdocs\panjul\ta_survey" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\panjul\ta_survey\TCPDF-master\examples" />
-      <recent name="C:\xampp\htdocs\panjul\ta_survey\view\laporan\survey" />
-      <recent name="C:\xampp\htdocs\panjul\ta_survey\TCPDF-master\examples\config" />
-      <recent name="C:\xampp\htdocs\panjul\ta_survey\view\laporan\berita" />
-      <recent name="C:\xampp\htdocs\panjul\ta_survey\view\laporan\responden" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -362,7 +364,9 @@
       <workItem from="1524200363165" duration="1235000" />
       <workItem from="1524203724778" duration="5186000" />
       <workItem from="1524220568664" duration="1158000" />
-      <workItem from="1524221751655" duration="5160000" />
+      <workItem from="1524221751655" duration="6409000" />
+      <workItem from="1524379527242" duration="7908000" />
+      <workItem from="1524389876536" duration="774000" />
     </task>
     <task id="LOCAL-00001" summary="register">
       <created>1521989115334</created>
@@ -389,7 +393,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167736000" />
+    <option name="totallyTimeSpent" value="177750000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -401,7 +405,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2672035" />
@@ -451,83 +455,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanBerita3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_berita.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanBerita2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanBerita1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanBerita4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/BeritaDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="314" column="38" selection-start-line="314" selection-start-column="20" selection-end-line="314" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/member/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="79" column="36" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="79" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/admin/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="69" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_pengguna.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/pengguna.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="81" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanPengguna1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -563,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_responden.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -598,37 +518,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/RespondenDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4488">
-          <caret line="269" column="45" selection-start-line="269" selection-start-column="28" selection-end-line="269" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/survey/survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="65" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/UserDao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5967">
           <caret line="375" column="144" selection-start-line="375" selection-start-column="144" selection-end-line="375" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
-          <folding>
-            <element signature="n#insertPertanyaan#0;n#SurveyController#0;n#!!top" />
-            <element signature="n#isiSurvey#0;n#SurveyController#0;n#!!top" />
-            <element signature="n#jawabanSurvey#0;n#SurveyController#0;n#!!top" />
-            <element signature="n#detailJawaban#0;n#SurveyController#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -639,38 +532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/laporan/survey.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="35" column="143" selection-start-line="35" selection-start-column="143" selection-end-line="35" selection-end-column="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="77" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -681,49 +546,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/SurveyDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="337" column="48" selection-start-line="337" selection-start-column="48" selection-end-line="337" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="106" column="85" selection-start-line="106" selection-start-column="85" selection-end-line="106" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/LaporanController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="249" column="47" selection-start-line="249" selection-start-column="47" selection-end-line="249" selection-end-column="47" />
-          <folding>
-            <element signature="n#beritaByKategori#0;n#LaporanController#0;n#!!top" />
-            <element signature="n#beritaByUser#0;n#LaporanController#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/laporan/berita.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="37" column="76" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/berita/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="42" column="118" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="118" />
         </state>
       </provider>
     </entry>
@@ -783,38 +609,206 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dao/RespondenDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="288" column="41" lean-forward="true" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/SurveyDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="171" column="20" selection-start-line="171" selection-start-column="20" selection-end-line="171" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/jawaban.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" column="137" lean-forward="true" selection-start-line="35" selection-start-column="137" selection-end-line="35" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="50" column="71" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/LaporanController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="261" column="30" selection-start-line="261" selection-start-column="20" selection-end-line="261" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/berita/all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="39" column="95" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_jawaban.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1159">
+          <caret line="538" column="9" selection-start-line="480" selection-start-column="8" selection-end-line="538" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/detailJawaban.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" selection-start-line="30" selection-end-line="30" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanJawaban1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-668">
+          <caret line="60" selection-start-line="60" selection-end-line="61" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="71" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/jawaban/jawabanPDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_berita.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_jawaban.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_responden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_pengguna.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/survey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/survey/jawabanSurvey.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="56" column="129" selection-start-line="56" selection-start-column="129" selection-end-line="56" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/feedback/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="52" column="118" selection-start-line="52" selection-start-column="118" selection-end-line="52" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/view/laporan/survey/all.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="118" />
+        <state relative-caret-position="204">
+          <caret line="78" column="118" selection-start-line="78" selection-start-column="118" selection-end-line="78" selection-end-column="118" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/laporan/survey/jumlah.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="59" column="122" selection-start-line="59" selection-start-column="122" selection-end-line="59" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/survey/periode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="67" column="122" selection-start-line="67" selection-start-column="122" selection-end-line="67" selection-end-column="122" />
+          <caret line="98" column="122" selection-start-line="98" selection-start-column="122" selection-end-line="98" selection-end-column="122" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/laporan/survey/status.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1633">
-          <caret line="97" column="122" selection-start-line="97" selection-start-column="122" selection-end-line="97" selection-end-column="122" />
+        <state relative-caret-position="440">
+          <caret line="135" column="122" selection-start-line="135" selection-start-column="122" selection-end-line="135" selection-end-column="122" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/view/laporan/survey/periode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="105" column="122" selection-start-line="105" selection-start-column="122" selection-end-line="105" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="108" column="66" lean-forward="true" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
         </state>
       </provider>
     </entry>

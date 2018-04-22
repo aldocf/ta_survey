@@ -252,4 +252,17 @@ class LaporanController
     }
 
     //endregion
+
+    //region JAWABAN
+    public function indexJawaban()
+    {
+        require_once './view/laporan/jawaban.php';
+    }
+
+    public function jawabanPDF()
+    {
+        $data = $this->surveyDao->getAllSurvey()->getIterator();
+        require_once './view/laporan/jawaban/jawabanPDF.php';
+    }
+    //endregion
 }
