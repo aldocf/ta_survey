@@ -122,7 +122,6 @@ while ($pertanyaan->valid()) {
 <div class="col-md-12" style="margin-top: 5px;  margin-left: -12px">
     <span>Tanggal Laporan : <?php echo date("l, d F Y");?></span>
 </div>
-
 <div class="panel-content" style="margin-top: 10px">
     <div class="row">
         <div class="col-md-12" style="margin-bottom: 40px; margin-left: 30px">
