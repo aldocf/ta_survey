@@ -65,7 +65,7 @@ class JawabanDao
         $data = new ArrayObject();
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT * FROM jawaban JOIN responden ON responden.id_responden = jawaban.id_responden JOIN user ON user.id_user = responden.id_user WHERE jawaban.id_pertanyaan = ?";
+            $sql = "SELECT * FROM jawaban LEFT JOIN responden ON responden.id_responden = jawaban.id_responden LEFT JOIN user ON user.id_user = responden.id_user LEFT JOIN baris ON baris.id_baris = jawaban.id_baris WHERE jawaban.id_pertanyaan = ?";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $id);
             $stmt->execute();
@@ -78,6 +78,7 @@ class JawabanDao
                 $jawaban = new Jawaban();
                 $jawaban->setIsiJawaban($row['isi_jawaban']);
                 $jawaban->setResponden($responden);
+                $jawaban->setIdBaris($row['isi_baris']);
 
                 $data->append($jawaban);
             }

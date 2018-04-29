@@ -530,7 +530,7 @@ class SurveyController
                 $jawaban = $this->jawabanDao->getJawaban($pertanyaan->current()->getIdPertanyaan())->getIterator();
 
                 while ($jawaban->valid()) {
-                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>' . $jawaban->current()->getIsiJawaban() . '</td></tr>';
+                    $soal = $soal . '<tr><td>' . $jawaban->current()->getResponden()->getIdUser()->getNama() . '</td><td>[' . $jawaban->current()->getIdBaris() . "] " . $jawaban->current()->getIsiJawaban() . '</td></tr>';
                     $jawaban->next();
                 }
                 $soal = $soal . '</tbody></table></div></div></div>';
