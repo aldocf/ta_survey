@@ -261,12 +261,12 @@ class LaporanController
 
     public function jawabanPDF()
     {
-        $data = $this->surveyDao->getAllSurvey()->getIterator();
+        $data = $this->surveyDao->getAllCountRespondenSurvey()->getIterator();
         require_once './view/laporan/jawaban/jawabanPDF.php';
     }
     public function jawabanCSV()
     {
-        $data = $this->surveyDao->getAllSurvey()->getIterator();
+        $data = $this->surveyDao->getAllCountRespondenSurvey()->getIterator();
         require_once './view/laporan/jawaban/jawabanCSV.php';
     }
     //endregion

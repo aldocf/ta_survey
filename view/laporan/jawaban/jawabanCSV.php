@@ -56,7 +56,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Survey</th>
-                                    <th>Deskripsi Survey</th>
+                                    <th>Jumlah Responden</th>
                                     <th>Target Responden</th>
                                     <th>Periode Survey</th>
                                     <th>Periode Survey Akhir</th>
