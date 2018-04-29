@@ -76,7 +76,7 @@
                                         <td><?php echo date_format(date_create($data->current()->getPeriodeSurvey()), "d F Y"); ?></td>
                                         <td><?php echo date_format(date_create($data->current()->getPeriodeSurveyAkhir()), "d F Y"); ?></td>
                                         <td>
-                                            <a href="./view/laporan/jawaban/jawabanSurveyPDF.php?id=<?php echo $data->current()->getIdSurvey(); ?>" class="btn btn-warning btn-sm" target="_blank">Export to CSV</a>
+                                            <a href="./view/laporan/jawaban/jawabanSurveyCSV.php?id=<?php echo $data->current()->getIdSurvey(); ?>" class="btn btn-warning btn-sm" target="_blank">Export to CSV</a>
                                         </td>
                                     </tr>
                                     <?php

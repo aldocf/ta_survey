@@ -33,6 +33,33 @@ class JawabanDao
         return $result;
     }
 
+    public function insertJawabanMatrix(Jawaban $data)
+    {
+        $result = FALSE;
+        $responden = $data->getResponden();
+        $pertanyaan = $data->getPertanyaan();
+        $isi = $data->getIsiJawaban();
+        $baris = $data->getIdBaris();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $conn->beginTransaction();
+            $sql = "INSERT INTO jawaban(id_responden, id_pertanyaan, isi_jawaban, id_baris) VALUES(?,?,?,?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(1, $responden);
+            $stmt->bindParam(2, $pertanyaan);
+            $stmt->bindParam(3, $isi);
+            $stmt->bindParam(4, $baris);
+            $stmt->execute();
+            $conn->commit();
+            $result = TRUE;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        return $result;
+    }
+
     public function getJawaban($id)
     {
         $data = new ArrayObject();
@@ -61,5 +88,7 @@ class JawabanDao
         $conn = null;
         return $data;
     }
+
+
 
 }

@@ -345,4 +345,60 @@ class SurveyDao
         $conn = null;
         return $data;
     }
+
+    public function getAllRespondenFromSurvey($id)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT DISTINCT(responden.id_responden) FROM jawaban LEFT JOIN pertanyaan on pertanyaan.id_pertanyaan = jawaban.id_pertanyaan LEFT JOIN baris ON baris.id_pertanyaan = pertanyaan.id_pertanyaan LEFT JOIN responden ON responden.id_responden = jawaban.id_responden LEFT JOIN survey ON survey.id_survey = pertanyaan.id_survey WHERE survey.id_survey = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $responden = new Responden();
+                $responden->setIdResponden($row['id_responden']);
+                $data->append($responden);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
+
+    public function getAllJawabanByResponden($survey, $responden)
+    {
+        $data = new ArrayObject();
+        try {
+            $conn = Koneksi::get_koneksi();
+            $sql = "SELECT (@idp := pertanyaan.id_pertanyaan) AS 'id_pertanyaan', pertanyaan.pertanyaan, jawaban.isi_jawaban, (@idb := jawaban.id_baris) AS 'id_baris', IF(jawaban.id_baris IS NOT NULL, (SELECT baris.isi_baris FROM baris WHERE id_baris = @idb), NULL) AS 'baris' FROM jawaban LEFT JOIN pertanyaan on pertanyaan.id_pertanyaan = jawaban.id_pertanyaan LEFT JOIN responden ON responden.id_responden = jawaban.id_responden LEFT JOIN survey ON survey.id_survey = pertanyaan.id_survey WHERE survey.id_survey = ? AND responden.id_responden = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $survey);
+            $stmt->bindParam(2, $responden);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                $pertanyaan = new Pertanyaan();
+                $pertanyaan->setIdPertanyaan($row['id_pertanyaan']);
+                $pertanyaan->setPertanyaan($row['pertanyaan']);
+
+                $baris = new Baris();
+                $baris->setIdBaris($row['id_baris']);
+                $baris->setIsiBaris($row['baris']);
+
+                $jawaban = new Jawaban();
+                $jawaban->setIsiJawaban($row['isi_jawaban']);
+                $jawaban->setPertanyaan($pertanyaan);
+                $jawaban->setIdBaris($baris);
+
+                $data->append($jawaban);
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $conn = null;
+        return $data;
+    }
 }

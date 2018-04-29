@@ -453,7 +453,8 @@ class SurveyController
                         foreach ($baris as $b) {
                             if ($countMatrix != 0) {
                                 $jawaban->setIsiJawaban($_POST['soal' . $pertanyaan->current()->getNomorPertanyaan() . 'matrix' . $countMatrix]);
-                                $this->jawabanDao->insertJawaban($jawaban);
+                                $jawaban->setIdBaris($b->getIdBaris());
+                                $this->jawabanDao->insertJawabanMatrix($jawaban);
                             }
                             $countMatrix++;
                         }

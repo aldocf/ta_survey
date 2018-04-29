@@ -11,6 +11,7 @@ class Jawaban
     private $responden;
     private $pertanyaan;
     private $isiJawaban;
+    private $idBaris;
 
     /**
      * @return mixed
@@ -58,6 +59,22 @@ class Jawaban
     public function setIsiJawaban($isiJawaban): void
     {
         $this->isiJawaban = $isiJawaban;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdBaris()
+    {
+        return $this->idBaris;
+    }
+
+    /**
+     * @param mixed $idBaris
+     */
+    public function setIdBaris($idBaris): void
+    {
+        $this->idBaris = $idBaris;
     }
 
 
