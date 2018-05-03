@@ -268,7 +268,7 @@ class SurveyDao
             } else if ($id == 1) {
                 $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE CURRENT_DATE() BETWEEN survey.periode_survey AND survey.periode_survey_akhir";
             } else {
-                $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey_akhir > CURRENT_DATE()";
+                $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey_akhir < CURRENT_DATE()";
             }
             $stmt = $conn->prepare($sql);
             $stmt->execute();
