@@ -11,6 +11,8 @@ class Responden
     private $jabatan;
     private $nama_perusahaan;
     private $id_user;
+    private $pendidikan;
+    private $lamaBekerja;
 
     /**
      * @return mixed
@@ -75,5 +77,38 @@ class Responden
     {
         $this->id_user = $id_user;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPendidikan()
+    {
+        return $this->pendidikan;
+    }
+
+    /**
+     * @param mixed $pendidikan
+     */
+    public function setPendidikan($pendidikan): void
+    {
+        $this->pendidikan = $pendidikan;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLamaBekerja()
+    {
+        return $this->lamaBekerja;
+    }
+
+    /**
+     * @param mixed $lamaBekerja
+     */
+    public function setLamaBekerja($lamaBekerja): void
+    {
+        $this->lamaBekerja = $lamaBekerja;
+    }
+
 
 }

@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4469139f-9643-49a7-9b96-44d41355cae4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/controller/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SurveyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/JawabanDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/JawabanDao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img_berita/2017-11-14 03.38.04 1 Update.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img_berita/W1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img_berita/W3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/RespondenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/RespondenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/RespondenDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/RespondenDao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/SurveyDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/SurveyDao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Responden.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Responden.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/isiDataResponden.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/isiDataResponden.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/member/insertResponden.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/member/insertResponden.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/user/member/responden.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/user/member/responden.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,44 +30,34 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
-              <caret line="115" column="35" lean-forward="true" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
+              <caret line="220" column="35" lean-forward="true" selection-start-line="220" selection-start-column="35" selection-end-line="220" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SurveyController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
+      <file leaf-file-name="LaporanController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/LaporanController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="532" column="164" lean-forward="true" selection-start-line="532" selection-start-column="164" selection-end-line="532" selection-end-column="164" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="227" column="51" lean-forward="true" selection-start-line="227" selection-start-column="51" selection-end-line="227" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JawabanDao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/JawabanDao.php">
+      <file leaf-file-name="SurveyDao.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao/SurveyDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
+            <state relative-caret-position="204">
+              <caret line="297" column="20" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="periode.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/laporan/survey/periode.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="48" column="78" lean-forward="true" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -67,10 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>surveymem</find>
-      <find>surveyMember</find>
-      <find>isisurvey</find>
-      <find>isiResponden</find>
       <find>dataBerita</find>
       <find>insertper</find>
       <find>insertBerita</find>
@@ -83,7 +78,6 @@
       <find>&lt;table</find>
       <find>$data</find>
       <find>berita</find>
-      <find>insertResponden</find>
       <find>survey</find>
       <find>inserts</find>
       <find>jawabans</find>
@@ -97,6 +91,11 @@
       <find>laporanJawabanCSV</find>
       <find>jawabansurv</find>
       <find>detailja</find>
+      <find>laporanSurveyStatus</find>
+      <find>insertResponden</find>
+      <find>dataresp</find>
+      <find>isiResponden</find>
+      <find>laporanSurveyPeriode</find>
     </findStrings>
     <replaceStrings>
       <replace>logo</replace>
@@ -108,14 +107,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/laporan/berita/tanggal.php" />
-        <option value="$PROJECT_DIR$/view/laporan/berita/user.php" />
-        <option value="$PROJECT_DIR$/view/laporan/pengguna/role.php" />
         <option value="$PROJECT_DIR$/view/laporan/pengguna/status.php" />
         <option value="$PROJECT_DIR$/view/laporan/responden/all.php" />
         <option value="$PROJECT_DIR$/view/laporan/responden/jabatan.php" />
         <option value="$PROJECT_DIR$/view/laporan/responden/perusahaan.php" />
-        <option value="$PROJECT_DIR$/dao/RespondenDao.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_jawaban.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanJawaban1.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/config/tcpdf_config_alt_berita.php" />
@@ -128,7 +123,6 @@
         <option value="$PROJECT_DIR$/view/survey/survey.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/all.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/jumlah.php" />
-        <option value="$PROJECT_DIR$/view/laporan/survey/periode.php" />
         <option value="$PROJECT_DIR$/view/laporan/survey/status.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita1.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanBerita2.php" />
@@ -145,20 +139,25 @@
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey2.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey3.php" />
         <option value="$PROJECT_DIR$/TCPDF-master/examples/laporanSurvey4.php" />
-        <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php" />
         <option value="$PROJECT_DIR$/view/laporan/jawaban.php" />
-        <option value="$PROJECT_DIR$/view/user/member/responden.php" />
-        <option value="$PROJECT_DIR$/controller/RespondenController.php" />
         <option value="$PROJECT_DIR$/sidebar.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/model/Jawaban.php" />
-        <option value="$PROJECT_DIR$/dao/SurveyDao.php" />
         <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyCSV.php" />
         <option value="$PROJECT_DIR$/controller/LaporanController.php" />
         <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanCSV.php" />
         <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanPDF.php" />
         <option value="$PROJECT_DIR$/dao/JawabanDao.php" />
         <option value="$PROJECT_DIR$/controller/SurveyController.php" />
+        <option value="$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/model/Responden.php" />
+        <option value="$PROJECT_DIR$/view/user/member/insertResponden.php" />
+        <option value="$PROJECT_DIR$/dao/RespondenDao.php" />
+        <option value="$PROJECT_DIR$/view/user/member/responden.php" />
+        <option value="$PROJECT_DIR$/view/user/isiDataResponden.php" />
+        <option value="$PROJECT_DIR$/controller/RespondenController.php" />
+        <option value="$PROJECT_DIR$/view/laporan/survey/periode.php" />
+        <option value="$PROJECT_DIR$/dao/SurveyDao.php" />
       </list>
     </option>
   </component>
@@ -182,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,7 +192,7 @@
             <path>
               <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
               <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="utility" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="model" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
@@ -210,20 +210,12 @@
               <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="laporan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="jawaban" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ta_survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ta_survey" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="laporan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pengguna" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="survey" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -315,7 +307,10 @@
       <workItem from="1524949339521" duration="921000" />
       <workItem from="1524950294338" duration="2158000" />
       <workItem from="1524952744935" duration="1171000" />
-      <workItem from="1525003182151" duration="3041000" />
+      <workItem from="1525003182151" duration="3651000" />
+      <workItem from="1525316837561" duration="904000" />
+      <workItem from="1525745725870" duration="2646000" />
+      <workItem from="1525748401373" duration="245000" />
     </task>
     <task id="LOCAL-00001" summary="register">
       <created>1521989115334</created>
@@ -342,7 +337,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195986000" />
+    <option name="totallyTimeSpent" value="200391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,34 +399,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/laporan/responden/jabatan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="72" column="125" selection-start-line="72" selection-start-column="125" selection-end-line="72" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/responden/perusahaan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="72" column="125" selection-start-line="72" selection-start-column="125" selection-end-line="72" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/RespondenDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="288" column="41" lean-forward="true" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/berita/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="95" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TCPDF-master/examples/tcpdf_include_jawaban.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -499,20 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="98" column="122" selection-start-line="98" selection-start-column="122" selection-end-line="98" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/survey/status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="135" column="122" selection-start-line="135" selection-start-column="122" selection-end-line="135" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/survey/periode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="105" column="122" selection-start-line="105" selection-start-column="122" selection-end-line="105" selection-end-column="122" />
         </state>
       </provider>
     </entry>
@@ -656,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/RespondenController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2431">
-          <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -670,31 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/user/member/responden.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Jawaban.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="74" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/SurveyDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6613">
-          <caret line="394" column="38" selection-start-line="394" selection-start-column="38" selection-end-line="394" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -714,11 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-          <folding>
-            <element signature="e#664#685#0#PHP" />
-            <element signature="e#2175#2196#0#PHP" />
-            <element signature="e#3772#3793#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -729,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/LaporanController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="268" column="78" selection-start-line="268" selection-start-column="78" selection-end-line="268" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/laporan/jawaban/jawabanPDF.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -743,43 +656,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="115" column="35" lean-forward="true" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/JawabanDao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="1275">
           <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/SurveyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="532" column="164" lean-forward="true" selection-start-line="532" selection-start-column="164" selection-end-line="532" selection-end-column="164" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="8959">
+          <caret line="532" column="164" selection-start-line="532" selection-start-column="164" selection-end-line="532" selection-end-column="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/jawaban/jawabanSurveyPDF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="149" selection-start-line="66" selection-start-column="149" selection-end-line="66" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/survey/status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="135" column="122" selection-start-line="135" selection-start-column="122" selection-end-line="135" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Responden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="112" column="4" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/member/responden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="61" column="99" selection-start-line="61" selection-start-column="99" selection-end-line="61" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/member/insertResponden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="93" column="111" lean-forward="true" selection-start-line="75" selection-start-column="44" selection-end-line="93" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user/isiDataResponden.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="232" column="121" selection-start-line="232" selection-start-column="121" selection-end-line="232" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/RespondenDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/RespondenController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="134" column="67" selection-start-line="134" selection-start-column="67" selection-end-line="134" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="220" column="35" lean-forward="true" selection-start-line="220" selection-start-column="35" selection-end-line="220" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/laporan/survey/periode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="48" column="78" lean-forward="true" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/LaporanController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="227" column="51" lean-forward="true" selection-start-line="227" selection-start-column="51" selection-end-line="227" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/SurveyDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="297" column="20" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="100" />
         </state>
       </provider>
     </entry>

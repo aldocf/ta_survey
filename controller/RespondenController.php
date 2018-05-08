@@ -47,6 +47,8 @@ class RespondenController
                         $responden_new->setJabatan($_POST['jabatan']);
                         $responden_new->setNamaPerusahaan($_POST['nmPerusahaan']);
                         $responden_new->setIdUser($newUser->getIdUser());
+                        $responden_new->setPendidikan($_POST['pendidikan']);
+                        $responden_new->setLamaBekerja($_POST['lama_bekerja']);
                         $this->respondenDao->insert_responden($responden_new);
                         header("location:index.php?menu=insertResponden&msg=4");
 
@@ -81,6 +83,8 @@ class RespondenController
             $resp = $this->respondenDao->getResponden($_SESSION['id_user']);
             $jabatan = $resp->getJabatan();
             $nmPerusahaan = $resp->getNamaPerusahaan();
+            $pendidikan = $resp->getPendidikan();
+            $lamaBekerja = $resp->getLamaBekerja();
         } else {
             if (!isset($_POST['jabatan'])) {
                 $jabatan = "";
@@ -107,6 +111,8 @@ class RespondenController
             $responden_new = new Responden();
             $responden_new->setJabatan($jabatan);
             $responden_new->setNamaPerusahaan($nmPerusahaan);
+            $responden_new->setPendidikan($_POST['pendidikan']);
+            $responden_new->setLamaBekerja($_POST['lama_bekerja']);
             $responden_new->setIdUser($_SESSION['id_user']);
 
             $this->userDao->updateMember($user);
@@ -125,6 +131,8 @@ class RespondenController
             $responden_new = new Responden();
             $responden_new->setJabatan($_POST['jabatan']);
             $responden_new->setNamaPerusahaan($_POST['nmPerusahaan']);
+            $responden_new->setPendidikan($_POST['pendidikan']);
+            $responden_new->setLamaBekerja($_POST['lama_bekerja']);
             $responden_new->setIdUser($_SESSION['id_user']);
 
             $this->userDao->updateMember($user);

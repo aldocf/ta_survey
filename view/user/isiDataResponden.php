@@ -71,19 +71,21 @@
                                                         <label>Nama</label>
                                                         <input type="text" class="form-control form-white"
                                                                placeholder="Nama"
-                                                               name="nama" required value="<?php echo $nama; ?>">
+                                                               name="nama" required value="<?php echo $nama; ?>"
+                                                               readonly>
                                                     </div>
                                                     <div class="col-md-12 m-b-10">
                                                         <label>Email</label>
                                                         <input type="email" class="form-control form-white"
                                                                placeholder="Email"
-                                                               name="email" required value="<?php echo $email; ?>">
+                                                               name="email" required value="<?php echo $email; ?>"
+                                                               readonly>
                                                     </div>
                                                     <div class="col-md-12 m-b-10">
                                                         <label>Nomor Telepon</label>
                                                         <input type="text" class="form-control form-white"
                                                                placeholder="Nomor Telepon" name="telepon" required
-                                                               value="<?php echo $telepon; ?>">
+                                                               value="<?php echo $telepon; ?>" readonly>
                                                     </div>
                                                     <div class="col-md-12 m-b-10">
                                                         <label>Jabatan</label>
@@ -96,11 +98,28 @@
                                                                placeholder="Nama Perusahaan" name="nmPerusahaan"
                                                                required>
                                                     </div>
-                                                    <!--                                                <div class="col-md-12 m-b-10">-->
-                                                    <!--                                                    <input type="checkbox" class="form-control form-white"-->
-                                                    <!--                                                           name="cekResponden" required>saya setuju untuk mengupdate-->
-                                                    <!--                                                    status menjadi responden<br>-->
-                                                    <!--                                                </div>-->
+                                                    <div class="col-md-12 m-b-10">
+                                                        <label>Pendidikan</label>
+                                                        <select name="pendidikan" class="form-control form-white"
+                                                                required>
+                                                            <option value="-" selected disabled>- PILIH PENDIDIKAN -
+                                                            </option>
+                                                            <option value="SD">SD</option>
+                                                            <option value="SMP">SMP</option>
+                                                            <option value="SMA">SMA</option>
+                                                            <option value="D1">D1</option>
+                                                            <option value="D2">D2</option>
+                                                            <option value="D3">D3</option>
+                                                            <option value="S1">S1</option>
+                                                            <option value="S2">S2</option>
+                                                            <option value="S3">S3</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-12 m-b-10">
+                                                        <label>Lama Bekerja (Dalam Tahun)</label>
+                                                        <input type="number" class="form-control form-white"
+                                                               placeholder="Lama Bekerja" name="lama_bekerja" required>
+                                                    </div>
                                                     <div class="col-md-12 m-t-10">
                                                         <button class="btn btn-primary" name="btnInsert">Insert Data
                                                         </button>
@@ -157,40 +176,75 @@
                                                                 <div class="form-group">
                                                                     <div class="col-md-12 m-b-10">
                                                                         <label>Nama</label>
-                                                                        <input type="text" class="form-control form-white"
+                                                                        <input type="text"
+                                                                               class="form-control form-white"
                                                                                placeholder="Nama"
-                                                                               name="nama" required value="<?php echo $nama; ?>">
+                                                                               name="nama" required
+                                                                               value="<?php echo $nama; ?>">
                                                                     </div>
                                                                     <div class="col-md-12 m-b-10">
                                                                         <label>Email</label>
-                                                                        <input type="email" class="form-control form-white"
+                                                                        <input type="email"
+                                                                               class="form-control form-white"
                                                                                placeholder="Email"
-                                                                               name="email" required value="<?php echo $email; ?>">
+                                                                               name="email" required
+                                                                               value="<?php echo $email; ?>">
                                                                     </div>
                                                                     <div class="col-md-12 m-b-10">
                                                                         <label>Nomor Telepon</label>
-                                                                        <input type="text" class="form-control form-white"
-                                                                               placeholder="Nomor Telepon" name="telepon" required
+                                                                        <input type="text"
+                                                                               class="form-control form-white"
+                                                                               placeholder="Nomor Telepon"
+                                                                               name="telepon" required
                                                                                value="<?php echo $telepon; ?>">
                                                                     </div>
                                                                     <div class="col-md-12 m-b-10">
                                                                         <label>Jabatan</label>
-                                                                        <input type="text" class="form-control form-white"
-                                                                               placeholder="Jabatan" name="jabatan" required value="<?php echo $jabatan;?>">
+                                                                        <input type="text"
+                                                                               class="form-control form-white"
+                                                                               placeholder="Jabatan" name="jabatan"
+                                                                               required value="<?php echo $jabatan; ?>">
                                                                     </div>
                                                                     <div class="col-md-12 m-b-10">
                                                                         <label>Nama Perusahaan</label>
-                                                                        <input type="text" class="form-control form-white"
-                                                                               placeholder="Nama Perusahaan" name="nmPerusahaan"
-                                                                               required value="<?php echo $nmPerusahaan;?>">
+                                                                        <input type="text"
+                                                                               class="form-control form-white"
+                                                                               placeholder="Nama Perusahaan"
+                                                                               name="nmPerusahaan"
+                                                                               required
+                                                                               value="<?php echo $nmPerusahaan; ?>">
                                                                     </div>
-                                                                    <!--                                                <div class="col-md-12 m-b-10">-->
-                                                                    <!--                                                    <input type="checkbox" class="form-control form-white"-->
-                                                                    <!--                                                           name="cekResponden" required>saya setuju untuk mengupdate-->
-                                                                    <!--                                                    status menjadi responden<br>-->
-                                                                    <!--                                                </div>-->
+                                                                    <div class="col-md-12 m-b-10">
+                                                                        <label>Pendidikan</label>
+                                                                        <select name="pendidikan"
+                                                                                class="form-control form-white"
+                                                                                required>
+                                                                            <option value="-" selected disabled>- PILIH
+                                                                                PENDIDIKAN -
+                                                                            </option>
+                                                                            <option value="SD"<?php if($pendidikan == "SD")echo "selected"?>>SD</option>
+                                                                            <option value="SMP"<?php if($pendidikan == "SMP")echo "selected"?>>SMP</option>
+                                                                            <option value="SMA"<?php if($pendidikan == "SMA")echo "selected"?>>SMA</option>
+                                                                            <option value="D1"<?php if($pendidikan == "D1")echo "selected"?>>D1</option>
+                                                                            <option value="D2"<?php if($pendidikan == "D2")echo "selected"?>>D2</option>
+                                                                            <option value="D3"<?php if($pendidikan == "D3")echo "selected"?>>D3</option>
+                                                                            <option value="S1"<?php if($pendidikan == "S1")echo "selected"?>>S1</option>
+                                                                            <option value="S2"<?php if($pendidikan == "S2")echo "selected"?>>S2</option>
+                                                                            <option value="S3"<?php if($pendidikan == "S3")echo "selected"?>>S3</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-12 m-b-10">
+                                                                        <label>Lama Bekerja (Dalam Tahun)</label>
+                                                                        <input type="number"
+                                                                               class="form-control form-white"
+                                                                               placeholder="Lama Bekerja"
+                                                                               name="lama_bekerja"
+                                                                               value="<?php echo $lamaBekerja; ?>"
+                                                                               required>
+                                                                    </div>
                                                                     <div class="col-md-12 m-t-10">
-                                                                        <button class="btn btn-primary" name="btnUpdate">Update Data
+                                                                        <button class="btn btn-primary"
+                                                                                name="btnUpdate">Update Data
                                                                         </button>
                                                                     </div>
                                                                 </div>

@@ -18,13 +18,17 @@ class RespondenDao
             $jabatan = $responden->getJabatan();
             $nama_perusahaan = $responden->getNamaPerusahaan();
             $id_user = $responden->getIdUser();
+            $pendidikan = $responden->getPendidikan();
+            $lamaBekerja = $responden->getLamaBekerja();
 
-            $query = "INSERT INTO responden (jabatan,nama_perusahaan,id_user)
-                  VALUES (?,?,?)";
+            $query = "INSERT INTO responden (jabatan,nama_perusahaan,id_user, pendidikan, lama_bekerja)
+                  VALUES (?,?,?,?,?)";
             $stmt = $conn->prepare($query);
             $stmt->bindParam(1, $jabatan);
             $stmt->bindParam(2, $nama_perusahaan);
             $stmt->bindParam(3, $id_user);
+            $stmt->bindParam(4, $pendidikan);
+            $stmt->bindParam(5, $lamaBekerja);
             $result = $stmt->execute();
 
             $conn->commit(); //untuk proses Insert, Update, Delete
@@ -50,6 +54,8 @@ class RespondenDao
             $responden->setIdResponden($row['id_responden']);
             $responden->setJabatan($row['jabatan']);
             $responden->setNamaPerusahaan($row['nama_perusahaan']);
+            $responden->setPendidikan($row['pendidikan']);
+            $responden->setLamaBekerja($row['lama_bekerja']);
             $responden->setIdUser($row['id_user']);
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -109,15 +115,19 @@ class RespondenDao
         $id = $data->getIdUser();
         $jabatan = $data->getJabatan();
         $namaPerusahaan = $data->getNamaPerusahaan();
+        $pendidikan = $data->getPendidikan();
+        $lamaBekerja = $data->getLamaBekerja();
         try {
             $conn = Koneksi::get_koneksi();
             $conn->beginTransaction();
-            $sql = "UPDATE responden SET jabatan=?, nama_perusahaan=? WHERE id_user=?";
+            $sql = "UPDATE responden SET jabatan=?, nama_perusahaan=?, pendidikan=?, lama_bekerja=? WHERE id_user=?";
             $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(1, $jabatan);
             $stmt->bindParam(2, $namaPerusahaan);
-            $stmt->bindParam(3, $id);
+            $stmt->bindParam(3, $pendidikan);
+            $stmt->bindParam(4, $lamaBekerja);
+            $stmt->bindParam(5, $id);
             $stmt->execute();
             $conn->commit();
             $result = TRUE;
@@ -147,6 +157,8 @@ class RespondenDao
                 $responden->setIdResponden($row['id_responden']);
                 $responden->setJabatan($row['jabatan']);
                 $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setPendidikan($row['pendidikan']);
+                $responden->setLamaBekerja($row['lama_bekerja']);
                 $responden->setIdUser($user);
 
                 $data->append($responden);
@@ -178,6 +190,8 @@ class RespondenDao
                 $responden->setIdResponden($row['id_responden']);
                 $responden->setJabatan($row['jabatan']);
                 $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setPendidikan($row['pendidikan']);
+                $responden->setLamaBekerja($row['lama_bekerja']);
                 $responden->setIdUser($user);
 
                 $data->append($responden);
@@ -210,6 +224,8 @@ class RespondenDao
                 $responden->setIdResponden($row['id_responden']);
                 $responden->setJabatan($row['jabatan']);
                 $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setPendidikan($row['pendidikan']);
+                $responden->setLamaBekerja($row['lama_bekerja']);
                 $responden->setIdUser($user);
 
                 $data->append($responden);
@@ -242,6 +258,8 @@ class RespondenDao
                 $responden->setIdResponden($row['id_responden']);
                 $responden->setJabatan($row['jabatan']);
                 $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setPendidikan($row['pendidikan']);
+                $responden->setLamaBekerja($row['lama_bekerja']);
                 $responden->setIdUser($user);
 
                 $data->append($responden);
@@ -268,6 +286,8 @@ class RespondenDao
                 $responden->setIdResponden($row['id_responden']);
                 $responden->setJabatan($row['jabatan']);
                 $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setPendidikan($row['pendidikan']);
+                $responden->setLamaBekerja($row['lama_bekerja']);
                 $responden->setIdUser($row['id_user']);
 
                 $data->append($responden);
@@ -294,6 +314,8 @@ class RespondenDao
                 $responden->setIdResponden($row['id_responden']);
                 $responden->setJabatan($row['jabatan']);
                 $responden->setNamaPerusahaan($row['nama_perusahaan']);
+                $responden->setPendidikan($row['pendidikan']);
+                $responden->setLamaBekerja($row['lama_bekerja']);
                 $responden->setIdUser($row['id_user']);
 
                 $data->append($responden);

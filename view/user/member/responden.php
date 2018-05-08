@@ -42,6 +42,8 @@
                                     <th>Nama Perusahaan</th>
                                     <th>No Telepon</th>
                                     <th>Email</th>
+                                    <th>Pendidikan</th>
+                                    <th>Lama Bekerja</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -56,6 +58,8 @@
                                         <td><?php echo $data->current()->getNamaPerusahaan(); ?></td>
                                         <td><?php echo $data->current()->getIdUser()->getNomorTelepon(); ?></td>
                                         <td><?php echo $data->current()->getIdUser()->getEmail(); ?></td>
+                                        <td><?php echo $data->current()->getPendidikan(); ?></td>
+                                        <td><?php echo $data->current()->getLamaBekerja(); ?> Tahun</td>
                                     </tr>
                                     <?php
                                     $no++;

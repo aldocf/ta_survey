@@ -295,7 +295,7 @@ class SurveyDao
         $data = new ArrayObject();
         try {
             $conn = Koneksi::get_koneksi();
-            $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey >= ? AND survey.periode_survey_akhir <= ?";
+            $sql = "SELECT *, CURRENT_DATE() FROM survey WHERE survey.periode_survey BETWEEN ? AND ?";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $awal);
             $stmt->bindParam(2, $akhir);
